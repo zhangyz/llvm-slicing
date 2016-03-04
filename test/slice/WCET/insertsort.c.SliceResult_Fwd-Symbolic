@@ -1,0 +1,10 @@
+
+Forward Static SliceTable:
+	#Insts_sliced = 60.0 (Average: 15)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ a                {"wcet/insertsort.c: [62,66,70,75,76,77,78,83]"}
+ i@main           {"wcet/insertsort.c: [62,66,70,75,76,77,78,83]"}
+ j@main           {"wcet/insertsort.c: [70,78]"}
+ temp@main        {"wcet/insertsort.c: []"}

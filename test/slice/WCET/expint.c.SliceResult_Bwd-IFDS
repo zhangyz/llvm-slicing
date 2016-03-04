@@ -1,0 +1,21 @@
+
+Backward Static SliceTable:
+	#Insts_sliced = 436.0 (Average: 29)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ a@expint           {"wcet/expint.c: [31,35,61,71,75,79,89,93,95,97,99,101,105]"}
+ ans@expint         {"wcet/expint.c: [31,35,45,49,61,71,75,79,89,93,95,97,99,101,103,105,109,127,131,135,137,139,147,149,151,155]"}
+ b@expint           {"wcet/expint.c: [31,35,61,71,75,79,89,93,95,97,99,101,105]"}
+ c@expint           {"wcet/expint.c: [31,35,61,71,75,79,81,89,93,95,97,99,101,105]"}
+ d@expint           {"wcet/expint.c: [31,35,61,71,75,79,83,89,93,95,97,99,101,105]"}
+ del@expint         {"wcet/expint.c: [31,35,45,49,61,71,75,79,89,93,95,97,99,101,105,131,135,137,139,147,149,151]"}
+ fact@expint        {"wcet/expint.c: [31,35,61,75,129,131,135]"}
+ h@expint           {"wcet/expint.c: [31,35,61,71,75,79,85,89,93,95,97,99,101,103,105]"}
+ i@expint           {"wcet/expint.c: [31,35,61,71,75,79,89,93,95,97,99,101,105,131]"}
+ ii@expint          {"wcet/expint.c: [31,35,61,71,131,137,147]"}
+ n@expint           {"wcet/expint.c: [31,35,61]"}
+ nm1@expint         {"wcet/expint.c: [31,35,61,71]"}
+ psi@expint         {"wcet/expint.c: [31,35,61,71,131,137,145,147,149]"}
+ x@expint           {"wcet/expint.c: [31,35,61]"}
+ x@foo              {"wcet/expint.c: [31,35,45,61,71,147,151]"}

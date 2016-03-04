@@ -1,0 +1,310 @@
+digraph {
+    subgraph cluster_49 {
+        graph [label="[\"wcet/ns.c:990\"]@foo"];
+        -4611686018427387851 [label="FinalUse(%1)"
+                             ,color=green];
+        -4611686018427387850 [label="FinalUse(%2)"
+                             ,color=green];
+        -4611686018427387849 [label="FinalUse(%i)"
+                             ,color=green];
+        -4611686018427387848 [label="FinalUse(%j)"
+                             ,color=green];
+        -4611686018427387847 [label="FinalUse(%k)"
+                             ,color=green];
+        -4611686018427387846 [label="FinalUse(%l)"
+                             ,color=green];
+        49 [label="ENTER @foo"
+           ,color=yellow];
+        50 [label="(formal-in)%x"
+           ,color=yellow];
+        52 [label="[]: %1 = alloca i32 , align 4"
+           ,shape=box];
+        53 [label="[]: %2 = alloca i32 , align 4"
+           ,shape=box];
+        54 [label="[]: %i = alloca i32 , align 4"
+           ,shape=box];
+        55 [label="[]: %j = alloca i32 , align 4"
+           ,shape=box];
+        56 [label="[]: %k = alloca i32 , align 4"
+           ,shape=box];
+        57 [label="[]: %l = alloca i32 , align 4"
+           ,shape=box];
+        58 [label="[]: store i32 %x , i32* %2 , align 4"
+           ,shape=box];
+        59 [label="[1004]: store i32 0 , i32* %i , align 4"
+           ,shape=box];
+        60 [label="[1004]: br label %3"
+           ,shape=box];
+        62 [label="[]: %4 = phi i32 [ [%43, %42], [0, %0] ]"
+           ,shape=box];
+        63 [label="[1004]: %5 = icmp slt i32 %4 , 5"
+           ,shape=box];
+        65 [label="[1004]: br i1 %5 , label %6 , label %44"
+           ,shape=box];
+        67 [label="[1006]: store i32 0 , i32* %j , align 4"
+           ,shape=box];
+        68 [label="[1006]: br label %7"
+           ,shape=box];
+        70 [label="[]: %8 = phi i32 [ [%41, %40], [0, %6] ]"
+           ,shape=box];
+        71 [label="[1006]: %9 = icmp slt i32 %8 , 5"
+           ,shape=box];
+        72 [label="[1006]: br i1 %9 , label %10 , label %42"
+           ,shape=box];
+        74 [label="[1008]: store i32 0 , i32* %k , align 4"
+           ,shape=box];
+        75 [label="[1008]: br label %11"
+           ,shape=box];
+        77 [label="[]: %12 = phi i32 [ [%39, %38], [0, %10] ]"
+           ,shape=box];
+        78 [label="[1008]: %13 = icmp slt i32 %12 , 5"
+           ,shape=box];
+        79 [label="[1008]: br i1 %13 , label %14 , label %40"
+           ,shape=box];
+        81 [label="[1010]: store i32 0 , i32* %l , align 4"
+           ,shape=box];
+        82 [label="[1010]: br label %15"
+           ,shape=box];
+        84 [label="[]: %16 = phi i32 [ [%37, %36], [0, %14] ]"
+           ,shape=box];
+        85 [label="[1010]: %17 = icmp slt i32 %16 , 5"
+           ,shape=box];
+        86 [label="[1010]: br i1 %17 , label %18 , label %38"
+           ,shape=box];
+        88 [label="[1020]: %19 = sext i32 %16 to i64"
+           ,shape=box];
+        89 [label="[1020]: %20 = sext i32 %12 to i64"
+           ,shape=box];
+        90 [label="[1020]: %21 = sext i32 %8 to i64"
+           ,shape=box];
+        91 [label="[1020]: %22 = sext i32 %4 to i64"
+           ,shape=box];
+        92 [label="[1020]: %23 = getelementptr inbounds [5 x [5 x [5 x [5 x i32]]]]* @keys , i32 0, i64 %22"
+           ,shape=box];
+        93 [label="[1020]: %24 = getelementptr inbounds [5 x [5 x [5 x i32]]]* %23 , i32 0, i64 %21"
+           ,shape=box];
+        94 [label="[1020]: %25 = getelementptr inbounds [5 x [5 x i32]]* %24 , i32 0, i64 %20"
+           ,shape=box];
+        95 [label="[1020]: %26 = getelementptr inbounds [5 x i32]* %25 , i32 0, i64 %19"
+           ,shape=box];
+        96 [label="[1020]: %27 = load i32* %26 , align 4"
+           ,shape=box];
+        97 [label="[1020]: %28 = icmp eq i32 %27 , %x"
+           ,shape=box];
+        98 [label="[1020]: br i1 %28 , label %29 , label %36"
+           ,shape=box];
+        100 [label="[1030]: %30 = getelementptr inbounds [5 x [5 x [5 x [5 x i32]]]]* @answer , i32 0, i64 %22"
+            ,shape=box];
+        101 [label="[1030]: %31 = getelementptr inbounds [5 x [5 x [5 x i32]]]* %30 , i32 0, i64 %21"
+            ,shape=box];
+        102 [label="[1030]: %32 = getelementptr inbounds [5 x [5 x i32]]* %31 , i32 0, i64 %20"
+            ,shape=box];
+        103 [label="[1030]: %33 = getelementptr inbounds [5 x i32]* %32 , i32 0, i64 %19"
+            ,shape=box];
+        104 [label="[1030]: %34 = load i32* %33 , align 4"
+            ,shape=box];
+        105 [label="[1030]: %35 = add nsw i32 %34 , %x"
+            ,shape=box];
+        106 [label="[1030]: store i32 %35 , i32* %1"
+            ,shape=box];
+        107 [label="[1030]: br label %45"
+            ,shape=box];
+        109 [label="[1010]: %37 = add nsw i32 %16 , 1"
+            ,shape=box];
+        110 [label="[1010]: store i32 %37 , i32* %l , align 4"
+            ,shape=box];
+        111 [label="[1010]: br label %15"
+            ,shape=box];
+        113 [label="[1008]: %39 = add nsw i32 %12 , 1"
+            ,shape=box];
+        114 [label="[1008]: store i32 %39 , i32* %k , align 4"
+            ,shape=box];
+        115 [label="[1008]: br label %11"
+            ,shape=box];
+        117 [label="[1006]: %41 = add nsw i32 %8 , 1"
+            ,shape=box];
+        118 [label="[1006]: store i32 %41 , i32* %j , align 4"
+            ,shape=box];
+        119 [label="[1006]: br label %7"
+            ,shape=box];
+        121 [label="[1004]: %43 = add nsw i32 %4 , 1"
+            ,shape=box];
+        122 [label="[1004]: store i32 %43 , i32* %i , align 4"
+            ,shape=box];
+        123 [label="[1004]: br label %3"
+            ,shape=box];
+        126 [label="[1036]: store i32 -1 , i32* %1"
+            ,shape=box];
+        127 [label="[1036]: br label %45"
+            ,shape=box];
+        129 [label="[]: %46 = phi i32 [ [-1, %44], [%35, %29] ]"
+            ,shape=box];
+        130 [label="[1038]: ret i32 %46"
+            ,shape=box];
+        384307168202282276 [label="(global-in)@foo:@answer"
+                           ,color=yellow];
+        4611686018427387854 [label="(global-in)@foo:@keys"
+                            ,color=yellow];
+    }
+    subgraph cluster_131 {
+        graph [label="[\"wcet/ns.c:1044\"]@main"];
+        131 [label="ENTER @main"
+            ,color=yellow];
+        133 [label="[1054]: %1 = call i32 @foo ( i32 400 )"
+            ,shape=box];
+        135 [label="[1058]: ret void"
+            ,shape=box];
+        271275648142787390 [label="(actual-in)%1:@answer"
+                           ,color=yellow];
+        384307168202282194 [label="(global-in)@main:@answer"
+                           ,color=yellow];
+        768614336404564517 [label="(actual-in)%1:@keys"
+                           ,color=yellow];
+        4611686018427387772 [label="(global-in)@main:@keys"
+                            ,color=yellow];
+    }
+    49 -> -4611686018427387851 [color=black];
+    49 -> -4611686018427387850 [color=black];
+    49 -> -4611686018427387849 [color=black];
+    49 -> -4611686018427387848 [color=black];
+    49 -> -4611686018427387847 [color=black];
+    49 -> -4611686018427387846 [color=black];
+    49 -> 50 [color=black];
+    49 -> 52 [color=black];
+    49 -> 53 [color=black];
+    49 -> 54 [color=black];
+    49 -> 55 [color=black];
+    49 -> 56 [color=black];
+    49 -> 57 [color=black];
+    49 -> 58 [color=black];
+    49 -> 59 [color=black];
+    49 -> 60 [color=black];
+    49 -> 62 [color=black];
+    49 -> 63 [color=black];
+    49 -> 65 [color=black];
+    49 -> 70 [color=black];
+    49 -> 71 [color=black];
+    49 -> 72 [color=black];
+    49 -> 77 [color=black];
+    49 -> 78 [color=black];
+    49 -> 79 [color=black];
+    49 -> 84 [color=black];
+    49 -> 85 [color=black];
+    49 -> 86 [color=black];
+    49 -> 129 [color=black];
+    49 -> 130 [color=black];
+    49 -> 384307168202282276 [color=black];
+    49 -> 4611686018427387854 [color=black];
+    50 -> 58 [color=sandybrown];
+    50 -> 97 [color=sandybrown];
+    50 -> 105 [color=sandybrown];
+    58 -> -4611686018427387850 [color=sandybrown];
+    59 -> -4611686018427387849 [color=sandybrown];
+    62 -> 63 [color=sandybrown];
+    62 -> 91 [color=sandybrown];
+    62 -> 121 [color=sandybrown];
+    63 -> 65 [color=sandybrown];
+    65 -> 67 [color=black];
+    65 -> 68 [color=black];
+    65 -> 126 [color=black];
+    65 -> 127 [color=black];
+    67 -> -4611686018427387848 [color=sandybrown];
+    70 -> 71 [color=sandybrown];
+    70 -> 90 [color=sandybrown];
+    70 -> 117 [color=sandybrown];
+    71 -> 72 [color=sandybrown];
+    72 -> 74 [color=black];
+    72 -> 75 [color=black];
+    72 -> 121 [color=black];
+    72 -> 122 [color=black];
+    72 -> 123 [color=black];
+    74 -> -4611686018427387847 [color=sandybrown];
+    77 -> 78 [color=sandybrown];
+    77 -> 89 [color=sandybrown];
+    77 -> 113 [color=sandybrown];
+    78 -> 79 [color=sandybrown];
+    79 -> 81 [color=black];
+    79 -> 82 [color=black];
+    79 -> 117 [color=black];
+    79 -> 118 [color=black];
+    79 -> 119 [color=black];
+    81 -> -4611686018427387846 [color=sandybrown];
+    84 -> 85 [color=sandybrown];
+    84 -> 88 [color=sandybrown];
+    84 -> 109 [color=sandybrown];
+    85 -> 86 [color=sandybrown];
+    86 -> 88 [color=black];
+    86 -> 89 [color=black];
+    86 -> 90 [color=black];
+    86 -> 91 [color=black];
+    86 -> 92 [color=black];
+    86 -> 93 [color=black];
+    86 -> 94 [color=black];
+    86 -> 95 [color=black];
+    86 -> 96 [color=black];
+    86 -> 97 [color=black];
+    86 -> 98 [color=black];
+    86 -> 113 [color=black];
+    86 -> 114 [color=black];
+    86 -> 115 [color=black];
+    88 -> 95 [color=sandybrown];
+    88 -> 103 [color=sandybrown];
+    89 -> 94 [color=sandybrown];
+    89 -> 102 [color=sandybrown];
+    90 -> 93 [color=sandybrown];
+    90 -> 101 [color=sandybrown];
+    91 -> 92 [color=sandybrown];
+    91 -> 100 [color=sandybrown];
+    92 -> 93 [color=sandybrown];
+    93 -> 94 [color=sandybrown];
+    94 -> 95 [color=sandybrown];
+    96 -> 97 [color=sandybrown];
+    97 -> 98 [color=sandybrown];
+    98 -> 100 [color=black];
+    98 -> 101 [color=black];
+    98 -> 102 [color=black];
+    98 -> 103 [color=black];
+    98 -> 104 [color=black];
+    98 -> 105 [color=black];
+    98 -> 106 [color=black];
+    98 -> 107 [color=black];
+    98 -> 109 [color=black];
+    98 -> 110 [color=black];
+    98 -> 111 [color=black];
+    100 -> 101 [color=sandybrown];
+    101 -> 102 [color=sandybrown];
+    102 -> 103 [color=sandybrown];
+    104 -> 105 [color=sandybrown];
+    105 -> 106 [color=sandybrown];
+    105 -> 129 [color=sandybrown];
+    106 -> -4611686018427387851 [color=sandybrown];
+    109 -> 84 [color=sandybrown];
+    109 -> 110 [color=sandybrown];
+    110 -> -4611686018427387846 [color=sandybrown];
+    113 -> 77 [color=sandybrown];
+    113 -> 114 [color=sandybrown];
+    114 -> -4611686018427387847 [color=sandybrown];
+    117 -> 70 [color=sandybrown];
+    117 -> 118 [color=sandybrown];
+    118 -> -4611686018427387848 [color=sandybrown];
+    121 -> 62 [color=sandybrown];
+    121 -> 122 [color=sandybrown];
+    122 -> -4611686018427387849 [color=sandybrown];
+    126 -> -4611686018427387851 [color=sandybrown];
+    129 -> 130 [color=sandybrown];
+    131 -> 133 [color=black];
+    131 -> 135 [color=black];
+    131 -> 384307168202282194 [color=black];
+    131 -> 4611686018427387772 [color=black];
+    133 -> 49 [color=deepskyblue];
+    133 -> 271275648142787390 [color=black];
+    133 -> 768614336404564517 [color=black];
+    271275648142787390 -> 384307168202282276 [style=dashed
+                                             ,color=forestgreen];
+    384307168202282276 -> 100 [color=sandybrown];
+    384307168202282276 -> 104 [color=sandybrown];
+    768614336404564517 -> 4611686018427387854 [style=dashed
+                                              ,color=forestgreen];
+    4611686018427387854 -> 92 [color=sandybrown];
+    4611686018427387854 -> 96 [color=sandybrown];
+}

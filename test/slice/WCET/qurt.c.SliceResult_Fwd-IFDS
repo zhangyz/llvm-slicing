@@ -1,0 +1,22 @@
+
+Forward Static SliceTable:
+	#Insts_sliced = 219.0 (Average: 14)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ a                        {}
+ d@qurt                   {"wcet/qurt.c: [142]"}
+ diff@qurt_sqrt           {"wcet/qurt.c: [98]"}
+ dx@qurt_sqrt             {"wcet/qurt.c: [96]"}
+ f@qurt_fabs              {"wcet/qurt.c: [73,74]"}
+ flag                     {}
+ flag@qurt_sqrt           {"wcet/qurt.c: [90,99]"}
+ i@qurt_sqrt              {"wcet/qurt.c: [93]"}
+ min_tol@qurt_sqrt        {"wcet/qurt.c: [86]"}
+ n@qurt_fabs              {"wcet/qurt.c: [69,73,74,75,95,96,97,98,99,100,105,144,148,150,166,168,170]"}
+ val@qurt_sqrt            {"wcet/qurt.c: [69,73,74,75,81,91,93,95,96,97,98,99,100,105,144,148,150,166,168,170]"}
+ w1@qurt                  {"wcet/qurt.c: [143]"}
+ w2@qurt                  {"wcet/qurt.c: [144,166]"}
+ x1                       {}
+ x2                       {}
+ x@qurt_sqrt              {"wcet/qurt.c: [81,91,97]"}

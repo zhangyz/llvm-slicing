@@ -1,0 +1,21 @@
+
+Forward Static SliceTable:
+	#Insts_sliced = 263.0 (Average: 18)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ a@expint           {"wcet/expint.c: [93]"}
+ ans@expint         {"wcet/expint.c: [109,127,155]"}
+ b@expint           {"wcet/expint.c: [79,95]"}
+ c@expint           {"wcet/expint.c: [81,99]"}
+ d@expint           {"wcet/expint.c: [83,97]"}
+ del@expint         {"wcet/expint.c: [101,139,151]"}
+ fact@expint        {"wcet/expint.c: [129,135]"}
+ h@expint           {"wcet/expint.c: [85,103]"}
+ i@expint           {"wcet/expint.c: [89,131]"}
+ ii@expint          {"wcet/expint.c: [147]"}
+ n@expint           {"wcet/expint.c: [45,49,71,79,89,93,95,97,99,101,103,105,109,111,117,127,137,139,145,147,149,151,155,165,167]"}
+ nm1@expint         {"wcet/expint.c: [71]"}
+ psi@expint         {"wcet/expint.c: [145,149]"}
+ x@expint           {"wcet/expint.c: [49,75,79,81,83,85,89,93,95,97,99,101,103,105,109,111,117,127,129,131,135,139,151,155,165,167]"}
+ x@foo              {"wcet/expint.c: [49,151,155,165,167]"}

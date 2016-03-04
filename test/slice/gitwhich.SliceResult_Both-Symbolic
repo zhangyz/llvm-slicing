@@ -1,0 +1,81 @@
+
+Backward Static SliceTable:
+	#Insts_sliced = 1503.0 (Average: 42)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ argc@main             {"gitwhich.c: [63,64,66,69,72,74,75,78,80,82,83,84,86,104,106,107]","xmalloc.c: [49]"}
+ argv@main             {"gitwhich.c: [63,64,66,69,72,74,75,78,80,82,83,84,86,104,106,107]","xmalloc.c: [49]"}
+ found@find            {"gitwhich.c: [63,64,66,69,72,74,75,78,80,82,83,84,86,104,106,107]","xmalloc.c: [49]"}
+ len@find              {"gitwhich.c: [63,64,66,69,72,74,75,78,80,82,83,84,86,104,106,107]","xmalloc.c: [49]"}
+ n@x2nrealloc          {"./xalloc.h: [197,199,201,209,210,219,221]","xmalloc.c: [76]"}
+ n@xcalloc             {"xmalloc.c: []"}
+ n@xcharalloc          {"./xalloc.h: []"}
+ n@xmalloc             {"./xalloc.h: [123,125,235]","gitwhich.c: [63,64,66,69,72,74,75,78,80,82,83,84,86,104,106,107]","xmalloc.c: [49,86,113,121]"}
+ n@xnmalloc            {"./xalloc.h: []"}
+ n@xnrealloc           {"./xalloc.h: []"}
+ n@xrealloc            {"./xalloc.h: [134,136,197,199,201,209,210,219,221,224,225]","xmalloc.c: [76]"}
+ name@find             {"gitwhich.c: [63,64,66,69,72,74,75,78,80,82,83,84,86,104,106,107]","xmalloc.c: [49]"}
+ p@x2nrealloc          {"./xalloc.h: []","xmalloc.c: [76]"}
+ p@x2realloc           {"xmalloc.c: []"}
+ p@xcalloc             {"xmalloc.c: [101]"}
+ p@xmalloc             {"./xalloc.h: [123,125,235]","gitwhich.c: [63,64,66,69,72,74,75,78,80,82,83,84,86,104,106,107]","xmalloc.c: [49,86,113,121]"}
+ p@xmemdup             {"xmalloc.c: [121]"}
+ p@xnrealloc           {"./xalloc.h: []"}
+ p@xrealloc            {"./xalloc.h: [134,136,197,199,201,209,210,219,221,224,225]","xmalloc.c: [61,76]"}
+ path@find             {"gitwhich.c: [63,64,66,69,72,74,75,78,80,82,83,84,86,104,106,107]","xmalloc.c: [49]"}
+ path@main             {"gitwhich.c: [104]"}
+ pc@find               {"gitwhich.c: [63,64,66,69,72,74,75,78,80,82,83,84,86,104,106,107]","xmalloc.c: [49]"}
+ pn@x2nrealloc         {"./xalloc.h: [197,199,201,209,210,219,221,224]","xmalloc.c: [76]"}
+ pn@x2realloc          {"./xalloc.h: [197,199,201,209,210,219,221,224]","xmalloc.c: [76]"}
+ pointer@xfree         {"gitwhich.c: [63,64,66,69,72,74,75,78,80,82,83,84,86,87,104,106,107]","xmalloc.c: [49]"}
+ postmsg@fatal         {"./xalloc.h: [123,124,125,134,135,136,197,199,201,209,210,219,220,221,224,225,235]","gitwhich.c: [50,63,64,66,69,72,74,75,78,80,82,83,84,86,87,104,106,107]","xmalloc.c: [43,49,50,51,52,55,61,62,63,76,86,101,102,113,121]"}
+ program_name          {"gitwhich.c: [103]"}
+ s@x2nrealloc          {"./xalloc.h: []","xmalloc.c: [76]"}
+ s@xcalloc             {"xmalloc.c: []"}
+ s@xmemdup             {"xmalloc.c: [121]"}
+ s@xnmalloc            {"./xalloc.h: []"}
+ s@xnrealloc           {"./xalloc.h: []"}
+ s@xzalloc             {"xmalloc.c: []"}
+ save@find             {"gitwhich.c: [63,64,66,69,72,74,75,78,80,82,83,84,86,104,106,107]","xmalloc.c: [49]"}
+ string@xstrdup        {"xmalloc.c: []"}
+ tmp@find              {"gitwhich.c: [63,64,66,69,72,74,75,78,80,82,83,84,86,104,106,107]","xmalloc.c: [49]"}
+
+
+Forward Static SliceTable:
+	#Insts_sliced = 1804.0 (Average: 56)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ argc@main             {"gitwhich.c: [50,51,63,64,66,69,72,74,75,78,79,80,81,82,83,84,86,87,90,106,107,108,110]","xmalloc.c: [43,45,49,50,51,52,53,55]"}
+ argv@main             {"gitwhich.c: [50,51,63,64,66,69,72,74,75,78,79,80,81,82,83,84,86,87,90,103,106,107,108,110]","xmalloc.c: [43,45,49,50,51,52,53,55]"}
+ found@find            {"gitwhich.c: [50,51,63,64,66,69,72,74,75,78,79,80,81,82,83,84,86,87,90,106,107,108,110]","xmalloc.c: [43,45,49,50,51,52,53,55]"}
+ len@find              {"gitwhich.c: [50,51,63,64,66,69,72,74,75,78,79,80,81,82,83,84,86,87,90,106,107,108,110]","xmalloc.c: [43,45,49,50,51,52,53,55]"}
+ n@x2nrealloc          {"./xalloc.h: [197,199,201,209,210,219,220,221,224,225]","gitwhich.c: [50,51]","xmalloc.c: [43,45,61,62,63,64,76]"}
+ n@xcalloc             {"gitwhich.c: [50,51]","xmalloc.c: [43,45,101,102,103]"}
+ n@xcharalloc          {"./xalloc.h: [235]","gitwhich.c: [50,51]","xmalloc.c: [43,45,49,50,51,52]"}
+ n@xmalloc             {"./xalloc.h: [125,235]","gitwhich.c: [50,51,63,64,66,69,72,74,75,78,79,80,81,82,83,84,86,87,90,106,107,108,110]","xmalloc.c: [43,45,49,50,51,52,53,55,86,113,121]"}
+ n@xnmalloc            {"./xalloc.h: [123,124,125]","gitwhich.c: [50,51]","xmalloc.c: [43,45,49,50,51,52]"}
+ n@xnrealloc           {"./xalloc.h: [134,135,136]","gitwhich.c: [50,51]","xmalloc.c: [43,45,61,62,63,64]"}
+ n@xrealloc            {"./xalloc.h: [136,197,199,201,209,210,219,220,221,224,225]","gitwhich.c: [50,51]","xmalloc.c: [43,45,61,62,63,64,76]"}
+ name@find             {"gitwhich.c: [50,51,63,64,66,69,72,74,75,78,79,80,81,82,83,84,86,87,90,106,107,108,110]","xmalloc.c: [43,45,49,50,51,52,53,55]"}
+ p@x2nrealloc          {"./xalloc.h: [197,199,201,209,210,219,220,221,224,225]","gitwhich.c: [50,51]","xmalloc.c: [43,45,61,62,63,64,76]"}
+ p@x2realloc           {"./xalloc.h: [197,199,201,209,210,219,220,221,224,225]","gitwhich.c: [50,51]","xmalloc.c: [43,45,61,62,63,64,76]"}
+ p@xmemdup             {"xmalloc.c: [113]"}
+ p@xnrealloc           {"./xalloc.h: [136]","gitwhich.c: [50,51]","xmalloc.c: [43,45,61,62,63,64]"}
+ p@xrealloc            {"./xalloc.h: [136,197,199,201,209,210,219,220,221,224,225]","gitwhich.c: [50,51]","xmalloc.c: [43,45,61,62,63,64,76]"}
+ path@find             {"gitwhich.c: [50,51,63,64,66,69,72,74,75,78,79,80,81,82,83,84,86,87,90,106,107,108,110]","xmalloc.c: [43,45,49,50,51,52,53,55]"}
+ pc@find               {"gitwhich.c: [50,51,63,64,66,69,72,74,75,78,79,80,81,82,83,84,86,87,90,106,107,108,110]","xmalloc.c: [43,45,49,50,51,52,53,55]"}
+ pn@x2nrealloc         {"./xalloc.h: [197,199,201,209,210,219,220,221,224,225]","gitwhich.c: [50,51]","xmalloc.c: [43,45,61,62,63,64,76]"}
+ pn@x2realloc          {"./xalloc.h: [197,199,201,209,210,219,220,221,224,225]","gitwhich.c: [50,51]","xmalloc.c: [43,45,61,62,63,64,76]"}
+ pointer@xfree         {"gitwhich.c: [50,51]","xmalloc.c: [52,53,55]"}
+ postmsg@fatal         {"gitwhich.c: []"}
+ s@x2nrealloc          {"./xalloc.h: [197,199,201,209,210,219,220,221,224,225]","gitwhich.c: [50,51]","xmalloc.c: [43,45,61,62,63,64,76]"}
+ s@xcalloc             {"gitwhich.c: [50,51]","xmalloc.c: [43,45,101,102,103]"}
+ s@xmemdup             {"gitwhich.c: [50,51]","xmalloc.c: [43,45,49,50,51,52,113,121]"}
+ s@xnmalloc            {"./xalloc.h: [123,124,125]","gitwhich.c: [50,51]","xmalloc.c: [43,45,49,50,51,52]"}
+ s@xnrealloc           {"./xalloc.h: [134,135,136]","gitwhich.c: [50,51]","xmalloc.c: [43,45,61,62,63,64]"}
+ s@xzalloc             {"gitwhich.c: [50,51]","xmalloc.c: [43,45,49,50,51,52,86]"}
+ save@find             {"gitwhich.c: [50,51,63,64,66,69,72,74,75,78,79,80,81,82,83,84,86,87,90,106,107,108,110]","xmalloc.c: [43,45,49,50,51,52,53,55]"}
+ string@xstrdup        {"gitwhich.c: [50,51]","xmalloc.c: [43,45,49,50,51,52,113,121]"}
+ tmp@find              {"gitwhich.c: []"}

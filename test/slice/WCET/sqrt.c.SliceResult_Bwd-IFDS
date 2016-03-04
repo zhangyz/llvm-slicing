@@ -1,0 +1,14 @@
+
+Backward Static SliceTable:
+	#Insts_sliced = 219.0 (Average: 27)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ diff@sqrtfcn           {"wcet/sqrt.c: [52,54,55,60,62,75,77,78,79,80,81]"}
+ dx@sqrtfcn             {"wcet/sqrt.c: [52,54,55,60,62,75,77,78,79,80,81]"}
+ flag@sqrtfcn           {"wcet/sqrt.c: [52,54,55,60,62,71,75,77,78,79,80,81,82]"}
+ i@sqrtfcn              {"wcet/sqrt.c: [60,72,75]"}
+ min_tol@sqrtfcn        {"wcet/sqrt.c: [60,67]"}
+ val@sqrtfcn            {"wcet/sqrt.c: [60]"}
+ x@fabs                 {"wcet/sqrt.c: [52,54,55,57,60,62,75,77,78,79,80,81]"}
+ x@sqrtfcn              {"wcet/sqrt.c: [52,54,55,60,62,72,73,75,77,78,79,80,81]"}
