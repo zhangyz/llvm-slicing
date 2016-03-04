@@ -1,0 +1,297 @@
+digraph {
+    subgraph cluster_2 {
+        graph [label="[\"wcet/recursion.c:13\"]@fib"];
+        -9223372036854775784 [label="(actual-out)%10:%9"
+                             ,color=yellow];
+        -9223372036854775781 [label="(actual-out)%12:%11"
+                             ,color=yellow];
+        -4611686018427387897 [label="FinalUse(%1)"
+                             ,color=green];
+        -4611686018427387896 [label="FinalUse(%2)"
+                             ,color=green];
+        2 [label="ENTER @fib"
+          ,color=yellow];
+        3 [label="(formal-in)%i"
+          ,color=yellow];
+        6 [label="[]: %1 = alloca i32 , align 4"
+          ,shape=box];
+        7 [label="[]: %2 = alloca i32 , align 4"
+          ,shape=box];
+        8 [label="[]: store i32 %i , i32* %2 , align 4"
+          ,shape=box];
+        9 [label="[17]: %3 = icmp eq i32 %i , 0"
+          ,shape=box];
+        11 [label="[17]: br i1 %3 , label %4 , label %5"
+           ,shape=box];
+        13 [label="[19]: store i32 1 , i32* %1"
+           ,shape=box];
+        14 [label="[19]: br label %14"
+           ,shape=box];
+        16 [label="[21]: %6 = icmp eq i32 %i , 1"
+           ,shape=box];
+        17 [label="[21]: br i1 %6 , label %7 , label %8"
+           ,shape=box];
+        19 [label="[23]: store i32 1 , i32* %1"
+           ,shape=box];
+        20 [label="[23]: br label %14"
+           ,shape=box];
+        22 [label="[25]: %9 = sub nsw i32 %i , 1"
+           ,shape=box];
+        23 [label="[25]: %10 = call i32 @fib ( i32 %9 )"
+           ,shape=box];
+        25 [label="[25]: %11 = sub nsw i32 %i , 2"
+           ,shape=box];
+        26 [label="[25]: %12 = call i32 @fib ( i32 %11 )"
+           ,shape=box];
+        27 [label="[25]: %13 = add nsw i32 %10 , %12"
+           ,shape=box];
+        28 [label="[25]: store i32 %13 , i32* %1"
+           ,shape=box];
+        29 [label="[25]: br label %14"
+           ,shape=box];
+        31 [label="[]: %15 = phi i32 [ [%13, %8], [1, %7], [1, %4] ]"
+           ,shape=box];
+        32 [label="[27]: ret i32 %15"
+           ,shape=box];
+        9223372036854775781 [label="(actual-in)%12:%11"
+                            ,color=yellow];
+        9223372036854775784 [label="(actual-in)%10:%9"
+                            ,color=yellow];
+    }
+    subgraph cluster_33 {
+        graph [label="[\"wcet/recursion.c:37\"]@kalle"];
+        -9223372036854775761 [label="(actual-out)%7:%6"
+                             ,color=yellow];
+        -4611686018427387867 [label="FinalUse(%1)"
+                             ,color=green];
+        -4611686018427387866 [label="FinalUse(%2)"
+                             ,color=green];
+        -34 [label="(formal-out)%i"
+            ,color=yellow];
+        33 [label="ENTER @kalle"
+           ,color=yellow];
+        34 [label="(formal-in)%i"
+           ,color=yellow];
+        36 [label="[]: %1 = alloca i32 , align 4"
+           ,shape=box];
+        37 [label="[]: %2 = alloca i32 , align 4"
+           ,shape=box];
+        38 [label="[]: store i32 %i , i32* %2 , align 4"
+           ,shape=box];
+        39 [label="[41]: %3 = icmp sle i32 %i , 0"
+           ,shape=box];
+        40 [label="[41]: br i1 %3 , label %4 , label %5"
+           ,shape=box];
+        42 [label="[43]: store i32 0 , i32* %1"
+           ,shape=box];
+        43 [label="[43]: br label %8"
+           ,shape=box];
+        45 [label="[47]: %6 = sub nsw i32 %i , 1"
+           ,shape=box];
+        46 [label="[47]: %7 = call i32 @anka ( i32 %6 )"
+           ,shape=box];
+        47 [label="[47]: store i32 %7 , i32* %1"
+           ,shape=box];
+        48 [label="[47]: br label %8"
+           ,shape=box];
+        50 [label="[]: %9 = phi i32 [ [%7, %5], [0, %4] ]"
+           ,shape=box];
+        51 [label="[49]: ret i32 %9"
+           ,shape=box];
+        9223372036854775761 [label="(actual-in)%7:%6"
+                            ,color=yellow];
+    }
+    subgraph cluster_52 {
+        graph [label="[\"wcet/recursion.c:53\"]@anka"];
+        -9223372036854775742 [label="(actual-out)%7:%6"
+                             ,color=yellow];
+        -4611686018427387848 [label="FinalUse(%1)"
+                             ,color=green];
+        -4611686018427387847 [label="FinalUse(%2)"
+                             ,color=green];
+        -53 [label="(formal-out)%i"
+            ,color=yellow];
+        52 [label="ENTER @anka"
+           ,color=yellow];
+        53 [label="(formal-in)%i"
+           ,color=yellow];
+        55 [label="[]: %1 = alloca i32 , align 4"
+           ,shape=box];
+        56 [label="[]: %2 = alloca i32 , align 4"
+           ,shape=box];
+        57 [label="[]: store i32 %i , i32* %2 , align 4"
+           ,shape=box];
+        58 [label="[57]: %3 = icmp sle i32 %i , 0"
+           ,shape=box];
+        59 [label="[57]: br i1 %3 , label %4 , label %5"
+           ,shape=box];
+        61 [label="[59]: store i32 1 , i32* %1"
+           ,shape=box];
+        62 [label="[59]: br label %8"
+           ,shape=box];
+        64 [label="[63]: %6 = sub nsw i32 %i , 1"
+           ,shape=box];
+        65 [label="[63]: %7 = call i32 @kalle ( i32 %6 )"
+           ,shape=box];
+        66 [label="[63]: store i32 %7 , i32* %1"
+           ,shape=box];
+        67 [label="[63]: br label %8"
+           ,shape=box];
+        69 [label="[]: %9 = phi i32 [ [%7, %5], [1, %4] ]"
+           ,shape=box];
+        70 [label="[65]: ret i32 %9"
+           ,shape=box];
+        9223372036854775742 [label="(actual-in)%7:%6"
+                            ,color=yellow];
+    }
+    subgraph cluster_71 {
+        graph [label="[\"wcet/recursion.c:73\"]@main"];
+        71 [label="ENTER @main"
+           ,color=yellow];
+        73 [label="[77]: %1 = call i32 @fib ( i32 10 )"
+           ,shape=box];
+        75 [label="[77]: volatile store i32 %1 , i32* @In , align 4"
+           ,shape=box];
+        76 [label="[79]: ret void"
+           ,shape=box];
+    }
+    -4611686018427387866 -> -34 [color=sandybrown];
+    -4611686018427387847 -> -53 [color=sandybrown];
+    -53 -> -9223372036854775761 [style=dashed
+                                ,color=purple];
+    -34 -> -9223372036854775742 [style=dashed
+                                ,color=purple];
+    2 -> -4611686018427387897 [color=black];
+    2 -> -4611686018427387896 [color=black];
+    2 -> 3 [color=black];
+    2 -> 6 [color=black];
+    2 -> 7 [color=black];
+    2 -> 8 [color=black];
+    2 -> 9 [color=black];
+    2 -> 11 [color=black];
+    2 -> 31 [color=black];
+    2 -> 32 [color=black];
+    3 -> 8 [color=sandybrown];
+    3 -> 9 [color=sandybrown];
+    3 -> 16 [color=sandybrown];
+    3 -> 22 [color=sandybrown];
+    3 -> 25 [color=sandybrown];
+    3 -> 9223372036854775781 [color=sandybrown];
+    3 -> 9223372036854775784 [color=sandybrown];
+    8 -> -4611686018427387896 [color=sandybrown];
+    9 -> 11 [color=sandybrown];
+    11 -> 13 [color=black];
+    11 -> 14 [color=black];
+    11 -> 16 [color=black];
+    11 -> 17 [color=black];
+    13 -> -4611686018427387897 [color=sandybrown];
+    16 -> 17 [color=sandybrown];
+    17 -> 19 [color=black];
+    17 -> 20 [color=black];
+    17 -> 22 [color=black];
+    17 -> 23 [color=black];
+    17 -> 25 [color=black];
+    17 -> 26 [color=black];
+    17 -> 27 [color=black];
+    17 -> 28 [color=black];
+    17 -> 29 [color=black];
+    19 -> -4611686018427387897 [color=sandybrown];
+    22 -> 9223372036854775784 [color=sandybrown];
+    23 -> -9223372036854775784 [color=black];
+    23 -> 2 [color=deepskyblue];
+    23 -> 27 [color=sandybrown];
+    23 -> 9223372036854775784 [color=black];
+    25 -> 9223372036854775781 [color=sandybrown];
+    26 -> -9223372036854775781 [color=black];
+    26 -> 2 [color=deepskyblue];
+    26 -> 27 [color=sandybrown];
+    26 -> 9223372036854775781 [color=black];
+    27 -> 28 [color=sandybrown];
+    27 -> 31 [color=sandybrown];
+    28 -> -4611686018427387897 [color=sandybrown];
+    31 -> 32 [color=sandybrown];
+    31 -> 75 [color=sandybrown];
+    33 -> -4611686018427387867 [color=black];
+    33 -> -4611686018427387866 [color=black];
+    33 -> -34 [color=black];
+    33 -> 34 [color=black];
+    33 -> 36 [color=black];
+    33 -> 37 [color=black];
+    33 -> 38 [color=black];
+    33 -> 39 [color=black];
+    33 -> 40 [color=black];
+    33 -> 50 [color=black];
+    33 -> 51 [color=black];
+    34 -> -34 [color=sandybrown];
+    34 -> 38 [color=sandybrown];
+    34 -> 39 [color=sandybrown];
+    34 -> 45 [color=sandybrown];
+    34 -> 9223372036854775761 [color=sandybrown];
+    38 -> -4611686018427387866 [color=sandybrown];
+    39 -> 40 [color=sandybrown];
+    40 -> 42 [color=black];
+    40 -> 43 [color=black];
+    40 -> 45 [color=black];
+    40 -> 46 [color=black];
+    40 -> 47 [color=black];
+    40 -> 48 [color=black];
+    42 -> -4611686018427387867 [color=sandybrown];
+    45 -> 9223372036854775761 [color=sandybrown];
+    46 -> -9223372036854775761 [color=black];
+    46 -> 47 [color=sandybrown];
+    46 -> 50 [color=sandybrown];
+    46 -> 52 [color=deepskyblue];
+    46 -> 9223372036854775761 [color=black];
+    47 -> -4611686018427387867 [color=sandybrown];
+    50 -> 51 [color=sandybrown];
+    50 -> 66 [color=sandybrown];
+    50 -> 69 [color=sandybrown];
+    52 -> -4611686018427387848 [color=black];
+    52 -> -4611686018427387847 [color=black];
+    52 -> -53 [color=black];
+    52 -> 53 [color=black];
+    52 -> 55 [color=black];
+    52 -> 56 [color=black];
+    52 -> 57 [color=black];
+    52 -> 58 [color=black];
+    52 -> 59 [color=black];
+    52 -> 69 [color=black];
+    52 -> 70 [color=black];
+    53 -> -53 [color=sandybrown];
+    53 -> 57 [color=sandybrown];
+    53 -> 58 [color=sandybrown];
+    53 -> 64 [color=sandybrown];
+    53 -> 9223372036854775742 [color=sandybrown];
+    57 -> -4611686018427387847 [color=sandybrown];
+    58 -> 59 [color=sandybrown];
+    59 -> 61 [color=black];
+    59 -> 62 [color=black];
+    59 -> 64 [color=black];
+    59 -> 65 [color=black];
+    59 -> 66 [color=black];
+    59 -> 67 [color=black];
+    61 -> -4611686018427387848 [color=sandybrown];
+    64 -> 9223372036854775742 [color=sandybrown];
+    65 -> -9223372036854775742 [color=black];
+    65 -> 33 [color=deepskyblue];
+    65 -> 66 [color=sandybrown];
+    65 -> 69 [color=sandybrown];
+    65 -> 9223372036854775742 [color=black];
+    66 -> -4611686018427387848 [color=sandybrown];
+    69 -> 47 [color=sandybrown];
+    69 -> 50 [color=sandybrown];
+    69 -> 70 [color=sandybrown];
+    71 -> 73 [color=black];
+    71 -> 75 [color=black];
+    71 -> 76 [color=black];
+    73 -> 2 [color=deepskyblue];
+    73 -> 75 [color=sandybrown];
+    9223372036854775742 -> 34 [style=dashed
+                              ,color=forestgreen];
+    9223372036854775761 -> 53 [style=dashed
+                              ,color=forestgreen];
+    9223372036854775781 -> 3 [style=dashed
+                             ,color=forestgreen];
+    9223372036854775784 -> 3 [style=dashed
+                             ,color=forestgreen];
+}

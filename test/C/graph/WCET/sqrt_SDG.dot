@@ -1,0 +1,341 @@
+digraph {
+    subgraph cluster_1 {
+        graph [label="[\"wcet/sqrt.c:52\"]@fabs"];
+        -4611686018427387898 [label="FinalUse(%1)"
+                             ,color=green];
+        -4611686018427387897 [label="FinalUse(%2)"
+                             ,color=green];
+        -2 [label="(formal-out)%x"
+           ,color=yellow];
+        1 [label="ENTER @fabs"
+          ,color=yellow];
+        2 [label="(formal-in)%x"
+          ,color=yellow];
+        5 [label="[]: %1 = alloca float , align 4"
+          ,shape=box];
+        6 [label="[]: %2 = alloca float , align 4"
+          ,shape=box];
+        7 [label="[]: store float %x , float* %2 , align 4"
+          ,shape=box];
+        8 [label="[54]: %3 = fcmp olt float %x , 0.0"
+          ,shape=box];
+        10 [label="[54]: br i1 %3 , label %4 , label %6"
+           ,shape=box];
+        13 [label="[55]: %5 = sub float -0.0 , %x"
+           ,shape=box];
+        14 [label="[55]: store float %5 , float* %1"
+           ,shape=box];
+        15 [label="[55]: br label %7"
+           ,shape=box];
+        17 [label="[57]: store float %x , float* %1"
+           ,shape=box];
+        18 [label="[57]: br label %7"
+           ,shape=box];
+        20 [label="[]: %8 = phi float [ [%x, %6], [%5, %4] ]"
+           ,shape=box];
+        21 [label="[58]: ret float %8"
+           ,shape=box];
+    }
+    subgraph cluster_22 {
+        graph [label="[\"wcet/sqrt.c:60\"]@sqrtfcn"];
+        -9223372036854775732 [label="(actual-out)%26:%25"
+                             ,color=yellow];
+        -4611686018427387878 [label="FinalUse(%1)"
+                             ,color=green];
+        -4611686018427387877 [label="FinalUse(%x)"
+                             ,color=green];
+        -4611686018427387876 [label="FinalUse(%dx)"
+                             ,color=green];
+        -4611686018427387875 [label="FinalUse(%diff)"
+                             ,color=green];
+        -4611686018427387874 [label="FinalUse(%min_tol)"
+                             ,color=green];
+        -4611686018427387873 [label="FinalUse(%i)"
+                             ,color=green];
+        -4611686018427387872 [label="FinalUse(%flag)"
+                             ,color=green];
+        -23 [label="(formal-out)%val"
+            ,color=yellow];
+        22 [label="ENTER @sqrtfcn"
+           ,color=yellow];
+        23 [label="(formal-in)%val"
+           ,color=yellow];
+        25 [label="[]: %1 = alloca float , align 4"
+           ,shape=box];
+        26 [label="[]: %x = alloca float , align 4"
+           ,shape=box];
+        27 [label="[]: %dx = alloca float , align 4"
+           ,shape=box];
+        28 [label="[]: %diff = alloca double , align 8"
+           ,shape=box];
+        29 [label="[]: %min_tol = alloca double , align 8"
+           ,shape=box];
+        30 [label="[]: %i = alloca i32 , align 4"
+           ,shape=box];
+        31 [label="[]: %flag = alloca i32 , align 4"
+           ,shape=box];
+        32 [label="[]: store float %val , float* %1 , align 4"
+           ,shape=box];
+        34 [label="[62]: %2 = div float %val , 10.0"
+           ,shape=box];
+        35 [label="[62]: store float %2 , float* %x , align 4"
+           ,shape=box];
+        37 [label="[67]: store double 1.0e-5 , double* %min_tol , align 8"
+           ,shape=box];
+        39 [label="[71]: store i32 0 , i32* %flag , align 4"
+           ,shape=box];
+        40 [label="[72]: %3 = fcmp oeq float %val , 0.0"
+           ,shape=box];
+        41 [label="[72]: br i1 %3 , label %4 , label %5"
+           ,shape=box];
+        43 [label="[73]: store float 0.0 , float* %x , align 4"
+           ,shape=box];
+        44 [label="[73]: br label %38"
+           ,shape=box];
+        46 [label="[75]: store i32 1 , i32* %i , align 4"
+           ,shape=box];
+        47 [label="[75]: br label %6"
+           ,shape=box];
+        49 [label="[]: %7 = phi i32 [ [%34, %33], [0, %5] ]"
+           ,shape=box];
+        50 [label="[]: %8 = phi i32 [ [%36, %33], [1, %5] ]"
+           ,shape=box];
+        51 [label="[]: %9 = phi float [ [%35, %33], [%2, %5] ]"
+           ,shape=box];
+        52 [label="[75]: %10 = icmp slt i32 %8 , 20"
+           ,shape=box];
+        54 [label="[75]: br i1 %10 , label %11 , label %37"
+           ,shape=box];
+        56 [label="[77]: %12 = icmp ne i32 %7 , 0"
+           ,shape=box];
+        57 [label="[77]: br i1 %12 , label %32 , label %13"
+           ,shape=box];
+        59 [label="[78]: %14 = mul float %9 , %9"
+           ,shape=box];
+        60 [label="[78]: %15 = sub float %val , %14"
+           ,shape=box];
+        61 [label="[78]: %16 = fpext float %15 to double"
+           ,shape=box];
+        62 [label="[78]: %17 = fpext float %9 to double"
+           ,shape=box];
+        64 [label="[78]: %18 = mul double 2.0 , %17"
+           ,shape=box];
+        65 [label="[78]: %19 = div double %16 , %18"
+           ,shape=box];
+        66 [label="[78]: %20 = fptrunc double %19 to float"
+           ,shape=box];
+        67 [label="[78]: store float %20 , float* %dx , align 4"
+           ,shape=box];
+        68 [label="[79]: %21 = add float %9 , %20"
+           ,shape=box];
+        69 [label="[79]: store float %21 , float* %x , align 4"
+           ,shape=box];
+        70 [label="[80]: %22 = mul float %21 , %21"
+           ,shape=box];
+        71 [label="[80]: %23 = sub float %val , %22"
+           ,shape=box];
+        72 [label="[80]: %24 = fpext float %23 to double"
+           ,shape=box];
+        73 [label="[80]: store double %24 , double* %diff , align 8"
+           ,shape=box];
+        74 [label="[81]: %25 = fptrunc double %24 to float"
+           ,shape=box];
+        75 [label="[81]: %26 = call float @fabs ( float %25 )"
+           ,shape=box];
+        76 [label="[81]: %27 = fpext float %26 to double"
+           ,shape=box];
+        77 [label="[81]: %28 = fcmp ole double %27 , 1.0e-5"
+           ,shape=box];
+        78 [label="[81]: br i1 %28 , label %29 , label %30"
+           ,shape=box];
+        80 [label="[82]: store i32 1 , i32* %flag , align 4"
+           ,shape=box];
+        81 [label="[82]: br label %30"
+           ,shape=box];
+        83 [label="[]: %31 = phi i32 [ [1, %29], [0, %13] ]"
+           ,shape=box];
+        84 [label="[83]: br label %33"
+           ,shape=box];
+        86 [label="[]: br label %33"
+           ,shape=box];
+        88 [label="[]: %34 = phi i32 [ [%7, %32], [%31, %30] ]"
+           ,shape=box];
+        89 [label="[]: %35 = phi float [ [%9, %32], [%21, %30] ]"
+           ,shape=box];
+        90 [label="[75]: %36 = add nsw i32 %8 , 1"
+           ,shape=box];
+        91 [label="[75]: store i32 %36 , i32* %i , align 4"
+           ,shape=box];
+        92 [label="[75]: br label %6"
+           ,shape=box];
+        94 [label="[]: br label %38"
+           ,shape=box];
+        96 [label="[]: %39 = phi float [ [%9, %37], [0.0, %4] ]"
+           ,shape=box];
+        97 [label="[88]: ret float %39"
+           ,shape=box];
+        9223372036854775732 [label="(actual-in)%26:%25"
+                            ,color=yellow];
+    }
+    -4611686018427387898 -> -2 [color=sandybrown];
+    -4611686018427387878 -> -23 [color=sandybrown];
+    -2 -> -9223372036854775732 [style=dashed
+                               ,color=purple];
+    1 -> -4611686018427387898 [color=black];
+    1 -> -4611686018427387897 [color=black];
+    1 -> -2 [color=black];
+    1 -> 2 [color=black];
+    1 -> 5 [color=black];
+    1 -> 6 [color=black];
+    1 -> 7 [color=black];
+    1 -> 8 [color=black];
+    1 -> 10 [color=black];
+    1 -> 20 [color=black];
+    1 -> 21 [color=black];
+    2 -> -2 [color=sandybrown];
+    2 -> 7 [color=sandybrown];
+    2 -> 8 [color=sandybrown];
+    2 -> 13 [color=sandybrown];
+    2 -> 17 [color=sandybrown];
+    2 -> 20 [color=sandybrown];
+    7 -> -4611686018427387897 [color=sandybrown];
+    8 -> 10 [color=sandybrown];
+    10 -> 13 [color=black];
+    10 -> 14 [color=black];
+    10 -> 15 [color=black];
+    10 -> 17 [color=black];
+    10 -> 18 [color=black];
+    13 -> 14 [color=sandybrown];
+    13 -> 20 [color=sandybrown];
+    14 -> -4611686018427387898 [color=sandybrown];
+    17 -> -4611686018427387898 [color=sandybrown];
+    20 -> 21 [color=sandybrown];
+    20 -> 76 [color=sandybrown];
+    22 -> -4611686018427387878 [color=black];
+    22 -> -4611686018427387877 [color=black];
+    22 -> -4611686018427387876 [color=black];
+    22 -> -4611686018427387875 [color=black];
+    22 -> -4611686018427387874 [color=black];
+    22 -> -4611686018427387873 [color=black];
+    22 -> -4611686018427387872 [color=black];
+    22 -> -23 [color=black];
+    22 -> 23 [color=black];
+    22 -> 25 [color=black];
+    22 -> 26 [color=black];
+    22 -> 27 [color=black];
+    22 -> 28 [color=black];
+    22 -> 29 [color=black];
+    22 -> 30 [color=black];
+    22 -> 31 [color=black];
+    22 -> 32 [color=black];
+    22 -> 34 [color=black];
+    22 -> 35 [color=black];
+    22 -> 37 [color=black];
+    22 -> 39 [color=black];
+    22 -> 40 [color=black];
+    22 -> 41 [color=black];
+    22 -> 49 [color=black];
+    22 -> 50 [color=black];
+    22 -> 51 [color=black];
+    22 -> 52 [color=black];
+    22 -> 54 [color=black];
+    22 -> 88 [color=black];
+    22 -> 89 [color=black];
+    22 -> 90 [color=black];
+    22 -> 91 [color=black];
+    22 -> 92 [color=black];
+    22 -> 96 [color=black];
+    22 -> 97 [color=black];
+    23 -> -23 [color=sandybrown];
+    23 -> 32 [color=sandybrown];
+    23 -> 34 [color=sandybrown];
+    23 -> 40 [color=sandybrown];
+    23 -> 60 [color=sandybrown];
+    23 -> 71 [color=sandybrown];
+    32 -> -4611686018427387878 [color=sandybrown];
+    34 -> 35 [color=sandybrown];
+    34 -> 51 [color=sandybrown];
+    35 -> -4611686018427387877 [color=sandybrown];
+    37 -> -4611686018427387874 [color=sandybrown];
+    39 -> -4611686018427387872 [color=sandybrown];
+    40 -> 41 [color=sandybrown];
+    41 -> 43 [color=black];
+    41 -> 44 [color=black];
+    41 -> 46 [color=black];
+    41 -> 47 [color=black];
+    43 -> -4611686018427387877 [color=sandybrown];
+    46 -> -4611686018427387873 [color=sandybrown];
+    49 -> 56 [color=sandybrown];
+    49 -> 88 [color=sandybrown];
+    50 -> 52 [color=sandybrown];
+    50 -> 90 [color=sandybrown];
+    51 -> 59 [color=sandybrown];
+    51 -> 62 [color=sandybrown];
+    51 -> 68 [color=sandybrown];
+    51 -> 89 [color=sandybrown];
+    51 -> 96 [color=sandybrown];
+    52 -> 54 [color=sandybrown];
+    54 -> 56 [color=black];
+    54 -> 57 [color=black];
+    54 -> 94 [color=black];
+    56 -> 57 [color=sandybrown];
+    57 -> 59 [color=black];
+    57 -> 60 [color=black];
+    57 -> 61 [color=black];
+    57 -> 62 [color=black];
+    57 -> 64 [color=black];
+    57 -> 65 [color=black];
+    57 -> 66 [color=black];
+    57 -> 67 [color=black];
+    57 -> 68 [color=black];
+    57 -> 69 [color=black];
+    57 -> 70 [color=black];
+    57 -> 71 [color=black];
+    57 -> 72 [color=black];
+    57 -> 73 [color=black];
+    57 -> 74 [color=black];
+    57 -> 75 [color=black];
+    57 -> 76 [color=black];
+    57 -> 77 [color=black];
+    57 -> 78 [color=black];
+    57 -> 86 [color=black];
+    59 -> 60 [color=sandybrown];
+    60 -> 61 [color=sandybrown];
+    61 -> 65 [color=sandybrown];
+    62 -> 64 [color=sandybrown];
+    64 -> 65 [color=sandybrown];
+    65 -> 66 [color=sandybrown];
+    66 -> 67 [color=sandybrown];
+    66 -> 68 [color=sandybrown];
+    67 -> -4611686018427387876 [color=sandybrown];
+    68 -> 69 [color=sandybrown];
+    68 -> 70 [color=sandybrown];
+    68 -> 89 [color=sandybrown];
+    69 -> -4611686018427387877 [color=sandybrown];
+    70 -> 71 [color=sandybrown];
+    71 -> 72 [color=sandybrown];
+    72 -> 73 [color=sandybrown];
+    72 -> 74 [color=sandybrown];
+    73 -> -4611686018427387875 [color=sandybrown];
+    74 -> 9223372036854775732 [color=sandybrown];
+    75 -> -9223372036854775732 [color=black];
+    75 -> 1 [color=deepskyblue];
+    75 -> 76 [color=sandybrown];
+    75 -> 9223372036854775732 [color=black];
+    76 -> 77 [color=sandybrown];
+    77 -> 78 [color=sandybrown];
+    78 -> 80 [color=black];
+    78 -> 81 [color=black];
+    78 -> 83 [color=black];
+    78 -> 84 [color=black];
+    80 -> -4611686018427387872 [color=sandybrown];
+    83 -> 88 [color=sandybrown];
+    88 -> 49 [color=sandybrown];
+    89 -> 51 [color=sandybrown];
+    90 -> 50 [color=sandybrown];
+    90 -> 91 [color=sandybrown];
+    91 -> -4611686018427387873 [color=sandybrown];
+    96 -> 97 [color=sandybrown];
+    9223372036854775732 -> 2 [style=dashed
+                             ,color=forestgreen];
+}
