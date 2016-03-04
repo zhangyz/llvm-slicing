@@ -1,0 +1,175 @@
+digraph {
+    subgraph cluster_1 {
+        graph [label="[\"wcet/fibcall.c:47\"]@fib"];
+        -4611686018427387898 [label="FinalUse(%1)"
+                             ,color=green];
+        -4611686018427387897 [label="FinalUse(%i)"
+                             ,color=green];
+        -4611686018427387896 [label="FinalUse(%Fnew)"
+                             ,color=green];
+        -4611686018427387895 [label="FinalUse(%Fold)"
+                             ,color=green];
+        -4611686018427387894 [label="FinalUse(%temp)"
+                             ,color=green];
+        -4611686018427387893 [label="FinalUse(%ans)"
+                             ,color=green];
+        1 [label="ENTER @fib"
+          ,color=yellow];
+        2 [label="(formal-in)%n"
+          ,color=yellow];
+        5 [label="[]: %1 = alloca i32 , align 4"
+          ,shape=box];
+        6 [label="[]: %i = alloca i32 , align 4"
+          ,shape=box];
+        7 [label="[]: %Fnew = alloca i32 , align 4"
+          ,shape=box];
+        8 [label="[]: %Fold = alloca i32 , align 4"
+          ,shape=box];
+        9 [label="[]: %temp = alloca i32 , align 4"
+          ,shape=box];
+        10 [label="[]: %ans = alloca i32 , align 4"
+           ,shape=box];
+        11 [label="[]: store i32 %n , i32* %1 , align 4"
+           ,shape=box];
+        12 [label="[51]: store i32 1 , i32* %Fnew , align 4"
+           ,shape=box];
+        14 [label="[51]: store i32 0 , i32* %Fold , align 4"
+           ,shape=box];
+        16 [label="[52]: store i32 2 , i32* %i , align 4"
+           ,shape=box];
+        17 [label="[52]: br label %2"
+           ,shape=box];
+        19 [label="[]: %3 = phi i32 [ [%4, %11], [0, %0] ]"
+           ,shape=box];
+        20 [label="[]: %4 = phi i32 [ [%12, %11], [1, %0] ]"
+           ,shape=box];
+        21 [label="[]: %5 = phi i32 [ [%13, %11], [2, %0] ]"
+           ,shape=box];
+        22 [label="[52]: %6 = icmp sle i32 %5 , 30"
+           ,shape=box];
+        24 [label="[52]: br i1 %6 , label %7 , label %9"
+           ,shape=box];
+        26 [label="[52]: %8 = icmp sle i32 %5 , %n"
+           ,shape=box];
+        27 [label="[]: br label %9"
+           ,shape=box];
+        29 [label="[]: %10 = phi i1 [ [0, %2], [%8, %7] ]"
+           ,shape=box];
+        31 [label="[]: br i1 %10 , label %11 , label %14"
+           ,shape=box];
+        33 [label="[56]: store i32 %4 , i32* %temp , align 4"
+           ,shape=box];
+        34 [label="[57]: %12 = add nsw i32 %4 , %3"
+           ,shape=box];
+        35 [label="[57]: store i32 %12 , i32* %Fnew , align 4"
+           ,shape=box];
+        36 [label="[58]: store i32 %4 , i32* %Fold , align 4"
+           ,shape=box];
+        37 [label="[54]: %13 = add nsw i32 %5 , 1"
+           ,shape=box];
+        38 [label="[54]: store i32 %13 , i32* %i , align 4"
+           ,shape=box];
+        39 [label="[54]: br label %2"
+           ,shape=box];
+        41 [label="[60]: store i32 %4 , i32* %ans , align 4"
+           ,shape=box];
+        42 [label="[61]: ret i32 %4"
+           ,shape=box];
+    }
+    subgraph cluster_43 {
+        graph [label="[\"wcet/fibcall.c:64\"]@main"];
+        -4611686018427387858 [label="FinalUse(%1)"
+                             ,color=green];
+        -4611686018427387857 [label="FinalUse(%a)"
+                             ,color=green];
+        43 [label="ENTER @main"
+           ,color=yellow];
+        45 [label="[]: %1 = alloca i32 , align 4"
+           ,shape=box];
+        46 [label="[]: %a = alloca i32 , align 4"
+           ,shape=box];
+        47 [label="[]: store i32 0 , i32* %1"
+           ,shape=box];
+        48 [label="[68]: store i32 30 , i32* %a , align 4"
+           ,shape=box];
+        49 [label="[69]: %2 = call i32 @fib ( i32 30 )"
+           ,shape=box];
+        50 [label="[70]: ret i32 30"
+           ,shape=box];
+    }
+    1 -> -4611686018427387898 [color=black];
+    1 -> -4611686018427387897 [color=black];
+    1 -> -4611686018427387896 [color=black];
+    1 -> -4611686018427387895 [color=black];
+    1 -> -4611686018427387894 [color=black];
+    1 -> -4611686018427387893 [color=black];
+    1 -> 2 [color=black];
+    1 -> 5 [color=black];
+    1 -> 6 [color=black];
+    1 -> 7 [color=black];
+    1 -> 8 [color=black];
+    1 -> 9 [color=black];
+    1 -> 10 [color=black];
+    1 -> 11 [color=black];
+    1 -> 12 [color=black];
+    1 -> 14 [color=black];
+    1 -> 16 [color=black];
+    1 -> 17 [color=black];
+    1 -> 19 [color=black];
+    1 -> 20 [color=black];
+    1 -> 21 [color=black];
+    1 -> 22 [color=black];
+    1 -> 24 [color=black];
+    2 -> 11 [color=sandybrown];
+    2 -> 26 [color=sandybrown];
+    11 -> -4611686018427387898 [color=sandybrown];
+    12 -> -4611686018427387896 [color=sandybrown];
+    14 -> -4611686018427387895 [color=sandybrown];
+    16 -> -4611686018427387897 [color=sandybrown];
+    19 -> 34 [color=sandybrown];
+    20 -> 19 [color=sandybrown];
+    20 -> 33 [color=sandybrown];
+    20 -> 34 [color=sandybrown];
+    20 -> 36 [color=sandybrown];
+    20 -> 41 [color=sandybrown];
+    20 -> 42 [color=sandybrown];
+    21 -> 22 [color=sandybrown];
+    21 -> 26 [color=sandybrown];
+    21 -> 37 [color=sandybrown];
+    22 -> 24 [color=sandybrown];
+    24 -> 26 [color=black];
+    24 -> 27 [color=black];
+    24 -> 29 [color=black];
+    24 -> 31 [color=black];
+    26 -> 29 [color=sandybrown];
+    29 -> 31 [color=sandybrown];
+    31 -> 33 [color=black];
+    31 -> 34 [color=black];
+    31 -> 35 [color=black];
+    31 -> 36 [color=black];
+    31 -> 37 [color=black];
+    31 -> 38 [color=black];
+    31 -> 39 [color=black];
+    31 -> 41 [color=black];
+    31 -> 42 [color=black];
+    33 -> -4611686018427387894 [color=sandybrown];
+    34 -> 20 [color=sandybrown];
+    34 -> 35 [color=sandybrown];
+    35 -> -4611686018427387896 [color=sandybrown];
+    36 -> -4611686018427387895 [color=sandybrown];
+    37 -> 21 [color=sandybrown];
+    37 -> 38 [color=sandybrown];
+    38 -> -4611686018427387897 [color=sandybrown];
+    41 -> -4611686018427387893 [color=sandybrown];
+    43 -> -4611686018427387858 [color=black];
+    43 -> -4611686018427387857 [color=black];
+    43 -> 45 [color=black];
+    43 -> 46 [color=black];
+    43 -> 47 [color=black];
+    43 -> 48 [color=black];
+    43 -> 49 [color=black];
+    43 -> 50 [color=black];
+    47 -> -4611686018427387858 [color=sandybrown];
+    48 -> -4611686018427387857 [color=sandybrown];
+    49 -> 1 [color=deepskyblue];
+}

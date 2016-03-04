@@ -1,0 +1,36 @@
+
+Forward Static SliceTable:
+	#Insts_sliced = 153.0 (Average: 5)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ e1          {"wcet/whet.c: [118,217,218,219]"}
+ e@pa        {"wcet/whet.c: [196,197,198,199]"}
+ i           {}
+ j           {}
+ j@pa        {"wcet/whet.c: [200]"}
+ k           {}
+ l           {}
+ n1          {}
+ n10         {}
+ n11         {}
+ n2          {}
+ n3          {}
+ n4          {}
+ n6          {}
+ n7          {}
+ n8          {}
+ n9          {}
+ t           {}
+ t1          {}
+ t2          {}
+ x           {}
+ x1          {}
+ x2          {}
+ x3          {}
+ x4          {}
+ x@p3        {"wcet/whet.c: [209,210,211]"}
+ y           {}
+ y@p3        {"wcet/whet.c: [209,210,211]"}
+ z           {}
+ z@p3        {"wcet/whet.c: []"}

@@ -1,0 +1,13 @@
+
+Backward Static SliceTable:
+	#Insts_sliced = 150.0 (Average: 21)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ answer        {}
+ i@foo         {"wcet/ns.c: [1004,1006,1008,1010,1020,1054]"}
+ j@foo         {"wcet/ns.c: [1004,1006,1008,1010,1020,1054]"}
+ k@foo         {"wcet/ns.c: [1004,1006,1008,1010,1020,1054]"}
+ keys          {}
+ l@foo         {"wcet/ns.c: [1004,1006,1008,1010,1020,1054]"}
+ x@foo         {"wcet/ns.c: [1054]"}

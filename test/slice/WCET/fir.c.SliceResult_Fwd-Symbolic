@@ -1,0 +1,22 @@
+
+Forward Static SliceTable:
+	#Insts_sliced = 866.0 (Average: 54)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ acc@fir_filter_int               {"wcet/fir.c: [281,282]"}
+ acc_length@fir_filter_int        {"wcet/fir.c: [271,274,275,279,280,281,282,286,287,288,294,295]"}
+ coef@fir_filter_int              {"wcet/fir.c: [261,275,279,281,282,288]"}
+ coef_len@fir_filter_int          {"wcet/fir.c: [262,266,269,271,274,275,279,280,281,282,286,287,288,294,295]"}
+ coef_ptr@fir_filter_int          {"wcet/fir.c: [281,282]"}
+ coef_start@fir_filter_int        {"wcet/fir.c: [275,279,281,282,288]"}
+ data_ptr@fir_filter_int          {"wcet/fir.c: [281,282]"}
+ i@fir_filter_int                 {"wcet/fir.c: [271,274,275,279,280,281,282,286,287,288,294,295]"}
+ in@fir_filter_int                {"wcet/fir.c: [265,266,271,274,275,279,280,281,282,286,287,288,294,295]"}
+ in_end@fir_filter_int            {"wcet/fir.c: [271,274,275,279,280,281,282,286,287,288,294,295]"}
+ in_len@fir_filter_int            {"wcet/fir.c: [265,271,274,275,279,280,281,282,286,287,288,294,295]"}
+ in_ptr@fir_filter_int            {"wcet/fir.c: [271,274,275,279,280,281,282,286,287,288,294,295]"}
+ j@fir_filter_int                 {"wcet/fir.c: [271,274,275,279,280,281,282,286,287,288,294,295]"}
+ out@fir_filter_int               {"wcet/fir.c: [282]"}
+ output@main                      {"wcet/fir.c: [217,261,262,265,266,269,271,274,275,279,280,281,282,286,287,288,294,295]"}
+ scale@fir_filter_int             {"wcet/fir.c: [282]"}

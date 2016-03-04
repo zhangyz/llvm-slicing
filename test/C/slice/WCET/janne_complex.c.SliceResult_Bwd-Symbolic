@@ -1,0 +1,11 @@
+
+Backward Static SliceTable:
+	#Insts_sliced = 80.0 (Average: 16)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ a@complex          {"wcet/janne_complex.c: [31,33,35,36,38,39,40,42,44,45,58]"}
+ a@main             {"wcet/janne_complex.c: [53]"}
+ answer@main        {"wcet/janne_complex.c: [58]"}
+ b@complex          {"wcet/janne_complex.c: [31,33,35,36,38,39,40,42,44,45,58]"}
+ b@main             {"wcet/janne_complex.c: [53]"}
