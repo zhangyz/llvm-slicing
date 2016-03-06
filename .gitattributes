@@ -1,1 +1,3 @@
-./test/C/source/WCET/* linguist-vendored
+*.c linguist-language=Haxe
+
+test/C/source/WCET/* linguist-vendored
