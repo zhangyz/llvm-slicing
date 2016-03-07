@@ -1,2 +1,2 @@
 # llvm-slicing
-Various Program Slicers Based on LLVM
+Symbolic Program Slicing Based on LLVM
