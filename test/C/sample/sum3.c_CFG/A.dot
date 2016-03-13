@@ -1,0 +1,13 @@
+digraph {
+	node [label="\N"];
+	graph [bb="0,0,400,244"];
+	subgraph cluster_67 {
+		graph [label="%0",
+			bb="8,8,392,236"];
+		68 [label="call void @add ( i32* %x, i32* %y )", pos="200,183", width="5.1111", height="0.51389"];
+		69 [label="call void @inc ( i32* %y )", pos="200,109", width="3.7222", height="0.51389"];
+		70 [label="ret void", pos="200,35", width="1.3611", height="0.51389"];
+		68 -> 69 [pos="e,200,127.67 200,164.33 200,156.26 200,146.65 200,137.71"];
+		69 -> 70 [pos="e,200,53.667 200,90.327 200,82.264 200,72.648 200,63.711"];
+	}
+}

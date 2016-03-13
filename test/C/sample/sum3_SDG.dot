@@ -1,0 +1,354 @@
+digraph {
+    subgraph cluster_unknown {
+        graph [label=UnknownFunction];
+        101 [label="Extern @printf"
+            ,color=yellow];
+        102 [label="Extern @__isoc99_scanf"
+            ,color=yellow];
+    }
+    subgraph cluster_30 {
+        graph [label="[\"./sum3.c:3\"]@main"];
+        -9223372036854775753 [label="(actual-out)_54:%sum"
+                             ,color=yellow];
+        -4611686018427387870 [label="FinalUse(%1)"
+                             ,color=green];
+        -4611686018427387869 [label="FinalUse(%n)"
+                             ,color=green];
+        -4611686018427387868 [label="FinalUse(%i)"
+                             ,color=green];
+        -4611686018427387867 [label="FinalUse(%sum)"
+                             ,color=green];
+        -4611686018427387849 [label="(actual-out)_54:%i"
+                             ,color=yellow];
+        30 [label="ENTER @main"
+           ,color=yellow];
+        33 [label="[]: %1 = alloca i32 , align 4"
+           ,shape=box];
+        34 [label="[]: %n = alloca i32 , align 4"
+           ,shape=box];
+        35 [label="[]: %i = alloca i32 , align 4"
+           ,shape=box];
+        36 [label="[]: %sum = alloca i32 , align 4"
+           ,shape=box];
+        38 [label="[]: store i32 0 , i32* %1"
+           ,shape=box];
+        39 [label="[8]: %2 = call i32 @printf ( i8* i8* getelementptr ( [26 x i8]* @.str ,  i32 0, i32 0 ) )"
+           ,shape=box];
+        42 [label="[9]: %4 = call i32 @__isoc99_scanf ( i8* i8* getelementptr ( [3 x i8]* @.str1 ,  i32 0, i32 0 ), i32* %n )"
+           ,shape=box];
+        45 [label="[11]: store i32 0 , i32* %sum , align 4"
+           ,shape=box];
+        46 [label="[12]: store i32 1 , i32* %i , align 4"
+           ,shape=box];
+        47 [label="[13]: br label %6"
+           ,shape=box];
+        49 [label="[]: %7 = phi i32 [ [%.pre, %10], [1, %0] ]"
+           ,shape=box];
+        50 [label="[13]: %8 = load i32* %n , align 4"
+           ,shape=box];
+        51 [label="[13]: %9 = icmp sle i32 %7 , %8"
+           ,shape=box];
+        52 [label="[13]: br i1 %9 , label %10 , label %11"
+           ,shape=box];
+        54 [label="[15]: call void @A ( i32* %sum, i32* %i )"
+           ,shape=box];
+        55 [label="[13]: %.pre = load i32* %i , align 4"
+           ,shape=box];
+        56 [label="[16]: br label %6"
+           ,shape=box];
+        58 [label="[18]: %12 = load i32* %sum , align 4"
+           ,shape=box];
+        59 [label="[18]: %13 = call i32 @printf ( i8* i8* getelementptr ( [10 x i8]* @.str2 ,  i32 0, i32 0 ), i32 %12 )"
+           ,shape=box];
+        62 [label="[19]: %15 = load i32* %i , align 4"
+           ,shape=box];
+        63 [label="[19]: %16 = call i32 @printf ( i8* i8* getelementptr ( [8 x i8]* @.str3 ,  i32 0, i32 0 ), i32 %15 )"
+           ,shape=box];
+        66 [label="[20]: ret i32 0"
+           ,shape=box];
+        4611686018427387849 [label="(actual-in)_54:%i"
+                            ,color=yellow];
+        9223372036854775753 [label="(actual-in)_54:%sum"
+                            ,color=yellow];
+    }
+    subgraph cluster_67 {
+        graph [label="[\"./sum3.c:23\"]@A"];
+        -9223372036854775732 [label="(actual-out)_75:%x"
+                             ,color=yellow];
+        -9223372036854775731 [label="(actual-out)_76:%y"
+                             ,color=yellow];
+        -4611686018427387832 [label="FinalUse(%1)"
+                             ,color=green];
+        -4611686018427387831 [label="FinalUse(%2)"
+                             ,color=green];
+        -69 [label="(formal-out)%y"
+            ,color=yellow];
+        -68 [label="(formal-out)%x"
+            ,color=yellow];
+        67 [label="ENTER @A"
+           ,color=yellow];
+        68 [label="(formal-in)%x"
+           ,color=yellow];
+        69 [label="(formal-in)%y"
+           ,color=yellow];
+        71 [label="[]: %1 = alloca i32* , align 8"
+           ,shape=box];
+        72 [label="[]: %2 = alloca i32* , align 8"
+           ,shape=box];
+        73 [label="[]: store i32* %x , i32** %1 , align 8"
+           ,shape=box];
+        74 [label="[]: store i32* %y , i32** %2 , align 8"
+           ,shape=box];
+        75 [label="[27]: call void @add ( i32* %x, i32* %y )"
+           ,shape=box];
+        76 [label="[28]: call void @inc ( i32* %y )"
+           ,shape=box];
+        77 [label="[29]: ret void"
+           ,shape=box];
+        4611686018427387828 [label="(actual-in)_75:%y"
+                            ,color=yellow];
+        9223372036854775731 [label="(actual-in)_76:%y"
+                            ,color=yellow];
+        9223372036854775732 [label="(actual-in)_75:%x"
+                            ,color=yellow];
+    }
+    subgraph cluster_78 {
+        graph [label="[\"./sum3.c:31\"]@add"];
+        -4611686018427387821 [label="FinalUse(%1)"
+                             ,color=green];
+        -4611686018427387820 [label="FinalUse(%2)"
+                             ,color=green];
+        -79 [label="(formal-out)%a"
+            ,color=yellow];
+        78 [label="ENTER @add"
+           ,color=yellow];
+        79 [label="(formal-in)%a"
+           ,color=yellow];
+        80 [label="(formal-in)%b"
+           ,color=yellow];
+        82 [label="[]: %1 = alloca i32* , align 8"
+           ,shape=box];
+        83 [label="[]: %2 = alloca i32* , align 8"
+           ,shape=box];
+        84 [label="[]: store i32* %a , i32** %1 , align 8"
+           ,shape=box];
+        85 [label="[]: store i32* %b , i32** %2 , align 8"
+           ,shape=box];
+        86 [label="[33]: %3 = load i32* %a , align 4"
+           ,shape=box];
+        87 [label="[33]: %4 = load i32* %b , align 4"
+           ,shape=box];
+        88 [label="[33]: %5 = add nsw i32 %3 , %4"
+           ,shape=box];
+        89 [label="[33]: store i32 %5 , i32* %a , align 4"
+           ,shape=box];
+        90 [label="[35]: ret void"
+           ,shape=box];
+    }
+    subgraph cluster_91 {
+        graph [label="[\"./sum3.c:37\"]@inc"];
+        -9223372036854775709 [label="(actual-out)_98:%z"
+                             ,color=yellow];
+        -4611686018427387809 [label="FinalUse(%1)"
+                             ,color=green];
+        -4611686018427387808 [label="FinalUse(%tmp)"
+                             ,color=green];
+        -92 [label="(formal-out)%z"
+            ,color=yellow];
+        91 [label="ENTER @inc"
+           ,color=yellow];
+        92 [label="(formal-in)%z"
+           ,color=yellow];
+        94 [label="[]: %1 = alloca i32* , align 8"
+           ,shape=box];
+        95 [label="[]: %tmp = alloca i32 , align 4"
+           ,shape=box];
+        96 [label="[]: store i32* %z , i32** %1 , align 8"
+           ,shape=box];
+        97 [label="[40]: store i32 1 , i32* %tmp , align 4"
+           ,shape=box];
+        98 [label="[41]: call void @add ( i32* %z, i32* %tmp )"
+           ,shape=box];
+        99 [label="[42]: ret void"
+           ,shape=box];
+        4611686018427387805 [label="(actual-in)_98:%tmp"
+                            ,color=yellow];
+        9223372036854775709 [label="(actual-in)_98:%z"
+                            ,color=yellow];
+    }
+    -9223372036854775753 -> -4611686018427387867 [color=sandybrown];
+    -9223372036854775753 -> 58 [color=sandybrown];
+    -9223372036854775753 -> 9223372036854775753 [color=sandybrown];
+    -9223372036854775732 -> -68 [color=sandybrown];
+    -9223372036854775731 -> -69 [color=sandybrown];
+    -9223372036854775709 -> -92 [color=sandybrown];
+    -4611686018427387849 -> -4611686018427387868 [color=sandybrown];
+    -4611686018427387849 -> 55 [color=sandybrown];
+    -4611686018427387849 -> 62 [color=sandybrown];
+    -4611686018427387849 -> 4611686018427387849 [color=sandybrown];
+    -4611686018427387832 -> -68 [color=sandybrown];
+    -4611686018427387831 -> -69 [color=sandybrown];
+    -4611686018427387821 -> -79 [color=sandybrown];
+    -4611686018427387809 -> -92 [color=sandybrown];
+    -92 -> -9223372036854775731 [style=dashed
+                                ,color=purple];
+    -79 -> -9223372036854775732 [style=dashed
+                                ,color=purple];
+    -79 -> -9223372036854775709 [style=dashed
+                                ,color=purple];
+    -69 -> -4611686018427387849 [style=dashed
+                                ,color=purple];
+    -68 -> -9223372036854775753 [style=dashed
+                                ,color=purple];
+    30 -> -4611686018427387870 [color=black];
+    30 -> -4611686018427387869 [color=black];
+    30 -> -4611686018427387868 [color=black];
+    30 -> -4611686018427387867 [color=black];
+    30 -> 33 [color=black];
+    30 -> 34 [color=black];
+    30 -> 35 [color=black];
+    30 -> 36 [color=black];
+    30 -> 38 [color=black];
+    30 -> 39 [color=black];
+    30 -> 42 [color=black];
+    30 -> 45 [color=black];
+    30 -> 46 [color=black];
+    30 -> 47 [color=black];
+    30 -> 49 [color=black];
+    30 -> 50 [color=black];
+    30 -> 51 [color=black];
+    30 -> 52 [color=black];
+    34 -> 42 [color=sandybrown];
+    38 -> -4611686018427387870 [color=sandybrown];
+    39 -> 101 [color=deepskyblue];
+    42 -> -4611686018427387869 [color=sandybrown];
+    42 -> 50 [color=sandybrown];
+    42 -> 102 [color=deepskyblue];
+    45 -> -4611686018427387867 [color=sandybrown];
+    45 -> 58 [color=sandybrown];
+    45 -> 9223372036854775753 [color=sandybrown];
+    46 -> -4611686018427387868 [color=sandybrown];
+    46 -> 62 [color=sandybrown];
+    46 -> 4611686018427387849 [color=sandybrown];
+    49 -> 51 [color=sandybrown];
+    50 -> 51 [color=sandybrown];
+    51 -> 52 [color=sandybrown];
+    52 -> 54 [color=black];
+    52 -> 55 [color=black];
+    52 -> 56 [color=black];
+    52 -> 58 [color=black];
+    52 -> 59 [color=black];
+    52 -> 62 [color=black];
+    52 -> 63 [color=black];
+    52 -> 66 [color=black];
+    54 -> -9223372036854775753 [color=black];
+    54 -> -4611686018427387849 [color=black];
+    54 -> 67 [color=deepskyblue];
+    54 -> 4611686018427387849 [color=black];
+    54 -> 9223372036854775753 [color=black];
+    55 -> 49 [color=sandybrown];
+    58 -> 59 [color=sandybrown];
+    59 -> 101 [color=deepskyblue];
+    62 -> 63 [color=sandybrown];
+    63 -> 101 [color=deepskyblue];
+    67 -> -4611686018427387832 [color=black];
+    67 -> -4611686018427387831 [color=black];
+    67 -> -69 [color=black];
+    67 -> -68 [color=black];
+    67 -> 68 [color=black];
+    67 -> 69 [color=black];
+    67 -> 71 [color=black];
+    67 -> 72 [color=black];
+    67 -> 73 [color=black];
+    67 -> 74 [color=black];
+    67 -> 75 [color=black];
+    67 -> 76 [color=black];
+    67 -> 77 [color=black];
+    68 -> 73 [color=sandybrown];
+    68 -> 9223372036854775732 [color=sandybrown];
+    69 -> 74 [color=sandybrown];
+    69 -> 4611686018427387828 [color=sandybrown];
+    69 -> 9223372036854775731 [color=sandybrown];
+    73 -> -4611686018427387832 [color=sandybrown];
+    74 -> -4611686018427387831 [color=sandybrown];
+    75 -> -9223372036854775732 [color=black];
+    75 -> 78 [color=deepskyblue];
+    75 -> 4611686018427387828 [color=black];
+    75 -> 9223372036854775732 [color=black];
+    76 -> -9223372036854775731 [color=black];
+    76 -> 91 [color=deepskyblue];
+    76 -> 9223372036854775731 [color=black];
+    78 -> -4611686018427387821 [color=black];
+    78 -> -4611686018427387820 [color=black];
+    78 -> -79 [color=black];
+    78 -> 79 [color=black];
+    78 -> 80 [color=black];
+    78 -> 82 [color=black];
+    78 -> 83 [color=black];
+    78 -> 84 [color=black];
+    78 -> 85 [color=black];
+    78 -> 86 [color=black];
+    78 -> 87 [color=black];
+    78 -> 88 [color=black];
+    78 -> 89 [color=black];
+    78 -> 90 [color=black];
+    79 -> 84 [color=sandybrown];
+    79 -> 86 [color=sandybrown];
+    80 -> 85 [color=sandybrown];
+    80 -> 87 [color=sandybrown];
+    84 -> -4611686018427387821 [color=sandybrown];
+    85 -> -4611686018427387820 [color=sandybrown];
+    86 -> 88 [color=sandybrown];
+    87 -> 88 [color=sandybrown];
+    88 -> 89 [color=sandybrown];
+    89 -> -79 [color=sandybrown];
+    91 -> -4611686018427387809 [color=black];
+    91 -> -4611686018427387808 [color=black];
+    91 -> -92 [color=black];
+    91 -> 92 [color=black];
+    91 -> 94 [color=black];
+    91 -> 95 [color=black];
+    91 -> 96 [color=black];
+    91 -> 97 [color=black];
+    91 -> 98 [color=black];
+    91 -> 99 [color=black];
+    92 -> 96 [color=sandybrown];
+    92 -> 9223372036854775709 [color=sandybrown];
+    96 -> -4611686018427387809 [color=sandybrown];
+    97 -> -4611686018427387808 [color=sandybrown];
+    97 -> 4611686018427387805 [color=sandybrown];
+    98 -> -9223372036854775709 [color=black];
+    98 -> 78 [color=deepskyblue];
+    98 -> 4611686018427387805 [color=black];
+    98 -> 9223372036854775709 [color=black];
+    4611686018427387805 -> -9223372036854775709 [color=red
+                                                ,style=bold];
+    4611686018427387805 -> 80 [style=dashed
+                              ,color=forestgreen];
+    4611686018427387828 -> -9223372036854775732 [color=red
+                                                ,style=bold];
+    4611686018427387828 -> 80 [style=dashed
+                              ,color=forestgreen];
+    4611686018427387849 -> -9223372036854775753 [color=red
+                                                ,style=bold];
+    4611686018427387849 -> -4611686018427387849 [color=red
+                                                ,style=bold];
+    4611686018427387849 -> 69 [style=dashed
+                              ,color=forestgreen];
+    9223372036854775709 -> -9223372036854775709 [color=red
+                                                ,style=bold];
+    9223372036854775709 -> 79 [style=dashed
+                              ,color=forestgreen];
+    9223372036854775731 -> -9223372036854775731 [color=red
+                                                ,style=bold];
+    9223372036854775731 -> 92 [style=dashed
+                              ,color=forestgreen];
+    9223372036854775732 -> -9223372036854775732 [color=red
+                                                ,style=bold];
+    9223372036854775732 -> 79 [style=dashed
+                              ,color=forestgreen];
+    9223372036854775753 -> -9223372036854775753 [color=red
+                                                ,style=bold];
+    9223372036854775753 -> 68 [style=dashed
+                              ,color=forestgreen];
+}

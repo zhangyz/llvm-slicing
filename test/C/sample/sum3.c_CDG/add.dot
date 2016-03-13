@@ -1,0 +1,13 @@
+digraph {
+	node [label="\N"];
+	graph [bb="0,0,1416,96"];
+	subgraph cluster_74 {
+		graph [label="%0",
+			bb="8,8,1408,88"];
+		75 [label="%1 = load i32* %a , align 4", pos="1252,35", width="4.1111", height="0.51389"];
+		76 [label="%2 = load i32* %b , align 4", pos="938,35", width="4.1111", height="0.51389"];
+		77 [label="%3 = add nsw i32 %1 , %2", pos="626,35", width="4.0556", height="0.51389"];
+		78 [label="store i32 %3 , i32* %a , align 4", pos="297,35", width="4.5833", height="0.51389"];
+		79 [label="ret void", pos="65,35", width="1.3611", height="0.51389"];
+	}
+}
