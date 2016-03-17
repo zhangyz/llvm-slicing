@@ -4,10 +4,9 @@ Program slicing is a technique for simplifying programs by focusing on selected 
 
 ## Installation
 `llvm-slicing` is written in [Haskell](https://www.haskell.org/). It depends on `LLVM 3.0-3.3` and `llvm-config` must be in your `PATH`. It is built and packaged using [`Cabal`](https://www.haskell.org/cabal/). 
- - Install the package `cabal-install` from your system's package manager (with e.g. `apt-get`)
- - Verify that `cabal` is installed and update its dependency list with  `cabal update`
+ - Install the package `cabal-install` from your system's package manager (with e.g. `apt-get`); <br>
+   Verify that `cabal` is installed and update its dependency list with  `cabal update`
  - `git clone` this repository, and `cd` to the `llvm-slicing` source directory (`src`) to build/install: `cabal install`. <br>
-  This will compile `llvm-slicing` and install it to your `~/.cabal/bin` directory
- - Add this directory to your `PATH`
- - Verify that your `PATH` is set up correctly with `which llvm-slicing`
+   This will compile `llvm-slicing` and install it to your `~/.cabal/bin` directory
+ - Add this directory to your `PATH`; <br> Verify that your `PATH` is set up correctly with `which llvm-slicing`
 
