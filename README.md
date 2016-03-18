@@ -13,7 +13,7 @@ Program slicing is a technique for simplifying programs by focusing on selected 
    This will compile `llvm-slicing` and install it to your `~/.cabal/bin` directory
  - Add this directory to your `PATH`; <br> Verify that your `PATH` is set up correctly with `which llvm-slicing`
 
-Alternatively, download our pre-built binary for Ubuntu (x86-64) with LLVM-3.3: <br> 
+Alternatively, download our pre-built binary for Ubuntu 12.04 LTS (64 bit) with LLVM 3.3: <br> 
      [`llvm-slicing_llvm-3.3_x86-64_Ubuntu-12.04.2.tar.bz2`](bin/llvm-slicing_llvm-3.3_x86-64_Ubuntu-12.04.2.tar.bz2)  <br>
 Then unzip it and put the binary `llvm-slicing` in a directory that is on your `PATH`
 
