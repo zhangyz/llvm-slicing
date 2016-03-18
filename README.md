@@ -41,3 +41,5 @@ Currently, `llvm-slicing` includes four static slicers based on corresponding sl
          FILE                       The input file which can be bitcode,llvm assembly, or C/CPP sourcecode
 
 For a multi-programs library, it must be converted to LLVM bitcode (e.g. using the [whole-program LLVM](https://github.com/travitch/whole-program-llvm) wrapper to compile the library) before using `llvm-slicing` to slice it.
+
+For a simple C example program and its slice results with some graphs such as SDG, CG, CFG, please visit the foler [`test/C/sample`](test/C/sample/).   
