@@ -21,7 +21,7 @@ Then unzip it and put the binary `llvm-slicing` in a directory that is on your `
 
 Currently, `llvm-slicing` includes four static slicers based on corresponding slicing methods, i.e. Symbolic slicing, Weiser slicing, SDG-based slicing (using intraprocedure slice result to generate summary edges), and IFDS-based slicing (using IFDS method to generate summary edges). To get detail help infomation:   
 
-     $ llvm-slicing -h
+       $ llvm-slicing -h
     
        llvm-slicing [-c|--criterion VARIABLES] [-d|--direction DIRECTION]
                     [-m|--method SLICE_METHOD] [-p|--isParallel ISPARALLEL]
@@ -42,4 +42,80 @@ Currently, `llvm-slicing` includes four static slicers based on corresponding sl
 
 For a multi-programs library, it must be converted to LLVM bitcode (e.g. using the [whole-program LLVM](https://github.com/travitch/whole-program-llvm) wrapper to compile the library) before using `llvm-slicing` to slice it.
 
-For a simple C example program and its slice results with some graphs such as SDG, CG, CFG, please visit the folder [`test/C/sample`](test/C/sample/).   
+
+## Example
+
+For a simple C program, [`sum3.c`](test/C/sample/sum3.c), its backward static slice table with symbolic slicing method:
+
+      $ llvm-slicing sum3.c
+      
+      Backward Static SliceTable:
+       Variable      SrcLineNumbers  
+      ------------------------------
+       a@add           {"sum3.c: [9,11,12,13,15,27,28,33,40,41]"}
+       b@add           {"sum3.c: [9,12,13,15,27,28,33,40,41]"}
+       i@main          {"sum3.c: [9,12,13,15,28,33,40,41]"}
+       n@main          {"sum3.c: [9]"}
+       sum@main        {"sum3.c: [9,11,12,13,15,27,28,33,40,41]"}
+       tmp@inc         {"sum3.c: [9,12,13,15,28,33,40,41]"}
+       x@A             {"sum3.c: [9,11,12,13,15,27,28,33,40,41]"}
+       y@A             {"sum3.c: [9,12,13,15,28,33,40,41]"}
+       z@inc           {"sum3.c: [9,12,13,15,28,33,40,41]"}
+
+For simplicity, here backward slicing criteria can be automatically generated to slice on the last instruction (the first instruction for forward slicing criteria) of the main procedure for each global variable, and on the last instruction (the first definition instruction in forward slicing) of each procedure for each local variable allocated (declared) in the procedure. 
+
+To get the final IR slice result of the local variable, `%z`, in the procedure `@inc` (on its last instruction):
+
+      $ llvm-slicing sum3.c -c z@inc
+  
+      Backward Static Slice for ["z@inc"]:
+       <SourceLines> ["sum3.c: [9,12,13,15,28,33,40,41]"]: 
+        %n = alloca i32 , align 4
+        %i = alloca i32 , align 4
+        %4 = call i32 @__isoc99_scanf ( i8* i8* getelementptr ( [3 x i8]* @.str1 ,  i32 0, i32 0 ), i32* %n )
+        store i32 1 , i32* %i , align 4
+        %7 = phi i32 [ [%.pre, %10], [1, %0] ]
+        %8 = load i32* %n , align 4
+        %9 = icmp sle i32 %7 , %8
+        br i1 %9 , label %10 , label %11
+        call void @A ( i32* %sum, i32* %i )
+        %.pre = load i32* %i , align 4
+        i32* %y
+        call void @inc ( i32* %y )
+        i32* %a
+        i32* %b
+        %3 = load i32* %a , align 4
+        %4 = load i32* %b , align 4
+        %5 = add nsw i32 %3 , %4
+        store i32 %5 , i32* %a , align 4
+        i32* %z
+        %tmp = alloca i32 , align 4
+        store i32* %z , i32** %1 , align 8
+        store i32 1 , i32* %tmp , align 4
+        call void @add ( i32* %z, i32* %tmp )
+ 
+ 
+To get its forward static slice table with IFDS-based slicing method:
+
+      $ llvm-slicing sum3.c -d Fwd -m IFDS
+       
+      Forward Static SliceTable:
+       Variable      SrcLineNumbers  
+      ------------------------------
+       a@add           {"sum3.c: [13,15,16,18,19,20,23,27,28,29,31,33,35,37,40,41,42]"}
+       b@add           {"sum3.c: [13,15,16,18,19,20,23,27,28,29,31,33,35,37,40,41,42]"}
+       i@main          {"sum3.c: [12,13,15,16,18,19,20,23,27,28,29,31,33,35,37,40,41,42]"}
+       n@main          {"sum3.c: [9,13,15,16,18,19,20,23,27,28,29,31,33,35,37,40,41,42]"}
+       sum@main        {"sum3.c: [11,18,33]"}
+       tmp@inc         {"sum3.c: [13,15,16,18,19,20,23,27,28,29,31,33,35,37,40,41,42]"}
+       x@A             {"sum3.c: [18,33]"}
+       y@A             {"sum3.c: [13,15,16,18,19,20,23,27,28,29,31,33,35,37,40,41,42]"}
+       z@inc           {"sum3.c: [13,15,16,18,19,20,23,27,28,29,31,33,35,37,40,41,42]"}
+ 
+To print its SDG (system dependence graphs):
+
+      $ llvm-slicing sum3.c -g Sdg
+     
+  ![SDG for sum3.c](test/C/sample/sum3_SDG.png "IR SDG of sum3.c")
+
+For more slice results of `sum3.c`, please visit the folder [`test/C/sample`](test/C/sample/).   
