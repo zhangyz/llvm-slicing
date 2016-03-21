@@ -2,7 +2,7 @@
 
 ## Motivation    
 
-Program slicing is a technique for simplifying programs by focusing on selected aspects of their behaviour. Current slicing techniques still have much room for improvement, such as handling programs written in multiple languages. Using the modern compilation framework [LLVM](http://llvm.org) (Low-Level Virtual Machine), we attempt in this project to meet this improvement by presenting a language-independent context-sensitive slicing approach, called `Symbolic Program Slicing`, including both backward and forward static slicing. In the symbolic slicing approach, slices are stored symbolically rather than procedure being re-analysed (cf. procedure summaries). For comparison, we systematically adapt SDG-based slicing methods with IFDS (Interprocedural Finite Distributive Subset analysis) to statically slice LLVM IR (intermediate representation). 
+Program slicing is a technique for simplifying programs by focusing on selected aspects of their behaviour. Current slicing techniques still have much room for improvement, such as handling programs written in multiple languages. Using the modern compilation framework [LLVM](http://llvm.org) (Low-Level Virtual Machine), we attempt in this project to meet this improvement by presenting a language-independent context-sensitive slicing approach, called `Symbolic Program Slicing`, including both backward and forward static slicing. In the symbolic slicing approach, slices are stored symbolically rather than procedure being re-analysed (cf. procedure summaries). For comparison, we systematically adapt SDG-based (system dependence graph) slicing methods with IFDS (Interprocedural Finite Distributive Subset analysis) to statically slice LLVM IR (intermediate representation). 
 
 ## Installation
 
@@ -112,7 +112,7 @@ To get its forward static slice table with IFDS-based slicing method:
        y@A             {"sum3.c: [13,15,16,18,19,20,23,27,28,29,31,33,35,37,40,41,42]"}
        z@inc           {"sum3.c: [13,15,16,18,19,20,23,27,28,29,31,33,35,37,40,41,42]"}
  
-To print its SDG (system dependence graphs):
+To print its LLVM IR SDG:
 
       $ llvm-slicing sum3.c -g Sdg
      
