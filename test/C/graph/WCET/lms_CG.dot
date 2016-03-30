@@ -1,0 +1,41 @@
+digraph {
+    subgraph cluster_0 {
+        473 [label="extern @llvm.dbg.declare"];
+    }
+    subgraph cluster_1 {
+        35 [label="@main"];
+    }
+    subgraph cluster_2 {
+        345 [label="@lms"];
+    }
+    subgraph cluster_3 {
+        263 [label="@gaussian"];
+    }
+    subgraph cluster_4 {
+        447 [label="@lms_log"];
+    }
+    subgraph cluster_5 {
+        185 [label="@lms_sin"];
+    }
+    subgraph cluster_6 {
+        111 [label="@lms_sqrt"];
+    }
+    subgraph cluster_7 {
+        455 [label="@lms_fabs"];
+    }
+    subgraph cluster_8 {
+        21 [label="@lms_rand"];
+    }
+    subgraph cluster_9 {
+        -100 [label=unknown];
+    }
+    35 -> 111 [label=""];
+    35 -> 185 [label=""];
+    35 -> 263 [label=""];
+    35 -> 345 [label=""];
+    111 -> 455 [label=""];
+    185 -> 455 [label=""];
+    263 -> 21 [label=""];
+    263 -> 111 [label=""];
+    263 -> 447 [label=""];
+}

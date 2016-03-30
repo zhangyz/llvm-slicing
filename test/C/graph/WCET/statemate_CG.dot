@@ -1,0 +1,36 @@
+digraph {
+    subgraph cluster_0 {
+        1805 [label="@main"];
+    }
+    subgraph cluster_1 {
+        1397 [label="@FH_DU"];
+    }
+    subgraph cluster_2 {
+        1244 [label="@generic_BLOCK_ERKENNUNG_CTRL"];
+    }
+    subgraph cluster_3 {
+        1182 [label="@generic_EINKLEMMSCHUTZ_CTRL"];
+    }
+    subgraph cluster_4 {
+        552 [label="@generic_FH_TUERMODUL_CTRL"];
+    }
+    subgraph cluster_5 {
+        256 [label="@generic_KINDERSICHERUNG_CTRL"];
+    }
+    subgraph cluster_6 {
+        234 [label="@init"];
+    }
+    subgraph cluster_7 {
+        111 [label="@interface"];
+    }
+    subgraph cluster_8 {
+        -100 [label=unknown];
+    }
+    1397 -> 256 [label=""];
+    1397 -> 552 [label=""];
+    1397 -> 1182 [label=""];
+    1397 -> 1244 [label=""];
+    1805 -> 111 [label=""];
+    1805 -> 234 [label=""];
+    1805 -> 1397 [label=""];
+}

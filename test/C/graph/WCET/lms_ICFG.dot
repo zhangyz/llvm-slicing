@@ -1,0 +1,1395 @@
+digraph {
+    subgraph cluster_473 {
+        graph [label="@llvm.dbg.declare"];
+        473 [label="ExternalFunction: @llvm.dbg.declare"];
+    }
+    subgraph cluster_21 {
+        graph [label="@lms_rand"];
+        subgraph cluster_22 {
+            graph [label="%0"];
+            23 [label="%1 = load i64* @lms_rand.next , align 8"
+               ,shape=box];
+            25 [label="%2 = mul i64 %1 , 1103515245"
+               ,shape=box];
+            27 [label="%3 = add i64 %2 , 12345"
+               ,shape=box];
+            28 [label="store i64 %3 , i64* @lms_rand.next , align 8"
+               ,shape=box];
+            30 [label="%4 = div i64 %3 , 65536"
+               ,shape=box];
+            31 [label="%5 = trunc i64 %4 to i32"
+               ,shape=box];
+            33 [label="%6 = rem i32 %5 , 32768"
+               ,shape=box];
+            34 [label="ret i32 %6"
+               ,shape=box];
+        }
+    }
+    subgraph cluster_35 {
+        graph [label="@main"];
+        subgraph cluster_36 {
+            graph [label="%0"];
+            -48 [label=ReturnNode
+                ,shape=box];
+            -45 [label=ReturnNode
+                ,shape=box];
+            38 [label="%1 = alloca i32 , align 4"
+               ,shape=box];
+            39 [label="%signal_amp = alloca float , align 4"
+               ,shape=box];
+            40 [label="%noise_amp = alloca float , align 4"
+               ,shape=box];
+            41 [label="%arg = alloca float , align 4"
+               ,shape=box];
+            42 [label="%x = alloca float , align 4"
+               ,shape=box];
+            43 [label="%k = alloca i32 , align 4"
+               ,shape=box];
+            44 [label="store i32 0 , i32* %1"
+               ,shape=box];
+            45 [label="%2 = call float @lms_sqrt ( double 2.0 )"
+               ,shape=box];
+            47 [label="store float %2 , float* %signal_amp , align 4"
+               ,shape=box];
+            48 [label="%3 = call float @lms_sqrt ( double 12.0 )"
+               ,shape=box];
+            50 [label="%4 = fpext float %3 to double"
+               ,shape=box];
+            52 [label="%5 = mul double 0.2 , %4"
+               ,shape=box];
+            53 [label="%6 = fptrunc double %5 to float"
+               ,shape=box];
+            54 [label="store float %6 , float* %noise_amp , align 4"
+               ,shape=box];
+            56 [label="store float 0.3141592741012573 , float* %arg , align 4"
+               ,shape=box];
+            57 [label="store i32 0 , i32* %k , align 4"
+               ,shape=box];
+            58 [label="br label %7"
+               ,shape=box];
+        }
+        subgraph cluster_59 {
+            graph [label="%7"];
+            60 [label="%8 = phi i32 [ [%21, %10], [0, %0] ]"
+               ,shape=box];
+            61 [label="%9 = icmp slt i32 %8 , 201"
+               ,shape=box];
+            63 [label="br i1 %9 , label %10 , label %22"
+               ,shape=box];
+        }
+        subgraph cluster_64 {
+            graph [label="%10"];
+            -70 [label=ReturnNode
+                ,shape=box];
+            -68 [label=ReturnNode
+                ,shape=box];
+            65 [label="%11 = sitofp i32 %8 to float"
+               ,shape=box];
+            66 [label="%12 = mul float 0.3141592741012573 , %11"
+               ,shape=box];
+            67 [label="%13 = fpext float %12 to double"
+               ,shape=box];
+            68 [label="%14 = call float @lms_sin ( double %13 )"
+               ,shape=box];
+            69 [label="%15 = mul float %2 , %14"
+               ,shape=box];
+            70 [label="%16 = call float @gaussian ( )"
+               ,shape=box];
+            71 [label="%17 = mul float %6 , %16"
+               ,shape=box];
+            72 [label="%18 = add float %15 , %17"
+               ,shape=box];
+            73 [label="%19 = sext i32 %8 to i64"
+               ,shape=box];
+            74 [label="%20 = getelementptr inbounds [201 x float]* @main.d , i32 0, i64 %19"
+               ,shape=box];
+            75 [label="store float %18 , float* %20 , align 4"
+               ,shape=box];
+            76 [label="%21 = add nsw i32 %8 , 1"
+               ,shape=box];
+            77 [label="store i32 %21 , i32* %k , align 4"
+               ,shape=box];
+            78 [label="br label %7"
+               ,shape=box];
+        }
+        subgraph cluster_79 {
+            graph [label="%22"];
+            80 [label="%23 = load float* @mu , align 4"
+               ,shape=box];
+            81 [label="%24 = fpext float %23 to double"
+               ,shape=box];
+            82 [label="%25 = mul double 2.0 , %24"
+               ,shape=box];
+            84 [label="%26 = div double %25 , 21.0"
+               ,shape=box];
+            85 [label="%27 = fptrunc double %26 to float"
+               ,shape=box];
+            86 [label="store float %27 , float* @mu , align 4"
+               ,shape=box];
+            87 [label="store float 0.0 , float* %x , align 4"
+               ,shape=box];
+            88 [label="store i32 0 , i32* %k , align 4"
+               ,shape=box];
+            89 [label="br label %28"
+               ,shape=box];
+        }
+        subgraph cluster_90 {
+            graph [label="%28"];
+            91 [label="%29 = phi float [ [%39, %32], [0.0, %22] ]"
+               ,shape=box];
+            92 [label="%30 = phi i32 [ [%40, %32], [0, %22] ]"
+               ,shape=box];
+            93 [label="%31 = icmp slt i32 %30 , 201"
+               ,shape=box];
+            94 [label="br i1 %31 , label %32 , label %41"
+               ,shape=box];
+        }
+        subgraph cluster_95 {
+            graph [label="%32"];
+            -100 [label=ReturnNode
+                 ,shape=box];
+            96 [label="%33 = sext i32 %30 to i64"
+               ,shape=box];
+            97 [label="%34 = getelementptr inbounds [201 x float]* @main.d , i32 0, i64 %33"
+               ,shape=box];
+            98 [label="%35 = load float* %34 , align 4"
+               ,shape=box];
+            99 [label="%36 = load float* @mu , align 4"
+               ,shape=box];
+            100 [label="%37 = call float @lms ( float %29, float %35, float* float* getelementptr ( [21 x float]* @main.b ,  i32 0, i32 0 ), i32 20, float %36, float 9.999999776482582e-3 )"
+                ,shape=box];
+            104 [label="%39 = load float* %34 , align 4"
+                ,shape=box];
+            105 [label="store float %39 , float* %x , align 4"
+                ,shape=box];
+            106 [label="%40 = add nsw i32 %30 , 1"
+                ,shape=box];
+            107 [label="store i32 %40 , i32* %k , align 4"
+                ,shape=box];
+            108 [label="br label %28"
+                ,shape=box];
+        }
+        subgraph cluster_109 {
+            graph [label="%41"];
+            110 [label="ret i32 0"
+                ,shape=box];
+        }
+    }
+    subgraph cluster_111 {
+        graph [label="@lms_sqrt"];
+        subgraph cluster_113 {
+            graph [label="%0"];
+            114 [label="%1 = alloca float , align 4"
+                ,shape=box];
+            115 [label="%x = alloca float , align 4"
+                ,shape=box];
+            116 [label="%dx = alloca float , align 4"
+                ,shape=box];
+            117 [label="%diff = alloca double , align 8"
+                ,shape=box];
+            118 [label="%min_tol = alloca double , align 8"
+                ,shape=box];
+            119 [label="%i = alloca i32 , align 4"
+                ,shape=box];
+            120 [label="%flag = alloca i32 , align 4"
+                ,shape=box];
+            121 [label="%val = fptrunc double % to float"
+                ,shape=box];
+            122 [label="store float %val , float* %1 , align 4"
+                ,shape=box];
+            124 [label="%2 = div float %val , 10.0"
+                ,shape=box];
+            125 [label="store float %2 , float* %x , align 4"
+                ,shape=box];
+            127 [label="store double 1.0e-5 , double* %min_tol , align 8"
+                ,shape=box];
+            128 [label="store i32 0 , i32* %flag , align 4"
+                ,shape=box];
+            129 [label="%3 = fcmp oeq float %val , 0.0"
+                ,shape=box];
+            130 [label="br i1 %3 , label %4 , label %5"
+                ,shape=box];
+        }
+        subgraph cluster_131 {
+            graph [label="%4"];
+            132 [label="store float 0.0 , float* %x , align 4"
+                ,shape=box];
+            133 [label="br label %38"
+                ,shape=box];
+        }
+        subgraph cluster_134 {
+            graph [label="%5"];
+            135 [label="store i32 1 , i32* %i , align 4"
+                ,shape=box];
+            136 [label="br label %6"
+                ,shape=box];
+        }
+        subgraph cluster_137 {
+            graph [label="%6"];
+            138 [label="%7 = phi i32 [ [%34, %33], [0, %5] ]"
+                ,shape=box];
+            139 [label="%8 = phi i32 [ [%36, %33], [1, %5] ]"
+                ,shape=box];
+            140 [label="%9 = phi float [ [%35, %33], [%2, %5] ]"
+                ,shape=box];
+            141 [label="%10 = icmp slt i32 %8 , 20"
+                ,shape=box];
+            142 [label="br i1 %10 , label %11 , label %37"
+                ,shape=box];
+        }
+        subgraph cluster_143 {
+            graph [label="%11"];
+            144 [label="%12 = icmp ne i32 %7 , 0"
+                ,shape=box];
+            145 [label="br i1 %12 , label %32 , label %13"
+                ,shape=box];
+        }
+        subgraph cluster_146 {
+            graph [label="%13"];
+            -162 [label=ReturnNode
+                 ,shape=box];
+            147 [label="%14 = mul float %9 , %9"
+                ,shape=box];
+            148 [label="%15 = sub float %val , %14"
+                ,shape=box];
+            149 [label="%16 = fpext float %15 to double"
+                ,shape=box];
+            150 [label="%17 = fpext float %9 to double"
+                ,shape=box];
+            151 [label="%18 = mul double 2.0 , %17"
+                ,shape=box];
+            152 [label="%19 = div double %16 , %18"
+                ,shape=box];
+            153 [label="%20 = fptrunc double %19 to float"
+                ,shape=box];
+            154 [label="store float %20 , float* %dx , align 4"
+                ,shape=box];
+            155 [label="%21 = add float %9 , %20"
+                ,shape=box];
+            156 [label="store float %21 , float* %x , align 4"
+                ,shape=box];
+            157 [label="%22 = mul float %21 , %21"
+                ,shape=box];
+            158 [label="%23 = sub float %val , %22"
+                ,shape=box];
+            159 [label="%24 = fpext float %23 to double"
+                ,shape=box];
+            160 [label="store double %24 , double* %diff , align 8"
+                ,shape=box];
+            161 [label="%25 = fptrunc double %24 to float"
+                ,shape=box];
+            162 [label="%26 = call float @lms_fabs ( float %25 )"
+                ,shape=box];
+            163 [label="%27 = fpext float %26 to double"
+                ,shape=box];
+            164 [label="%28 = fcmp ole double %27 , 1.0e-5"
+                ,shape=box];
+            165 [label="br i1 %28 , label %29 , label %30"
+                ,shape=box];
+        }
+        subgraph cluster_166 {
+            graph [label="%29"];
+            167 [label="store i32 1 , i32* %flag , align 4"
+                ,shape=box];
+            168 [label="br label %30"
+                ,shape=box];
+        }
+        subgraph cluster_169 {
+            graph [label="%30"];
+            170 [label="%31 = phi i32 [ [1, %29], [0, %13] ]"
+                ,shape=box];
+            171 [label="br label %33"
+                ,shape=box];
+        }
+        subgraph cluster_172 {
+            graph [label="%32"];
+            173 [label="br label %33"
+                ,shape=box];
+        }
+        subgraph cluster_174 {
+            graph [label="%33"];
+            175 [label="%34 = phi i32 [ [%7, %32], [%31, %30] ]"
+                ,shape=box];
+            176 [label="%35 = phi float [ [%9, %32], [%21, %30] ]"
+                ,shape=box];
+            177 [label="%36 = add nsw i32 %8 , 1"
+                ,shape=box];
+            178 [label="store i32 %36 , i32* %i , align 4"
+                ,shape=box];
+            179 [label="br label %6"
+                ,shape=box];
+        }
+        subgraph cluster_180 {
+            graph [label="%37"];
+            181 [label="br label %38"
+                ,shape=box];
+        }
+        subgraph cluster_182 {
+            graph [label="%38"];
+            183 [label="%39 = phi float [ [%9, %37], [0.0, %4] ]"
+                ,shape=box];
+            184 [label="ret float %39"
+                ,shape=box];
+        }
+    }
+    subgraph cluster_185 {
+        graph [label="@lms_sin"];
+        subgraph cluster_187 {
+            graph [label="%0"];
+            188 [label="%1 = alloca float , align 4"
+                ,shape=box];
+            189 [label="%app = alloca float , align 4"
+                ,shape=box];
+            190 [label="%diff = alloca float , align 4"
+                ,shape=box];
+            191 [label="%inc = alloca i32 , align 4"
+                ,shape=box];
+            192 [label="%rad = fptrunc double % to float"
+                ,shape=box];
+            193 [label="store float %rad , float* %1 , align 4"
+                ,shape=box];
+            194 [label="store i32 1 , i32* %inc , align 4"
+                ,shape=box];
+            195 [label="br label %2"
+                ,shape=box];
+        }
+        subgraph cluster_196 {
+            graph [label="%2"];
+            197 [label="%3 = phi float [ [%8, %6], [%rad, %0] ]"
+                ,shape=box];
+            198 [label="%4 = fpext float %3 to double"
+                ,shape=box];
+            199 [label="%5 = fcmp ogt double %4 , 6.283185307179586"
+                ,shape=box];
+            201 [label="br i1 %5 , label %6 , label %9"
+                ,shape=box];
+        }
+        subgraph cluster_202 {
+            graph [label="%6"];
+            203 [label="%7 = sub double %4 , 6.283185307179586"
+                ,shape=box];
+            204 [label="%8 = fptrunc double %7 to float"
+                ,shape=box];
+            205 [label="store float %8 , float* %1 , align 4"
+                ,shape=box];
+            206 [label="br label %2"
+                ,shape=box];
+        }
+        subgraph cluster_207 {
+            graph [label="%9"];
+            208 [label="br label %10"
+                ,shape=box];
+        }
+        subgraph cluster_209 {
+            graph [label="%10"];
+            210 [label="%11 = phi float [ [%16, %14], [%3, %9] ]"
+                ,shape=box];
+            211 [label="%12 = fpext float %11 to double"
+                ,shape=box];
+            212 [label="%13 = fcmp olt double %12 , -6.283185307179586"
+                ,shape=box];
+            214 [label="br i1 %13 , label %14 , label %17"
+                ,shape=box];
+        }
+        subgraph cluster_215 {
+            graph [label="%14"];
+            216 [label="%15 = add double %12 , 6.283185307179586"
+                ,shape=box];
+            217 [label="%16 = fptrunc double %15 to float"
+                ,shape=box];
+            218 [label="store float %16 , float* %1 , align 4"
+                ,shape=box];
+            219 [label="br label %10"
+                ,shape=box];
+        }
+        subgraph cluster_220 {
+            graph [label="%17"];
+            221 [label="store float %11 , float* %diff , align 4"
+                ,shape=box];
+            222 [label="store float %11 , float* %app , align 4"
+                ,shape=box];
+            223 [label="%18 = mul float %11 , %11"
+                ,shape=box];
+            225 [label="%19 = sub float -0.0 , %18"
+                ,shape=box];
+            226 [label="%20 = mul float %11 , %19"
+                ,shape=box];
+            227 [label="%21 = fpext float %20 to double"
+                ,shape=box];
+            229 [label="%22 = div double %21 , 6.0"
+                ,shape=box];
+            230 [label="%23 = fptrunc double %22 to float"
+                ,shape=box];
+            231 [label="store float %23 , float* %diff , align 4"
+                ,shape=box];
+            232 [label="%24 = add float %11 , %23"
+                ,shape=box];
+            233 [label="store float %24 , float* %app , align 4"
+                ,shape=box];
+            235 [label="store i32 2 , i32* %inc , align 4"
+                ,shape=box];
+            236 [label="br label %25"
+                ,shape=box];
+        }
+        subgraph cluster_237 {
+            graph [label="%25"];
+            -241 [label=ReturnNode
+                 ,shape=box];
+            238 [label="%26 = phi float [ [%41, %32], [%24, %17] ]"
+                ,shape=box];
+            239 [label="%27 = phi i32 [ [%42, %32], [2, %17] ]"
+                ,shape=box];
+            240 [label="%28 = phi float [ [%40, %32], [%23, %17] ]"
+                ,shape=box];
+            241 [label="%29 = call float @lms_fabs ( float %28 )"
+                ,shape=box];
+            242 [label="%30 = fpext float %29 to double"
+                ,shape=box];
+            243 [label="%31 = fcmp oge double %30 , 1.0e-5"
+                ,shape=box];
+            244 [label="br i1 %31 , label %32 , label %43"
+                ,shape=box];
+        }
+        subgraph cluster_245 {
+            graph [label="%32"];
+            246 [label="%33 = mul float %28 , %19"
+                ,shape=box];
+            247 [label="%34 = fpext float %33 to double"
+                ,shape=box];
+            248 [label="%35 = sitofp i32 %27 to double"
+                ,shape=box];
+            249 [label="%36 = mul double 2.0 , %35"
+                ,shape=box];
+            251 [label="%37 = add double %36 , 1.0"
+                ,shape=box];
+            252 [label="%38 = mul double %36 , %37"
+                ,shape=box];
+            253 [label="%39 = div double %34 , %38"
+                ,shape=box];
+            254 [label="%40 = fptrunc double %39 to float"
+                ,shape=box];
+            255 [label="store float %40 , float* %diff , align 4"
+                ,shape=box];
+            256 [label="%41 = add float %26 , %40"
+                ,shape=box];
+            257 [label="store float %41 , float* %app , align 4"
+                ,shape=box];
+            258 [label="%42 = add nsw i32 %27 , 1"
+                ,shape=box];
+            259 [label="store i32 %42 , i32* %inc , align 4"
+                ,shape=box];
+            260 [label="br label %25"
+                ,shape=box];
+        }
+        subgraph cluster_261 {
+            graph [label="%43"];
+            262 [label="ret float %26"
+                ,shape=box];
+        }
+    }
+    subgraph cluster_263 {
+        graph [label="@gaussian"];
+        subgraph cluster_264 {
+            graph [label="%0"];
+            265 [label="%v1 = alloca float , align 4"
+                ,shape=box];
+            266 [label="%v2 = alloca float , align 4"
+                ,shape=box];
+            267 [label="%r = alloca float , align 4"
+                ,shape=box];
+            268 [label="%fac = alloca float , align 4"
+                ,shape=box];
+            269 [label="%gaus = alloca float , align 4"
+                ,shape=box];
+            270 [label="%1 = load i32* @gaussian.ready , align 4"
+                ,shape=box];
+            271 [label="%2 = icmp eq i32 %1 , 0"
+                ,shape=box];
+            272 [label="br i1 %2 , label %3 , label %47"
+                ,shape=box];
+        }
+        subgraph cluster_273 {
+            graph [label="%3"];
+            -279 [label=ReturnNode
+                 ,shape=box];
+            -274 [label=ReturnNode
+                 ,shape=box];
+            274 [label="%4 = call i32 @lms_rand ( )"
+                ,shape=box];
+            275 [label="%5 = sitofp i32 %4 to float"
+                ,shape=box];
+            276 [label="%6 = load float* @gaussian.rconst2 , align 4"
+                ,shape=box];
+            277 [label="%7 = sub float %5 , %6"
+                ,shape=box];
+            278 [label="store float %7 , float* %v1 , align 4"
+                ,shape=box];
+            279 [label="%8 = call i32 @lms_rand ( )"
+                ,shape=box];
+            280 [label="%9 = sitofp i32 %8 to float"
+                ,shape=box];
+            281 [label="%10 = load float* @gaussian.rconst2 , align 4"
+                ,shape=box];
+            282 [label="%11 = sub float %9 , %10"
+                ,shape=box];
+            283 [label="store float %11 , float* %v2 , align 4"
+                ,shape=box];
+            284 [label="%12 = load float* @gaussian.rconst1 , align 4"
+                ,shape=box];
+            285 [label="%13 = mul float %7 , %12"
+                ,shape=box];
+            286 [label="store float %13 , float* %v1 , align 4"
+                ,shape=box];
+            287 [label="%14 = mul float %11 , %12"
+                ,shape=box];
+            288 [label="store float %14 , float* %v2 , align 4"
+                ,shape=box];
+            289 [label="%15 = mul float %13 , %13"
+                ,shape=box];
+            290 [label="%16 = mul float %14 , %14"
+                ,shape=box];
+            291 [label="%17 = add float %15 , %16"
+                ,shape=box];
+            292 [label="store float %17 , float* %r , align 4"
+                ,shape=box];
+            293 [label="br label %18"
+                ,shape=box];
+        }
+        subgraph cluster_294 {
+            graph [label="%18"];
+            295 [label="%19 = phi float [ [%34, %23], [%14, %3] ]"
+                ,shape=box];
+            296 [label="%20 = phi float [ [%33, %23], [%13, %3] ]"
+                ,shape=box];
+            297 [label="%21 = phi float [ [%37, %23], [%17, %3] ]"
+                ,shape=box];
+            298 [label="%22 = fcmp ogt float %21 , 1.0"
+                ,shape=box];
+            300 [label="br i1 %22 , label %23 , label %38"
+                ,shape=box];
+        }
+        subgraph cluster_301 {
+            graph [label="%23"];
+            -307 [label=ReturnNode
+                 ,shape=box];
+            -302 [label=ReturnNode
+                 ,shape=box];
+            302 [label="%24 = call i32 @lms_rand ( )"
+                ,shape=box];
+            303 [label="%25 = sitofp i32 %24 to float"
+                ,shape=box];
+            304 [label="%26 = load float* @gaussian.rconst2 , align 4"
+                ,shape=box];
+            305 [label="%27 = sub float %25 , %26"
+                ,shape=box];
+            306 [label="store float %27 , float* %v1 , align 4"
+                ,shape=box];
+            307 [label="%28 = call i32 @lms_rand ( )"
+                ,shape=box];
+            308 [label="%29 = sitofp i32 %28 to float"
+                ,shape=box];
+            309 [label="%30 = load float* @gaussian.rconst2 , align 4"
+                ,shape=box];
+            310 [label="%31 = sub float %29 , %30"
+                ,shape=box];
+            311 [label="store float %31 , float* %v2 , align 4"
+                ,shape=box];
+            312 [label="%32 = load float* @gaussian.rconst1 , align 4"
+                ,shape=box];
+            313 [label="%33 = mul float %27 , %32"
+                ,shape=box];
+            314 [label="store float %33 , float* %v1 , align 4"
+                ,shape=box];
+            315 [label="%34 = mul float %31 , %32"
+                ,shape=box];
+            316 [label="store float %34 , float* %v2 , align 4"
+                ,shape=box];
+            317 [label="%35 = mul float %33 , %33"
+                ,shape=box];
+            318 [label="%36 = mul float %34 , %34"
+                ,shape=box];
+            319 [label="%37 = add float %35 , %36"
+                ,shape=box];
+            320 [label="store float %37 , float* %r , align 4"
+                ,shape=box];
+            321 [label="br label %18"
+                ,shape=box];
+        }
+        subgraph cluster_322 {
+            graph [label="%38"];
+            -329 [label=ReturnNode
+                 ,shape=box];
+            -324 [label=ReturnNode
+                 ,shape=box];
+            323 [label="%39 = fpext float %21 to double"
+                ,shape=box];
+            324 [label="%40 = call float @lms_log ( double %39 )"
+                ,shape=box];
+            326 [label="%41 = mul float -2.0 , %40"
+                ,shape=box];
+            327 [label="%42 = div float %41 , %21"
+                ,shape=box];
+            328 [label="%43 = fpext float %42 to double"
+                ,shape=box];
+            329 [label="%44 = call float @lms_sqrt ( double %43 )"
+                ,shape=box];
+            330 [label="store float %44 , float* %fac , align 4"
+                ,shape=box];
+            331 [label="%45 = mul float %20 , %44"
+                ,shape=box];
+            332 [label="store float %45 , float* @gaussian.gstore , align 4"
+                ,shape=box];
+            333 [label="%46 = mul float %19 , %44"
+                ,shape=box];
+            334 [label="store float %46 , float* %gaus , align 4"
+                ,shape=box];
+            335 [label="store i32 1 , i32* @gaussian.ready , align 4"
+                ,shape=box];
+            336 [label="br label %49"
+                ,shape=box];
+        }
+        subgraph cluster_337 {
+            graph [label="%47"];
+            338 [label="store i32 0 , i32* @gaussian.ready , align 4"
+                ,shape=box];
+            339 [label="%48 = load float* @gaussian.gstore , align 4"
+                ,shape=box];
+            340 [label="store float %48 , float* %gaus , align 4"
+                ,shape=box];
+            341 [label="br label %49"
+                ,shape=box];
+        }
+        subgraph cluster_342 {
+            graph [label="%49"];
+            343 [label="%50 = phi float [ [%48, %47], [%46, %38] ]"
+                ,shape=box];
+            344 [label="ret float %50"
+                ,shape=box];
+        }
+    }
+    subgraph cluster_345 {
+        graph [label="@lms"];
+        subgraph cluster_352 {
+            graph [label="%0"];
+            353 [label="%1 = alloca float , align 4"
+                ,shape=box];
+            354 [label="%2 = alloca float , align 4"
+                ,shape=box];
+            355 [label="%3 = alloca float* , align 8"
+                ,shape=box];
+            356 [label="%4 = alloca i32 , align 4"
+                ,shape=box];
+            357 [label="%5 = alloca float , align 4"
+                ,shape=box];
+            358 [label="%6 = alloca float , align 4"
+                ,shape=box];
+            359 [label="%ll = alloca i32 , align 4"
+                ,shape=box];
+            360 [label="%e = alloca float , align 4"
+                ,shape=box];
+            361 [label="%mu_e = alloca float , align 4"
+                ,shape=box];
+            362 [label="%y = alloca float , align 4"
+                ,shape=box];
+            363 [label="store float %x , float* %1 , align 4"
+                ,shape=box];
+            364 [label="store float %d , float* %2 , align 4"
+                ,shape=box];
+            365 [label="store float* %b , float** %3 , align 8"
+                ,shape=box];
+            366 [label="store i32 %l , i32* %4 , align 4"
+                ,shape=box];
+            367 [label="store float %mu , float* %5 , align 4"
+                ,shape=box];
+            368 [label="store float %alpha , float* %6 , align 4"
+                ,shape=box];
+            372 [label="store float %x , float* float* getelementptr ( [51 x float]* @lms.px ,  i32 0, i64 0 ) , align 4"
+                ,shape=box];
+            373 [label="%8 = load float* %b , align 4"
+                ,shape=box];
+            374 [label="%9 = mul float %8 , %x"
+                ,shape=box];
+            375 [label="store float %9 , float* %y , align 4"
+                ,shape=box];
+            376 [label="store i32 1 , i32* %ll , align 4"
+                ,shape=box];
+            377 [label="br label %10"
+                ,shape=box];
+        }
+        subgraph cluster_378 {
+            graph [label="%10"];
+            379 [label="%11 = phi float [ [%21, %14], [%9, %0] ]"
+                ,shape=box];
+            380 [label="%12 = phi i32 [ [%22, %14], [1, %0] ]"
+                ,shape=box];
+            381 [label="%13 = icmp sle i32 %12 , %l"
+                ,shape=box];
+            382 [label="br i1 %13 , label %14 , label %23"
+                ,shape=box];
+        }
+        subgraph cluster_383 {
+            graph [label="%14"];
+            384 [label="%15 = sext i32 %12 to i64"
+                ,shape=box];
+            385 [label="%16 = getelementptr inbounds float* %b , i64 %15"
+                ,shape=box];
+            386 [label="%17 = load float* %16 , align 4"
+                ,shape=box];
+            387 [label="%18 = getelementptr inbounds [51 x float]* @lms.px , i32 0, i64 %15"
+                ,shape=box];
+            388 [label="%19 = load float* %18 , align 4"
+                ,shape=box];
+            389 [label="%20 = mul float %17 , %19"
+                ,shape=box];
+            390 [label="%21 = add float %11 , %20"
+                ,shape=box];
+            391 [label="store float %21 , float* %y , align 4"
+                ,shape=box];
+            392 [label="%22 = add nsw i32 %12 , 1"
+                ,shape=box];
+            393 [label="store i32 %22 , i32* %ll , align 4"
+                ,shape=box];
+            394 [label="br label %10"
+                ,shape=box];
+        }
+        subgraph cluster_395 {
+            graph [label="%23"];
+            396 [label="%24 = sub float %d , %11"
+                ,shape=box];
+            397 [label="store float %24 , float* %e , align 4"
+                ,shape=box];
+            398 [label="%25 = mul float %x , %x"
+                ,shape=box];
+            399 [label="%26 = mul float %alpha , %25"
+                ,shape=box];
+            400 [label="%27 = sub float 1.0 , %alpha"
+                ,shape=box];
+            401 [label="%28 = load float* @lms.sigma , align 4"
+                ,shape=box];
+            402 [label="%29 = mul float %27 , %28"
+                ,shape=box];
+            403 [label="%30 = add float %26 , %29"
+                ,shape=box];
+            404 [label="store float %30 , float* @lms.sigma , align 4"
+                ,shape=box];
+            405 [label="%31 = mul float %mu , %24"
+                ,shape=box];
+            406 [label="%32 = div float %31 , %30"
+                ,shape=box];
+            407 [label="store float %32 , float* %mu_e , align 4"
+                ,shape=box];
+            408 [label="store i32 0 , i32* %ll , align 4"
+                ,shape=box];
+            409 [label="br label %33"
+                ,shape=box];
+        }
+        subgraph cluster_410 {
+            graph [label="%33"];
+            411 [label="%34 = phi i32 [ [%44, %36], [0, %23] ]"
+                ,shape=box];
+            412 [label="%35 = icmp sle i32 %34 , %l"
+                ,shape=box];
+            413 [label="br i1 %35 , label %36 , label %45"
+                ,shape=box];
+        }
+        subgraph cluster_414 {
+            graph [label="%36"];
+            415 [label="%37 = sext i32 %34 to i64"
+                ,shape=box];
+            416 [label="%38 = getelementptr inbounds float* %b , i64 %37"
+                ,shape=box];
+            417 [label="%39 = load float* %38 , align 4"
+                ,shape=box];
+            418 [label="%40 = getelementptr inbounds [51 x float]* @lms.px , i32 0, i64 %37"
+                ,shape=box];
+            419 [label="%41 = load float* %40 , align 4"
+                ,shape=box];
+            420 [label="%42 = mul float %32 , %41"
+                ,shape=box];
+            421 [label="%43 = add float %39 , %42"
+                ,shape=box];
+            422 [label="store float %43 , float* %38 , align 4"
+                ,shape=box];
+            423 [label="%44 = add nsw i32 %34 , 1"
+                ,shape=box];
+            424 [label="store i32 %44 , i32* %ll , align 4"
+                ,shape=box];
+            425 [label="br label %33"
+                ,shape=box];
+        }
+        subgraph cluster_426 {
+            graph [label="%45"];
+            427 [label="store i32 %l , i32* %ll , align 4"
+                ,shape=box];
+            428 [label="br label %46"
+                ,shape=box];
+        }
+        subgraph cluster_429 {
+            graph [label="%46"];
+            430 [label="%47 = phi i32 [ [%56, %49], [%l, %45] ]"
+                ,shape=box];
+            431 [label="%48 = icmp sge i32 %47 , 1"
+                ,shape=box];
+            432 [label="br i1 %48 , label %49 , label %57"
+                ,shape=box];
+        }
+        subgraph cluster_433 {
+            graph [label="%49"];
+            434 [label="%50 = sub nsw i32 %47 , 1"
+                ,shape=box];
+            435 [label="%51 = sext i32 %50 to i64"
+                ,shape=box];
+            436 [label="%52 = getelementptr inbounds [51 x float]* @lms.px , i32 0, i64 %51"
+                ,shape=box];
+            437 [label="%53 = load float* %52 , align 4"
+                ,shape=box];
+            438 [label="%54 = sext i32 %47 to i64"
+                ,shape=box];
+            439 [label="%55 = getelementptr inbounds [51 x float]* @lms.px , i32 0, i64 %54"
+                ,shape=box];
+            440 [label="store float %53 , float* %55 , align 4"
+                ,shape=box];
+            442 [label="%56 = add nsw i32 %47 , -1"
+                ,shape=box];
+            443 [label="store i32 %56 , i32* %ll , align 4"
+                ,shape=box];
+            444 [label="br label %46"
+                ,shape=box];
+        }
+        subgraph cluster_445 {
+            graph [label="%57"];
+            446 [label="ret float %11"
+                ,shape=box];
+        }
+    }
+    subgraph cluster_447 {
+        graph [label="@lms_log"];
+        subgraph cluster_449 {
+            graph [label="%0"];
+            450 [label="%1 = alloca float , align 4"
+                ,shape=box];
+            451 [label="%r = fptrunc double % to float"
+                ,shape=box];
+            452 [label="store float %r , float* %1 , align 4"
+                ,shape=box];
+            453 [label="ret float 4.5"
+                ,shape=box];
+        }
+    }
+    subgraph cluster_455 {
+        graph [label="@lms_fabs"];
+        subgraph cluster_457 {
+            graph [label="%0"];
+            458 [label="%1 = alloca float , align 4"
+                ,shape=box];
+            459 [label="%f = alloca float , align 4"
+                ,shape=box];
+            460 [label="store float %n , float* %1 , align 4"
+                ,shape=box];
+            461 [label="%2 = fcmp oge float %n , 0.0"
+                ,shape=box];
+            462 [label="br i1 %2 , label %3 , label %4"
+                ,shape=box];
+        }
+        subgraph cluster_463 {
+            graph [label="%3"];
+            464 [label="store float %n , float* %f , align 4"
+                ,shape=box];
+            465 [label="br label %6"
+                ,shape=box];
+        }
+        subgraph cluster_466 {
+            graph [label="%4"];
+            467 [label="%5 = sub float -0.0 , %n"
+                ,shape=box];
+            468 [label="store float %5 , float* %f , align 4"
+                ,shape=box];
+            469 [label="br label %6"
+                ,shape=box];
+        }
+        subgraph cluster_470 {
+            graph [label="%6"];
+            471 [label="%7 = phi float [ [%5, %4], [%n, %3] ]"
+                ,shape=box];
+            472 [label="ret float %7"
+                ,shape=box];
+        }
+    }
+    -329 -> 330 [label=""];
+    -324 -> 326 [label=""];
+    -307 -> 308 [label=""];
+    -302 -> 303 [label=""];
+    -279 -> 280 [label=""];
+    -274 -> 275 [label=""];
+    -241 -> 242 [label=""];
+    -162 -> 163 [label=""];
+    -100 -> 104 [label=""];
+    -70 -> 71 [label=""];
+    -68 -> 69 [label=""];
+    -48 -> 50 [label=""];
+    -45 -> 47 [label=""];
+    23 -> 25 [label=""];
+    25 -> 27 [label=""];
+    27 -> 28 [label=""];
+    28 -> 30 [label=""];
+    30 -> 31 [label=""];
+    31 -> 33 [label=""];
+    33 -> 34 [label=""];
+    34 -> -307 [label=")_[%28 = call i32 @lms_rand ( )]"
+               ,style=dashed
+               ,color=crimson];
+    34 -> -302 [label=")_[%24 = call i32 @lms_rand ( )]"
+               ,style=dashed
+               ,color=crimson];
+    34 -> -279 [label=")_[%8 = call i32 @lms_rand ( )]"
+               ,style=dashed
+               ,color=crimson];
+    34 -> -274 [label=")_[%4 = call i32 @lms_rand ( )]"
+               ,style=dashed
+               ,color=crimson];
+    38 -> 39 [label=""];
+    39 -> 40 [label=""];
+    40 -> 41 [label=""];
+    41 -> 42 [label=""];
+    42 -> 43 [label=""];
+    43 -> 44 [label=""];
+    44 -> 45 [label=""];
+    45 -> -45 [label="<call-to-return>"
+              ,style=dotted
+              ,color=forestgreen];
+    45 -> 114 [label="(_[%2 = call float @lms_sqrt ( double 2.0 )]"
+              ,style=dashed
+              ,color=deepskyblue];
+    47 -> 48 [label=""];
+    48 -> -48 [label="<call-to-return>"
+              ,style=dotted
+              ,color=forestgreen];
+    48 -> 114 [label="(_[%3 = call float @lms_sqrt ( double 12.0 )]"
+              ,style=dashed
+              ,color=deepskyblue];
+    50 -> 52 [label=""];
+    52 -> 53 [label=""];
+    53 -> 54 [label=""];
+    54 -> 56 [label=""];
+    56 -> 57 [label=""];
+    57 -> 58 [label=""];
+    58 -> 60 [label=""];
+    60 -> 61 [label=""];
+    61 -> 63 [label=""];
+    63 -> 65 [label=True];
+    63 -> 80 [label=False];
+    65 -> 66 [label=""];
+    66 -> 67 [label=""];
+    67 -> 68 [label=""];
+    68 -> -68 [label="<call-to-return>"
+              ,style=dotted
+              ,color=forestgreen];
+    68 -> 188 [label="(_[%14 = call float @lms_sin ( double %13 )]"
+              ,style=dashed
+              ,color=deepskyblue];
+    69 -> 70 [label=""];
+    70 -> -70 [label="<call-to-return>"
+              ,style=dotted
+              ,color=forestgreen];
+    70 -> 265 [label="(_[%16 = call float @gaussian ( )]"
+              ,style=dashed
+              ,color=deepskyblue];
+    71 -> 72 [label=""];
+    72 -> 73 [label=""];
+    73 -> 74 [label=""];
+    74 -> 75 [label=""];
+    75 -> 76 [label=""];
+    76 -> 77 [label=""];
+    77 -> 78 [label=""];
+    78 -> 60 [label=""];
+    80 -> 81 [label=""];
+    81 -> 82 [label=""];
+    82 -> 84 [label=""];
+    84 -> 85 [label=""];
+    85 -> 86 [label=""];
+    86 -> 87 [label=""];
+    87 -> 88 [label=""];
+    88 -> 89 [label=""];
+    89 -> 91 [label=""];
+    91 -> 92 [label=""];
+    92 -> 93 [label=""];
+    93 -> 94 [label=""];
+    94 -> 96 [label=True];
+    94 -> 110 [label=False];
+    96 -> 97 [label=""];
+    97 -> 98 [label=""];
+    98 -> 99 [label=""];
+    99 -> 100 [label=""];
+    100 -> -100 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    100 -> 353 [label="(_[%37 = call float @lms ( float %29, float %35, float* float* getelementptr ( [21 x float]* @main.b ,  i32 0, i32 0 ), i32 20, float %36, float 9.999999776482582e-3 )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    104 -> 105 [label=""];
+    105 -> 106 [label=""];
+    106 -> 107 [label=""];
+    107 -> 108 [label=""];
+    108 -> 91 [label=""];
+    114 -> 115 [label=""];
+    115 -> 116 [label=""];
+    116 -> 117 [label=""];
+    117 -> 118 [label=""];
+    118 -> 119 [label=""];
+    119 -> 120 [label=""];
+    120 -> 121 [label=""];
+    121 -> 122 [label=""];
+    122 -> 124 [label=""];
+    124 -> 125 [label=""];
+    125 -> 127 [label=""];
+    127 -> 128 [label=""];
+    128 -> 129 [label=""];
+    129 -> 130 [label=""];
+    130 -> 132 [label=True];
+    130 -> 135 [label=False];
+    132 -> 133 [label=""];
+    133 -> 183 [label=""];
+    135 -> 136 [label=""];
+    136 -> 138 [label=""];
+    138 -> 139 [label=""];
+    139 -> 140 [label=""];
+    140 -> 141 [label=""];
+    141 -> 142 [label=""];
+    142 -> 144 [label=True];
+    142 -> 181 [label=False];
+    144 -> 145 [label=""];
+    145 -> 147 [label=False];
+    145 -> 173 [label=True];
+    147 -> 148 [label=""];
+    148 -> 149 [label=""];
+    149 -> 150 [label=""];
+    150 -> 151 [label=""];
+    151 -> 152 [label=""];
+    152 -> 153 [label=""];
+    153 -> 154 [label=""];
+    154 -> 155 [label=""];
+    155 -> 156 [label=""];
+    156 -> 157 [label=""];
+    157 -> 158 [label=""];
+    158 -> 159 [label=""];
+    159 -> 160 [label=""];
+    160 -> 161 [label=""];
+    161 -> 162 [label=""];
+    162 -> -162 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    162 -> 458 [label="(_[%26 = call float @lms_fabs ( float %25 )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    163 -> 164 [label=""];
+    164 -> 165 [label=""];
+    165 -> 167 [label=True];
+    165 -> 170 [label=False];
+    167 -> 168 [label=""];
+    168 -> 170 [label=""];
+    170 -> 171 [label=""];
+    171 -> 175 [label=""];
+    173 -> 175 [label=""];
+    175 -> 176 [label=""];
+    176 -> 177 [label=""];
+    177 -> 178 [label=""];
+    178 -> 179 [label=""];
+    179 -> 138 [label=""];
+    181 -> 183 [label=""];
+    183 -> 184 [label=""];
+    184 -> -329 [label=")_[%44 = call float @lms_sqrt ( double %43 )]"
+                ,style=dashed
+                ,color=crimson];
+    184 -> -48 [label=")_[%3 = call float @lms_sqrt ( double 12.0 )]"
+               ,style=dashed
+               ,color=crimson];
+    184 -> -45 [label=")_[%2 = call float @lms_sqrt ( double 2.0 )]"
+               ,style=dashed
+               ,color=crimson];
+    188 -> 189 [label=""];
+    189 -> 190 [label=""];
+    190 -> 191 [label=""];
+    191 -> 192 [label=""];
+    192 -> 193 [label=""];
+    193 -> 194 [label=""];
+    194 -> 195 [label=""];
+    195 -> 197 [label=""];
+    197 -> 198 [label=""];
+    198 -> 199 [label=""];
+    199 -> 201 [label=""];
+    201 -> 203 [label=True];
+    201 -> 208 [label=False];
+    203 -> 204 [label=""];
+    204 -> 205 [label=""];
+    205 -> 206 [label=""];
+    206 -> 197 [label=""];
+    208 -> 210 [label=""];
+    210 -> 211 [label=""];
+    211 -> 212 [label=""];
+    212 -> 214 [label=""];
+    214 -> 216 [label=True];
+    214 -> 221 [label=False];
+    216 -> 217 [label=""];
+    217 -> 218 [label=""];
+    218 -> 219 [label=""];
+    219 -> 210 [label=""];
+    221 -> 222 [label=""];
+    222 -> 223 [label=""];
+    223 -> 225 [label=""];
+    225 -> 226 [label=""];
+    226 -> 227 [label=""];
+    227 -> 229 [label=""];
+    229 -> 230 [label=""];
+    230 -> 231 [label=""];
+    231 -> 232 [label=""];
+    232 -> 233 [label=""];
+    233 -> 235 [label=""];
+    235 -> 236 [label=""];
+    236 -> 238 [label=""];
+    238 -> 239 [label=""];
+    239 -> 240 [label=""];
+    240 -> 241 [label=""];
+    241 -> -241 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    241 -> 458 [label="(_[%29 = call float @lms_fabs ( float %28 )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    242 -> 243 [label=""];
+    243 -> 244 [label=""];
+    244 -> 246 [label=True];
+    244 -> 262 [label=False];
+    246 -> 247 [label=""];
+    247 -> 248 [label=""];
+    248 -> 249 [label=""];
+    249 -> 251 [label=""];
+    251 -> 252 [label=""];
+    252 -> 253 [label=""];
+    253 -> 254 [label=""];
+    254 -> 255 [label=""];
+    255 -> 256 [label=""];
+    256 -> 257 [label=""];
+    257 -> 258 [label=""];
+    258 -> 259 [label=""];
+    259 -> 260 [label=""];
+    260 -> 238 [label=""];
+    262 -> -68 [label=")_[%14 = call float @lms_sin ( double %13 )]"
+               ,style=dashed
+               ,color=crimson];
+    265 -> 266 [label=""];
+    266 -> 267 [label=""];
+    267 -> 268 [label=""];
+    268 -> 269 [label=""];
+    269 -> 270 [label=""];
+    270 -> 271 [label=""];
+    271 -> 272 [label=""];
+    272 -> 274 [label=True];
+    272 -> 338 [label=False];
+    274 -> -274 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    274 -> 23 [label="(_[%4 = call i32 @lms_rand ( )]"
+              ,style=dashed
+              ,color=deepskyblue];
+    275 -> 276 [label=""];
+    276 -> 277 [label=""];
+    277 -> 278 [label=""];
+    278 -> 279 [label=""];
+    279 -> -279 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    279 -> 23 [label="(_[%8 = call i32 @lms_rand ( )]"
+              ,style=dashed
+              ,color=deepskyblue];
+    280 -> 281 [label=""];
+    281 -> 282 [label=""];
+    282 -> 283 [label=""];
+    283 -> 284 [label=""];
+    284 -> 285 [label=""];
+    285 -> 286 [label=""];
+    286 -> 287 [label=""];
+    287 -> 288 [label=""];
+    288 -> 289 [label=""];
+    289 -> 290 [label=""];
+    290 -> 291 [label=""];
+    291 -> 292 [label=""];
+    292 -> 293 [label=""];
+    293 -> 295 [label=""];
+    295 -> 296 [label=""];
+    296 -> 297 [label=""];
+    297 -> 298 [label=""];
+    298 -> 300 [label=""];
+    300 -> 302 [label=True];
+    300 -> 323 [label=False];
+    302 -> -302 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    302 -> 23 [label="(_[%24 = call i32 @lms_rand ( )]"
+              ,style=dashed
+              ,color=deepskyblue];
+    303 -> 304 [label=""];
+    304 -> 305 [label=""];
+    305 -> 306 [label=""];
+    306 -> 307 [label=""];
+    307 -> -307 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    307 -> 23 [label="(_[%28 = call i32 @lms_rand ( )]"
+              ,style=dashed
+              ,color=deepskyblue];
+    308 -> 309 [label=""];
+    309 -> 310 [label=""];
+    310 -> 311 [label=""];
+    311 -> 312 [label=""];
+    312 -> 313 [label=""];
+    313 -> 314 [label=""];
+    314 -> 315 [label=""];
+    315 -> 316 [label=""];
+    316 -> 317 [label=""];
+    317 -> 318 [label=""];
+    318 -> 319 [label=""];
+    319 -> 320 [label=""];
+    320 -> 321 [label=""];
+    321 -> 295 [label=""];
+    323 -> 324 [label=""];
+    324 -> -324 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    324 -> 450 [label="(_[%40 = call float @lms_log ( double %39 )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    326 -> 327 [label=""];
+    327 -> 328 [label=""];
+    328 -> 329 [label=""];
+    329 -> -329 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    329 -> 114 [label="(_[%44 = call float @lms_sqrt ( double %43 )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    330 -> 331 [label=""];
+    331 -> 332 [label=""];
+    332 -> 333 [label=""];
+    333 -> 334 [label=""];
+    334 -> 335 [label=""];
+    335 -> 336 [label=""];
+    336 -> 343 [label=""];
+    338 -> 339 [label=""];
+    339 -> 340 [label=""];
+    340 -> 341 [label=""];
+    341 -> 343 [label=""];
+    343 -> 344 [label=""];
+    344 -> -70 [label=")_[%16 = call float @gaussian ( )]"
+               ,style=dashed
+               ,color=crimson];
+    353 -> 354 [label=""];
+    354 -> 355 [label=""];
+    355 -> 356 [label=""];
+    356 -> 357 [label=""];
+    357 -> 358 [label=""];
+    358 -> 359 [label=""];
+    359 -> 360 [label=""];
+    360 -> 361 [label=""];
+    361 -> 362 [label=""];
+    362 -> 363 [label=""];
+    363 -> 364 [label=""];
+    364 -> 365 [label=""];
+    365 -> 366 [label=""];
+    366 -> 367 [label=""];
+    367 -> 368 [label=""];
+    368 -> 372 [label=""];
+    372 -> 373 [label=""];
+    373 -> 374 [label=""];
+    374 -> 375 [label=""];
+    375 -> 376 [label=""];
+    376 -> 377 [label=""];
+    377 -> 379 [label=""];
+    379 -> 380 [label=""];
+    380 -> 381 [label=""];
+    381 -> 382 [label=""];
+    382 -> 384 [label=True];
+    382 -> 396 [label=False];
+    384 -> 385 [label=""];
+    385 -> 386 [label=""];
+    386 -> 387 [label=""];
+    387 -> 388 [label=""];
+    388 -> 389 [label=""];
+    389 -> 390 [label=""];
+    390 -> 391 [label=""];
+    391 -> 392 [label=""];
+    392 -> 393 [label=""];
+    393 -> 394 [label=""];
+    394 -> 379 [label=""];
+    396 -> 397 [label=""];
+    397 -> 398 [label=""];
+    398 -> 399 [label=""];
+    399 -> 400 [label=""];
+    400 -> 401 [label=""];
+    401 -> 402 [label=""];
+    402 -> 403 [label=""];
+    403 -> 404 [label=""];
+    404 -> 405 [label=""];
+    405 -> 406 [label=""];
+    406 -> 407 [label=""];
+    407 -> 408 [label=""];
+    408 -> 409 [label=""];
+    409 -> 411 [label=""];
+    411 -> 412 [label=""];
+    412 -> 413 [label=""];
+    413 -> 415 [label=True];
+    413 -> 427 [label=False];
+    415 -> 416 [label=""];
+    416 -> 417 [label=""];
+    417 -> 418 [label=""];
+    418 -> 419 [label=""];
+    419 -> 420 [label=""];
+    420 -> 421 [label=""];
+    421 -> 422 [label=""];
+    422 -> 423 [label=""];
+    423 -> 424 [label=""];
+    424 -> 425 [label=""];
+    425 -> 411 [label=""];
+    427 -> 428 [label=""];
+    428 -> 430 [label=""];
+    430 -> 431 [label=""];
+    431 -> 432 [label=""];
+    432 -> 434 [label=True];
+    432 -> 446 [label=False];
+    434 -> 435 [label=""];
+    435 -> 436 [label=""];
+    436 -> 437 [label=""];
+    437 -> 438 [label=""];
+    438 -> 439 [label=""];
+    439 -> 440 [label=""];
+    440 -> 442 [label=""];
+    442 -> 443 [label=""];
+    443 -> 444 [label=""];
+    444 -> 430 [label=""];
+    446 -> -100 [label=")_[%37 = call float @lms ( float %29, float %35, float* float* getelementptr ( [21 x float]* @main.b ,  i32 0, i32 0 ), i32 20, float %36, float 9.999999776482582e-3 )]"
+                ,style=dashed
+                ,color=crimson];
+    450 -> 451 [label=""];
+    451 -> 452 [label=""];
+    452 -> 453 [label=""];
+    453 -> -324 [label=")_[%40 = call float @lms_log ( double %39 )]"
+                ,style=dashed
+                ,color=crimson];
+    458 -> 459 [label=""];
+    459 -> 460 [label=""];
+    460 -> 461 [label=""];
+    461 -> 462 [label=""];
+    462 -> 464 [label=True];
+    462 -> 467 [label=False];
+    464 -> 465 [label=""];
+    465 -> 471 [label=""];
+    467 -> 468 [label=""];
+    468 -> 469 [label=""];
+    469 -> 471 [label=""];
+    471 -> 472 [label=""];
+    472 -> -241 [label=")_[%29 = call float @lms_fabs ( float %28 )]"
+                ,style=dashed
+                ,color=crimson];
+    472 -> -162 [label=")_[%26 = call float @lms_fabs ( float %25 )]"
+                ,style=dashed
+                ,color=crimson];
+}

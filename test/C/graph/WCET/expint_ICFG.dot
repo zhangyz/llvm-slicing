@@ -1,0 +1,494 @@
+digraph {
+    subgraph cluster_176 {
+        graph [label="@llvm.dbg.declare"];
+        176 [label="ExternalFunction: @llvm.dbg.declare"];
+    }
+    subgraph cluster_1 {
+        graph [label="@main"];
+        subgraph cluster_2 {
+            graph [label="%0"];
+            -3 [label=ReturnNode,shape=box];
+            3 [label="%1 = call i64 @expint ( i32 50, i64 1 )"
+              ,shape=box];
+            6 [label="ret void",shape=box];
+        }
+    }
+    subgraph cluster_7 {
+        graph [label="@expint"];
+        subgraph cluster_10 {
+            graph [label="%0"];
+            12 [label="%1 = alloca i64 , align 8"
+               ,shape=box];
+            13 [label="%2 = alloca i32 , align 4"
+               ,shape=box];
+            14 [label="%3 = alloca i64 , align 8"
+               ,shape=box];
+            15 [label="%i = alloca i32 , align 4"
+               ,shape=box];
+            16 [label="%ii = alloca i32 , align 4"
+               ,shape=box];
+            17 [label="%nm1 = alloca i32 , align 4"
+               ,shape=box];
+            18 [label="%a = alloca i64 , align 8"
+               ,shape=box];
+            19 [label="%b = alloca i64 , align 8"
+               ,shape=box];
+            20 [label="%c = alloca i64 , align 8"
+               ,shape=box];
+            21 [label="%d = alloca i64 , align 8"
+               ,shape=box];
+            22 [label="%del = alloca i64 , align 8"
+               ,shape=box];
+            23 [label="%fact = alloca i64 , align 8"
+               ,shape=box];
+            24 [label="%h = alloca i64 , align 8"
+               ,shape=box];
+            25 [label="%psi = alloca i64 , align 8"
+               ,shape=box];
+            26 [label="%ans = alloca i64 , align 8"
+               ,shape=box];
+            27 [label="store i32 %n , i32* %2 , align 4"
+               ,shape=box];
+            28 [label="store i64 %x , i64* %3 , align 8"
+               ,shape=box];
+            29 [label="%4 = sub nsw i32 %n , 1"
+               ,shape=box];
+            30 [label="store i32 %4 , i32* %nm1 , align 4"
+               ,shape=box];
+            31 [label="%5 = icmp sgt i64 %x , 1"
+               ,shape=box];
+            32 [label="br i1 %5 , label %6 , label %36"
+               ,shape=box];
+        }
+        subgraph cluster_33 {
+            graph [label="%6"];
+            34 [label="%7 = sext i32 %n to i64"
+               ,shape=box];
+            35 [label="%8 = add nsw i64 %x , %7"
+               ,shape=box];
+            36 [label="store i64 %8 , i64* %b , align 8"
+               ,shape=box];
+            38 [label="store i64 2000000 , i64* %c , align 8"
+               ,shape=box];
+            40 [label="store i64 30000000 , i64* %d , align 8"
+               ,shape=box];
+            41 [label="store i64 30000000 , i64* %h , align 8"
+               ,shape=box];
+            42 [label="store i32 1 , i32* %i , align 4"
+               ,shape=box];
+            43 [label="br label %9"
+               ,shape=box];
+        }
+        subgraph cluster_44 {
+            graph [label="%9"];
+            45 [label="%10 = phi i64 [ [%28, %33], [30000000, %6] ]"
+               ,shape=box];
+            46 [label="%11 = phi i64 [ [%26, %33], [2000000, %6] ]"
+               ,shape=box];
+            47 [label="%12 = phi i64 [ [%24, %33], [30000000, %6] ]"
+               ,shape=box];
+            48 [label="%13 = phi i64 [ [%21, %33], [%8, %6] ]"
+               ,shape=box];
+            49 [label="%14 = phi i32 [ [%34, %33], [1, %6] ]"
+               ,shape=box];
+            50 [label="%15 = icmp sle i32 %14 , 100"
+               ,shape=box];
+            52 [label="br i1 %15 , label %16 , label %35"
+               ,shape=box];
+        }
+        subgraph cluster_53 {
+            graph [label="%16"];
+            55 [label="%17 = sub nsw i32 0 , %14"
+               ,shape=box];
+            56 [label="%18 = add nsw i32 %4 , %14"
+               ,shape=box];
+            57 [label="%19 = mul nsw i32 %17 , %18"
+               ,shape=box];
+            58 [label="%20 = sext i32 %19 to i64"
+               ,shape=box];
+            59 [label="store i64 %20 , i64* %a , align 8"
+               ,shape=box];
+            61 [label="%21 = add nsw i64 %13 , 2"
+               ,shape=box];
+            62 [label="store i64 %21 , i64* %b , align 8"
+               ,shape=box];
+            63 [label="%22 = mul nsw i64 %20 , %12"
+               ,shape=box];
+            64 [label="%23 = add nsw i64 %22 , %21"
+               ,shape=box];
+            66 [label="%24 = mul nsw i64 10 , %23"
+               ,shape=box];
+            67 [label="store i64 %24 , i64* %d , align 8"
+               ,shape=box];
+            68 [label="%25 = div i64 %20 , %11"
+               ,shape=box];
+            69 [label="%26 = add nsw i64 %21 , %25"
+               ,shape=box];
+            70 [label="store i64 %26 , i64* %c , align 8"
+               ,shape=box];
+            71 [label="%27 = mul nsw i64 %26 , %24"
+               ,shape=box];
+            72 [label="store i64 %27 , i64* %del , align 8"
+               ,shape=box];
+            73 [label="%28 = mul nsw i64 %10 , %27"
+               ,shape=box];
+            74 [label="store i64 %28 , i64* %h , align 8"
+               ,shape=box];
+            75 [label="%29 = icmp slt i64 %27 , 10000"
+               ,shape=box];
+            77 [label="br i1 %29 , label %30 , label %33"
+               ,shape=box];
+        }
+        subgraph cluster_78 {
+            graph [label="%30"];
+            80 [label="%31 = sub nsw i64 0 , %x"
+               ,shape=box];
+            81 [label="%32 = mul nsw i64 %28 , %31"
+               ,shape=box];
+            82 [label="store i64 %32 , i64* %ans , align 8"
+               ,shape=box];
+            83 [label="store i64 %32 , i64* %1"
+               ,shape=box];
+            84 [label="br label %77"
+               ,shape=box];
+        }
+        subgraph cluster_85 {
+            graph [label="%33"];
+            86 [label="%34 = add nsw i32 %14 , 1"
+               ,shape=box];
+            87 [label="store i32 %34 , i32* %i , align 4"
+               ,shape=box];
+            88 [label="br label %9"
+               ,shape=box];
+        }
+        subgraph cluster_89 {
+            graph [label="%35"];
+            90 [label="br label %75"
+               ,shape=box];
+        }
+        subgraph cluster_91 {
+            graph [label="%36"];
+            92 [label="%37 = icmp ne i32 %4 , 0"
+               ,shape=box];
+            95 [label="%38 = select i1 %37 , i32 2 , i32 1000"
+               ,shape=box];
+            96 [label="%39 = sext i32 %38 to i64"
+               ,shape=box];
+            97 [label="store i64 %39 , i64* %ans , align 8"
+               ,shape=box];
+            98 [label="store i64 1 , i64* %fact , align 8"
+               ,shape=box];
+            99 [label="store i32 1 , i32* %i , align 4"
+               ,shape=box];
+            100 [label="br label %40"
+                ,shape=box];
+        }
+        subgraph cluster_101 {
+            graph [label="%40"];
+            102 [label="%41 = phi i64 [ [%49, %70], [1, %36] ]"
+                ,shape=box];
+            103 [label="%42 = phi i32 [ [%73, %70], [1, %36] ]"
+                ,shape=box];
+            104 [label="%43 = phi i64 [ [%72, %70], [%39, %36] ]"
+                ,shape=box];
+            105 [label="%44 = icmp sle i32 %42 , 100"
+                ,shape=box];
+            106 [label="br i1 %44 , label %45 , label %74"
+                ,shape=box];
+        }
+        subgraph cluster_107 {
+            graph [label="%45"];
+            108 [label="%46 = sub nsw i64 0 , %x"
+                ,shape=box];
+            109 [label="%47 = sext i32 %42 to i64"
+                ,shape=box];
+            110 [label="%48 = div i64 %46 , %47"
+                ,shape=box];
+            111 [label="%49 = mul nsw i64 %41 , %48"
+                ,shape=box];
+            112 [label="store i64 %49 , i64* %fact , align 8"
+                ,shape=box];
+            113 [label="%50 = icmp ne i32 %42 , %4"
+                ,shape=box];
+            114 [label="br i1 %50 , label %51 , label %56"
+                ,shape=box];
+        }
+        subgraph cluster_115 {
+            graph [label="%51"];
+            116 [label="%52 = sub nsw i64 0 , %49"
+                ,shape=box];
+            117 [label="%53 = sub nsw i32 %42 , %4"
+                ,shape=box];
+            118 [label="%54 = sext i32 %53 to i64"
+                ,shape=box];
+            119 [label="%55 = div i64 %52 , %54"
+                ,shape=box];
+            120 [label="store i64 %55 , i64* %del , align 8"
+                ,shape=box];
+            121 [label="br label %70"
+                ,shape=box];
+        }
+        subgraph cluster_122 {
+            graph [label="%56"];
+            124 [label="store i64 255 , i64* %psi , align 8"
+                ,shape=box];
+            125 [label="store i32 1 , i32* %ii , align 4"
+                ,shape=box];
+            126 [label="br label %57"
+                ,shape=box];
+        }
+        subgraph cluster_127 {
+            graph [label="%57"];
+            128 [label="%58 = phi i64 [ [%64, %61], [255, %56] ]"
+                ,shape=box];
+            129 [label="%59 = phi i32 [ [%65, %61], [1, %56] ]"
+                ,shape=box];
+            130 [label="%60 = icmp sle i32 %59 , %4"
+                ,shape=box];
+            131 [label="br i1 %60 , label %61 , label %66"
+                ,shape=box];
+        }
+        subgraph cluster_132 {
+            graph [label="%61"];
+            133 [label="%62 = add nsw i32 %59 , %4"
+                ,shape=box];
+            134 [label="%63 = sext i32 %62 to i64"
+                ,shape=box];
+            135 [label="%64 = add nsw i64 %58 , %63"
+                ,shape=box];
+            136 [label="store i64 %64 , i64* %psi , align 8"
+                ,shape=box];
+            137 [label="%65 = add nsw i32 %59 , 1"
+                ,shape=box];
+            138 [label="store i32 %65 , i32* %ii , align 4"
+                ,shape=box];
+            139 [label="br label %57"
+                ,shape=box];
+        }
+        subgraph cluster_140 {
+            graph [label="%66"];
+            -141 [label=ReturnNode
+                 ,shape=box];
+            141 [label="%67 = call i64 @foo ( i64 %x )"
+                ,shape=box];
+            142 [label="%68 = mul nsw i64 %49 , %67"
+                ,shape=box];
+            143 [label="%69 = add nsw i64 %58 , %68"
+                ,shape=box];
+            144 [label="store i64 %69 , i64* %del , align 8"
+                ,shape=box];
+            145 [label="br label %70"
+                ,shape=box];
+        }
+        subgraph cluster_146 {
+            graph [label="%70"];
+            147 [label="%71 = phi i64 [ [%69, %66], [%55, %51] ]"
+                ,shape=box];
+            148 [label="%72 = add nsw i64 %43 , %71"
+                ,shape=box];
+            149 [label="store i64 %72 , i64* %ans , align 8"
+                ,shape=box];
+            150 [label="%73 = add nsw i32 %42 , 1"
+                ,shape=box];
+            151 [label="store i32 %73 , i32* %i , align 4"
+                ,shape=box];
+            152 [label="br label %40"
+                ,shape=box];
+        }
+        subgraph cluster_153 {
+            graph [label="%74"];
+            154 [label="br label %75"
+                ,shape=box];
+        }
+        subgraph cluster_155 {
+            graph [label="%75"];
+            156 [label="%76 = phi i64 [ [%43, %74], [undef, %35] ]"
+                ,shape=box];
+            158 [label="store i64 %76 , i64* %1"
+                ,shape=box];
+            159 [label="br label %77"
+                ,shape=box];
+        }
+        subgraph cluster_160 {
+            graph [label="%77"];
+            161 [label="%78 = phi i64 [ [%76, %75], [%32, %30] ]"
+                ,shape=box];
+            162 [label="ret i64 %78"
+                ,shape=box];
+        }
+    }
+    subgraph cluster_163 {
+        graph [label="@foo"];
+        subgraph cluster_165 {
+            graph [label="%0"];
+            166 [label="%1 = alloca i64 , align 8"
+                ,shape=box];
+            167 [label="store i64 %x , i64* %1 , align 8"
+                ,shape=box];
+            168 [label="%2 = mul nsw i64 %x , %x"
+                ,shape=box];
+            170 [label="%3 = mul nsw i64 8 , %x"
+                ,shape=box];
+            171 [label="%4 = add nsw i64 %2 , %3"
+                ,shape=box];
+            173 [label="%5 = sub nsw i64 4 , %x"
+                ,shape=box];
+            174 [label="%6 = shl i64 %4 , %5"
+                ,shape=box];
+            175 [label="ret i64 %6"
+                ,shape=box];
+        }
+    }
+    -141 -> 142 [label=""];
+    -3 -> 6 [label=""];
+    3 -> -3 [label="<call-to-return>"
+            ,style=dotted
+            ,color=forestgreen];
+    3 -> 12 [label="(_[%1 = call i64 @expint ( i32 50, i64 1 )]"
+            ,style=dashed
+            ,color=deepskyblue];
+    12 -> 13 [label=""];
+    13 -> 14 [label=""];
+    14 -> 15 [label=""];
+    15 -> 16 [label=""];
+    16 -> 17 [label=""];
+    17 -> 18 [label=""];
+    18 -> 19 [label=""];
+    19 -> 20 [label=""];
+    20 -> 21 [label=""];
+    21 -> 22 [label=""];
+    22 -> 23 [label=""];
+    23 -> 24 [label=""];
+    24 -> 25 [label=""];
+    25 -> 26 [label=""];
+    26 -> 27 [label=""];
+    27 -> 28 [label=""];
+    28 -> 29 [label=""];
+    29 -> 30 [label=""];
+    30 -> 31 [label=""];
+    31 -> 32 [label=""];
+    32 -> 34 [label=True];
+    32 -> 92 [label=False];
+    34 -> 35 [label=""];
+    35 -> 36 [label=""];
+    36 -> 38 [label=""];
+    38 -> 40 [label=""];
+    40 -> 41 [label=""];
+    41 -> 42 [label=""];
+    42 -> 43 [label=""];
+    43 -> 45 [label=""];
+    45 -> 46 [label=""];
+    46 -> 47 [label=""];
+    47 -> 48 [label=""];
+    48 -> 49 [label=""];
+    49 -> 50 [label=""];
+    50 -> 52 [label=""];
+    52 -> 55 [label=True];
+    52 -> 90 [label=False];
+    55 -> 56 [label=""];
+    56 -> 57 [label=""];
+    57 -> 58 [label=""];
+    58 -> 59 [label=""];
+    59 -> 61 [label=""];
+    61 -> 62 [label=""];
+    62 -> 63 [label=""];
+    63 -> 64 [label=""];
+    64 -> 66 [label=""];
+    66 -> 67 [label=""];
+    67 -> 68 [label=""];
+    68 -> 69 [label=""];
+    69 -> 70 [label=""];
+    70 -> 71 [label=""];
+    71 -> 72 [label=""];
+    72 -> 73 [label=""];
+    73 -> 74 [label=""];
+    74 -> 75 [label=""];
+    75 -> 77 [label=""];
+    77 -> 80 [label=True];
+    77 -> 86 [label=False];
+    80 -> 81 [label=""];
+    81 -> 82 [label=""];
+    82 -> 83 [label=""];
+    83 -> 84 [label=""];
+    84 -> 161 [label=""];
+    86 -> 87 [label=""];
+    87 -> 88 [label=""];
+    88 -> 45 [label=""];
+    90 -> 156 [label=""];
+    92 -> 95 [label=""];
+    95 -> 96 [label=""];
+    96 -> 97 [label=""];
+    97 -> 98 [label=""];
+    98 -> 99 [label=""];
+    99 -> 100 [label=""];
+    100 -> 102 [label=""];
+    102 -> 103 [label=""];
+    103 -> 104 [label=""];
+    104 -> 105 [label=""];
+    105 -> 106 [label=""];
+    106 -> 108 [label=True];
+    106 -> 154 [label=False];
+    108 -> 109 [label=""];
+    109 -> 110 [label=""];
+    110 -> 111 [label=""];
+    111 -> 112 [label=""];
+    112 -> 113 [label=""];
+    113 -> 114 [label=""];
+    114 -> 116 [label=True];
+    114 -> 124 [label=False];
+    116 -> 117 [label=""];
+    117 -> 118 [label=""];
+    118 -> 119 [label=""];
+    119 -> 120 [label=""];
+    120 -> 121 [label=""];
+    121 -> 147 [label=""];
+    124 -> 125 [label=""];
+    125 -> 126 [label=""];
+    126 -> 128 [label=""];
+    128 -> 129 [label=""];
+    129 -> 130 [label=""];
+    130 -> 131 [label=""];
+    131 -> 133 [label=True];
+    131 -> 141 [label=False];
+    133 -> 134 [label=""];
+    134 -> 135 [label=""];
+    135 -> 136 [label=""];
+    136 -> 137 [label=""];
+    137 -> 138 [label=""];
+    138 -> 139 [label=""];
+    139 -> 128 [label=""];
+    141 -> -141 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    141 -> 166 [label="(_[%67 = call i64 @foo ( i64 %x )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    142 -> 143 [label=""];
+    143 -> 144 [label=""];
+    144 -> 145 [label=""];
+    145 -> 147 [label=""];
+    147 -> 148 [label=""];
+    148 -> 149 [label=""];
+    149 -> 150 [label=""];
+    150 -> 151 [label=""];
+    151 -> 152 [label=""];
+    152 -> 102 [label=""];
+    154 -> 156 [label=""];
+    156 -> 158 [label=""];
+    158 -> 159 [label=""];
+    159 -> 161 [label=""];
+    161 -> 162 [label=""];
+    162 -> -3 [label=")_[%1 = call i64 @expint ( i32 50, i64 1 )]"
+              ,style=dashed
+              ,color=crimson];
+    166 -> 167 [label=""];
+    167 -> 168 [label=""];
+    168 -> 170 [label=""];
+    170 -> 171 [label=""];
+    171 -> 173 [label=""];
+    173 -> 174 [label=""];
+    174 -> 175 [label=""];
+    175 -> -141 [label=")_[%67 = call i64 @foo ( i64 %x )]"
+                ,style=dashed
+                ,color=crimson];
+}

@@ -1,0 +1,26 @@
+
+Forward Static SliceTable:
+	#Insts_sliced = 912.0 (Average: 46)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ ans@icrc1          {"WCET/crc.c: [60,64,66]"}
+ crc@icrc           {"WCET/crc.c: [77,89,95,98,100,103,106,108,120,121,122,123]"}
+ crc@icrc1          {"WCET/crc.c: [60,63,64,66,68,83,95,98,100,103,106,108,120,121,122,123]"}
+ cword@icrc         {"WCET/crc.c: [77,87,89,100]"}
+ i1@main            {"WCET/crc.c: [120]"}
+ i2@main            {"WCET/crc.c: [123]"}
+ i@icrc1            {"WCET/crc.c: [62]"}
+ icrc.icrctb        {"WCET/crc.c: [83,95,98,100,103,106,108,120,121,122,123]"}
+ icrc.init          {"WCET/crc.c: [80,81,82,87,88,89,95,98,100,103,106,108,120,121,122,123]"}
+ icrc.it            {"WCET/crc.c: [84,89,95,98,100,103,106,108,120,121,122,123]"}
+ icrc.rchr          {"WCET/crc.c: [84,89,95,98,100,103,106,108,120,121,122,123]"}
+ j@icrc             {"WCET/crc.c: [93]"}
+ jinit@icrc         {"WCET/crc.c: [87,88,89,95,98,100,103,106,108,120,121,122,123]"}
+ jrev@icrc          {"WCET/crc.c: [88,89,94,95,96,98,100,102,103,104,106,108,120,121,122,123]"}
+ len@icrc           {"WCET/crc.c: [93,94,95,96,98,100,102,103,104,106,108,120,121,122,123]"}
+ lin                {"WCET/crc.c: [95,98,100]"}
+ n@main             {"WCET/crc.c: [118]"}
+ onech@icrc1        {"WCET/crc.c: [60,63,64,66,68,83,95,98,100,103,106,108,120,121,122,123]"}
+ tmp1@icrc          {"WCET/crc.c: [95,98]"}
+ tmp2@icrc          {"WCET/crc.c: [103,106]"}

@@ -1,0 +1,9 @@
+
+Forward Static SliceTable:
+	#Insts_sliced = 103.0 (Average: 34)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ i@anka         {"WCET/recursion.c: [37,41,43,47,49,53,57,59,63,65]"}
+ i@fib          {"WCET/recursion.c: [13,17,19,21,23,25,27,77]"}
+ i@kalle        {"WCET/recursion.c: [37,41,43,47,49,53,57,59,63,65]"}

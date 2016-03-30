@@ -1,0 +1,15 @@
+digraph {
+    subgraph cluster_0 {
+        282 [label="extern @llvm.dbg.declare"];
+    }
+    subgraph cluster_1 {
+        6 [label="@main"];
+    }
+    subgraph cluster_2 {
+        72 [label="@ludcmp"];
+    }
+    subgraph cluster_3 {
+        -100 [label=unknown];
+    }
+    6 -> 72 [label=""];
+}

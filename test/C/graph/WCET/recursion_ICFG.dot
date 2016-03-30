@@ -1,0 +1,264 @@
+digraph {
+    subgraph cluster_77 {
+        graph [label="@llvm.dbg.declare"];
+        77 [label="ExternalFunction: @llvm.dbg.declare"];
+    }
+    subgraph cluster_2 {
+        graph [label="@fib"];
+        subgraph cluster_4 {
+            graph [label="%0"];
+            6 [label="%1 = alloca i32 , align 4"
+              ,shape=box];
+            7 [label="%2 = alloca i32 , align 4"
+              ,shape=box];
+            8 [label="store i32 %i , i32* %2 , align 4"
+              ,shape=box];
+            9 [label="%3 = icmp eq i32 %i , 0"
+              ,shape=box];
+            11 [label="br i1 %3 , label %4 , label %5"
+               ,shape=box];
+        }
+        subgraph cluster_12 {
+            graph [label="%4"];
+            13 [label="store i32 1 , i32* %1"
+               ,shape=box];
+            14 [label="br label %14"
+               ,shape=box];
+        }
+        subgraph cluster_15 {
+            graph [label="%5"];
+            16 [label="%6 = icmp eq i32 %i , 1"
+               ,shape=box];
+            17 [label="br i1 %6 , label %7 , label %8"
+               ,shape=box];
+        }
+        subgraph cluster_18 {
+            graph [label="%7"];
+            19 [label="store i32 1 , i32* %1"
+               ,shape=box];
+            20 [label="br label %14"
+               ,shape=box];
+        }
+        subgraph cluster_21 {
+            graph [label="%8"];
+            -26 [label=ReturnNode
+                ,shape=box];
+            -23 [label=ReturnNode
+                ,shape=box];
+            22 [label="%9 = sub nsw i32 %i , 1"
+               ,shape=box];
+            23 [label="%10 = call i32 @fib ( i32 %9 )"
+               ,shape=box];
+            25 [label="%11 = sub nsw i32 %i , 2"
+               ,shape=box];
+            26 [label="%12 = call i32 @fib ( i32 %11 )"
+               ,shape=box];
+            27 [label="%13 = add nsw i32 %10 , %12"
+               ,shape=box];
+            28 [label="store i32 %13 , i32* %1"
+               ,shape=box];
+            29 [label="br label %14"
+               ,shape=box];
+        }
+        subgraph cluster_30 {
+            graph [label="%14"];
+            31 [label="%15 = phi i32 [ [%13, %8], [1, %7], [1, %4] ]"
+               ,shape=box];
+            32 [label="ret i32 %15"
+               ,shape=box];
+        }
+    }
+    subgraph cluster_33 {
+        graph [label="@kalle"];
+        subgraph cluster_35 {
+            graph [label="%0"];
+            36 [label="%1 = alloca i32 , align 4"
+               ,shape=box];
+            37 [label="%2 = alloca i32 , align 4"
+               ,shape=box];
+            38 [label="store i32 %i , i32* %2 , align 4"
+               ,shape=box];
+            39 [label="%3 = icmp sle i32 %i , 0"
+               ,shape=box];
+            40 [label="br i1 %3 , label %4 , label %5"
+               ,shape=box];
+        }
+        subgraph cluster_41 {
+            graph [label="%4"];
+            42 [label="store i32 0 , i32* %1"
+               ,shape=box];
+            43 [label="br label %8"
+               ,shape=box];
+        }
+        subgraph cluster_44 {
+            graph [label="%5"];
+            -46 [label=ReturnNode
+                ,shape=box];
+            45 [label="%6 = sub nsw i32 %i , 1"
+               ,shape=box];
+            46 [label="%7 = call i32 @anka ( i32 %6 )"
+               ,shape=box];
+            47 [label="store i32 %7 , i32* %1"
+               ,shape=box];
+            48 [label="br label %8"
+               ,shape=box];
+        }
+        subgraph cluster_49 {
+            graph [label="%8"];
+            50 [label="%9 = phi i32 [ [%7, %5], [0, %4] ]"
+               ,shape=box];
+            51 [label="ret i32 %9"
+               ,shape=box];
+        }
+    }
+    subgraph cluster_52 {
+        graph [label="@anka"];
+        subgraph cluster_54 {
+            graph [label="%0"];
+            55 [label="%1 = alloca i32 , align 4"
+               ,shape=box];
+            56 [label="%2 = alloca i32 , align 4"
+               ,shape=box];
+            57 [label="store i32 %i , i32* %2 , align 4"
+               ,shape=box];
+            58 [label="%3 = icmp sle i32 %i , 0"
+               ,shape=box];
+            59 [label="br i1 %3 , label %4 , label %5"
+               ,shape=box];
+        }
+        subgraph cluster_60 {
+            graph [label="%4"];
+            61 [label="store i32 1 , i32* %1"
+               ,shape=box];
+            62 [label="br label %8"
+               ,shape=box];
+        }
+        subgraph cluster_63 {
+            graph [label="%5"];
+            -65 [label=ReturnNode
+                ,shape=box];
+            64 [label="%6 = sub nsw i32 %i , 1"
+               ,shape=box];
+            65 [label="%7 = call i32 @kalle ( i32 %6 )"
+               ,shape=box];
+            66 [label="store i32 %7 , i32* %1"
+               ,shape=box];
+            67 [label="br label %8"
+               ,shape=box];
+        }
+        subgraph cluster_68 {
+            graph [label="%8"];
+            69 [label="%9 = phi i32 [ [%7, %5], [1, %4] ]"
+               ,shape=box];
+            70 [label="ret i32 %9"
+               ,shape=box];
+        }
+    }
+    subgraph cluster_71 {
+        graph [label="@main"];
+        subgraph cluster_72 {
+            graph [label="%0"];
+            -73 [label=ReturnNode
+                ,shape=box];
+            73 [label="%1 = call i32 @fib ( i32 10 )"
+               ,shape=box];
+            75 [label="volatile store i32 %1 , i32* @In , align 4"
+               ,shape=box];
+            76 [label="ret void",shape=box];
+        }
+    }
+    -73 -> 75 [label=""];
+    -65 -> 66 [label=""];
+    -46 -> 47 [label=""];
+    -26 -> 27 [label=""];
+    -23 -> 25 [label=""];
+    6 -> 7 [label=""];
+    7 -> 8 [label=""];
+    8 -> 9 [label=""];
+    9 -> 11 [label=""];
+    11 -> 13 [label=True];
+    11 -> 16 [label=False];
+    13 -> 14 [label=""];
+    14 -> 31 [label=""];
+    16 -> 17 [label=""];
+    17 -> 19 [label=True];
+    17 -> 22 [label=False];
+    19 -> 20 [label=""];
+    20 -> 31 [label=""];
+    22 -> 23 [label=""];
+    23 -> -23 [label="<call-to-return>"
+              ,style=dotted
+              ,color=forestgreen];
+    23 -> 6 [label="(_[%10 = call i32 @fib ( i32 %9 )]"
+            ,style=dashed
+            ,color=deepskyblue];
+    25 -> 26 [label=""];
+    26 -> -26 [label="<call-to-return>"
+              ,style=dotted
+              ,color=forestgreen];
+    26 -> 6 [label="(_[%12 = call i32 @fib ( i32 %11 )]"
+            ,style=dashed
+            ,color=deepskyblue];
+    27 -> 28 [label=""];
+    28 -> 29 [label=""];
+    29 -> 31 [label=""];
+    31 -> 32 [label=""];
+    32 -> -73 [label=")_[%1 = call i32 @fib ( i32 10 )]"
+              ,style=dashed
+              ,color=crimson];
+    32 -> -26 [label=")_[%12 = call i32 @fib ( i32 %11 )]"
+              ,style=dashed
+              ,color=crimson];
+    32 -> -23 [label=")_[%10 = call i32 @fib ( i32 %9 )]"
+              ,style=dashed
+              ,color=crimson];
+    36 -> 37 [label=""];
+    37 -> 38 [label=""];
+    38 -> 39 [label=""];
+    39 -> 40 [label=""];
+    40 -> 42 [label=True];
+    40 -> 45 [label=False];
+    42 -> 43 [label=""];
+    43 -> 50 [label=""];
+    45 -> 46 [label=""];
+    46 -> -46 [label="<call-to-return>"
+              ,style=dotted
+              ,color=forestgreen];
+    46 -> 55 [label="(_[%7 = call i32 @anka ( i32 %6 )]"
+             ,style=dashed
+             ,color=deepskyblue];
+    47 -> 48 [label=""];
+    48 -> 50 [label=""];
+    50 -> 51 [label=""];
+    51 -> -65 [label=")_[%7 = call i32 @kalle ( i32 %6 )]"
+              ,style=dashed
+              ,color=crimson];
+    55 -> 56 [label=""];
+    56 -> 57 [label=""];
+    57 -> 58 [label=""];
+    58 -> 59 [label=""];
+    59 -> 61 [label=True];
+    59 -> 64 [label=False];
+    61 -> 62 [label=""];
+    62 -> 69 [label=""];
+    64 -> 65 [label=""];
+    65 -> -65 [label="<call-to-return>"
+              ,style=dotted
+              ,color=forestgreen];
+    65 -> 36 [label="(_[%7 = call i32 @kalle ( i32 %6 )]"
+             ,style=dashed
+             ,color=deepskyblue];
+    66 -> 67 [label=""];
+    67 -> 69 [label=""];
+    69 -> 70 [label=""];
+    70 -> -46 [label=")_[%7 = call i32 @anka ( i32 %6 )]"
+              ,style=dashed
+              ,color=crimson];
+    73 -> -73 [label="<call-to-return>"
+              ,style=dotted
+              ,color=forestgreen];
+    73 -> 6 [label="(_[%1 = call i32 @fib ( i32 10 )]"
+            ,style=dashed
+            ,color=deepskyblue];
+    75 -> 76 [label=""];
+}

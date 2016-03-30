@@ -1,0 +1,10 @@
+
+Backward Static SliceTable:
+	#Insts_sliced = 59.0 (Average: 15)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ i@main        {"WCET/fac.c: [14,20,21,22]"}
+ n@fac         {"WCET/fac.c: [6,8,11,14,20,21,22]"}
+ n@main        {"WCET/fac.c: [14,20]"}
+ s@main        {"WCET/fac.c: [6,8,11,14,17,20,21,22]"}

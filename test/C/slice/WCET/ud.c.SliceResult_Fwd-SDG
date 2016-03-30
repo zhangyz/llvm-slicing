@@ -1,0 +1,22 @@
+
+Forward Static SliceTable:
+	#Insts_sliced = 361.0 (Average: 23)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ a                  {"WCET/ud.c: [104,127,132,133,137,139,140,148,149,151,154,156,157]"}
+ b                  {"WCET/ud.c: [109,146,148,149,151,154,156,157]"}
+ chkerr@main        {"WCET/ud.c: [113]"}
+ i@ludcmp           {"WCET/ud.c: [152]"}
+ i@main             {"WCET/ud.c: [99]"}
+ j@ludcmp           {"WCET/ud.c: [135,147,155]"}
+ j@main             {"WCET/ud.c: [102]"}
+ k@ludcmp           {"WCET/ud.c: [131,138]"}
+ n@ludcmp           {"WCET/ud.c: [122,125,127,128,131,132,133,135,137,138,139,140,143,144,146,147,148,149,151,152,154,155,156,157,159]"}
+ n@main             {"WCET/ud.c: [93]"}
+ nmax@ludcmp        {"WCET/ud.c: []"}
+ nmax@main          {"WCET/ud.c: [93]"}
+ w@ludcmp           {"WCET/ud.c: [127,132,137,139,146,148,154,156]"}
+ w@main             {"WCET/ud.c: [101,107]"}
+ x                  {"WCET/ud.c: [151]"}
+ y@ludcmp           {"WCET/ud.c: [143,148,149,151,154,156,157]"}

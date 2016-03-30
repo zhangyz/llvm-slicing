@@ -1,0 +1,31 @@
+digraph {
+    subgraph cluster_0 {
+        166 [label="extern @llvm.dbg.declare"];
+    }
+    subgraph cluster_1 {
+        9 [label="@main"];
+    }
+    subgraph cluster_2 {
+        23 [label="@Test"];
+    }
+    subgraph cluster_3 {
+        81 [label="@Sum"];
+    }
+    subgraph cluster_4 {
+        43 [label="@Initialize"];
+    }
+    subgraph cluster_5 {
+        155 [label="@RandomInteger"];
+    }
+    subgraph cluster_6 {
+        19 [label="@InitSeed"];
+    }
+    subgraph cluster_7 {
+        -100 [label=unknown];
+    }
+    9 -> 19 [label=""];
+    9 -> 23 [label=""];
+    23 -> 43 [label=""];
+    23 -> 81 [label=""];
+    43 -> 155 [label=""];
+}

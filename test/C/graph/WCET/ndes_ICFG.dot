@@ -1,0 +1,2123 @@
+digraph {
+    subgraph cluster_898 {
+        graph [label="@llvm.dbg.declare"];
+        898 [label="ExternalFunction: @llvm.dbg.declare"];
+    }
+    subgraph cluster_899 {
+        graph [label="@llvm.memcpy.p0i8.p0i8.i64"];
+        899 [label="ExternalFunction: @llvm.memcpy.p0i8.p0i8.i64"];
+    }
+    subgraph cluster_203 {
+        graph [label="@des"];
+        subgraph cluster_211 {
+            graph [label="%0"];
+            212 [label="%inp = alloca %struct.IMMENSE , align 8"
+                ,shape=box];
+            213 [label="%key = alloca %struct.IMMENSE , align 8"
+                ,shape=box];
+            214 [label="%1 = alloca i32* , align 8"
+                ,shape=box];
+            215 [label="%2 = alloca i32 , align 4"
+                ,shape=box];
+            216 [label="%3 = alloca %struct.IMMENSE* , align 8"
+                ,shape=box];
+            217 [label="%ii = alloca i32 , align 4"
+                ,shape=box];
+            218 [label="%i = alloca i32 , align 4"
+                ,shape=box];
+            219 [label="%j = alloca i32 , align 4"
+                ,shape=box];
+            220 [label="%k = alloca i32 , align 4"
+                ,shape=box];
+            221 [label="%ic = alloca i64 , align 8"
+                ,shape=box];
+            222 [label="%shifter = alloca i64 , align 8"
+                ,shape=box];
+            223 [label="%itmp = alloca %struct.IMMENSE , align 8"
+                ,shape=box];
+            224 [label="%pg = alloca %struct.GREAT , align 8"
+                ,shape=box];
+            225 [label="%4 = bitcast %struct.IMMENSE* %inp to {i64, i64}*"
+                ,shape=box];
+            226 [label="%5 = getelementptr {i64, i64}* %4 , i32 0, i32 0"
+                ,shape=box];
+            227 [label="store i64 %inp.coerce0 , i64* %5"
+                ,shape=box];
+            228 [label="%6 = getelementptr {i64, i64}* %4 , i32 0, i32 1"
+                ,shape=box];
+            229 [label="store i64 %inp.coerce1 , i64* %6"
+                ,shape=box];
+            230 [label="%7 = bitcast %struct.IMMENSE* %key to {i64, i64}*"
+                ,shape=box];
+            231 [label="%8 = getelementptr {i64, i64}* %7 , i32 0, i32 0"
+                ,shape=box];
+            232 [label="store i64 %key.coerce0 , i64* %8"
+                ,shape=box];
+            233 [label="%9 = getelementptr {i64, i64}* %7 , i32 0, i32 1"
+                ,shape=box];
+            234 [label="store i64 %key.coerce1 , i64* %9"
+                ,shape=box];
+            235 [label="store i32* %newkey , i32** %1 , align 8"
+                ,shape=box];
+            236 [label="store i32 %isw , i32* %2 , align 4"
+                ,shape=box];
+            237 [label="store %struct.IMMENSE* %out , %struct.IMMENSE** %3 , align 8"
+                ,shape=box];
+            238 [label="%10 = load i32* @des.initflag , align 4"
+                ,shape=box];
+            239 [label="%11 = icmp ne i32 %10 , 0"
+                ,shape=box];
+            240 [label="br i1 %11 , label %12 , label %24"
+                ,shape=box];
+        }
+        subgraph cluster_241 {
+            graph [label="%12"];
+            242 [label="store i32 0 , i32* @des.initflag , align 4"
+                ,shape=box];
+            244 [label="store i64 1 , i64* %shifter , align 8"
+                ,shape=box];
+            247 [label="store i64 1 , i64* i64* getelementptr ( [33 x i64]* @bit ,  i32 0, i64 1 ) , align 8"
+                ,shape=box];
+            248 [label="store i32 2 , i32* %j , align 4"
+                ,shape=box];
+            249 [label="br label %14"
+                ,shape=box];
+        }
+        subgraph cluster_250 {
+            graph [label="%14"];
+            251 [label="%15 = phi i64 [ [%19, %18], [1, %12] ]"
+                ,shape=box];
+            252 [label="%16 = phi i32 [ [%22, %18], [2, %12] ]"
+                ,shape=box];
+            253 [label="%17 = icmp sle i32 %16 , 32"
+                ,shape=box];
+            254 [label="br i1 %17 , label %18 , label %23"
+                ,shape=box];
+        }
+        subgraph cluster_255 {
+            graph [label="%18"];
+            256 [label="%19 = shl i64 %15 , 1"
+                ,shape=box];
+            257 [label="store i64 %19 , i64* %shifter , align 8"
+                ,shape=box];
+            258 [label="%20 = sext i32 %16 to i64"
+                ,shape=box];
+            259 [label="%21 = getelementptr inbounds [33 x i64]* @bit , i32 0, i64 %20"
+                ,shape=box];
+            260 [label="store i64 %19 , i64* %21 , align 8"
+                ,shape=box];
+            261 [label="%22 = add nsw i32 %16 , 1"
+                ,shape=box];
+            262 [label="store i32 %22 , i32* %j , align 4"
+                ,shape=box];
+            263 [label="br label %14"
+                ,shape=box];
+        }
+        subgraph cluster_264 {
+            graph [label="%23"];
+            265 [label="br label %24"
+                ,shape=box];
+        }
+        subgraph cluster_266 {
+            graph [label="%24"];
+            267 [label="%25 = load i32* %newkey , align 4"
+                ,shape=box];
+            268 [label="%26 = icmp ne i32 %25 , 0"
+                ,shape=box];
+            269 [label="br i1 %26 , label %27 , label %64"
+                ,shape=box];
+        }
+        subgraph cluster_270 {
+            graph [label="%27"];
+            271 [label="store i32 0 , i32* %newkey , align 4"
+                ,shape=box];
+            275 [label="store i64 0 , i64* i64* getelementptr ( %struct.IMMENSE* @icd ,  i32 0, i32 0 ) , align 8"
+                ,shape=box];
+            278 [label="store i64 0 , i64* i64* getelementptr ( %struct.IMMENSE* @icd ,  i32 0, i32 1 ) , align 8"
+                ,shape=box];
+            279 [label="store i32 28 , i32* %j , align 4"
+                ,shape=box];
+            281 [label="store i32 56 , i32* %k , align 4"
+                ,shape=box];
+            282 [label="br label %30"
+                ,shape=box];
+        }
+        subgraph cluster_283 {
+            graph [label="%30"];
+            284 [label="%31 = phi i32 [ [%52, %34], [56, %27] ]"
+                ,shape=box];
+            285 [label="%32 = phi i32 [ [%51, %34], [28, %27] ]"
+                ,shape=box];
+            286 [label="%33 = icmp sge i32 %32 , 1"
+                ,shape=box];
+            287 [label="br i1 %33 , label %34 , label %53"
+                ,shape=box];
+        }
+        subgraph cluster_288 {
+            graph [label="%34"];
+            -306 [label=ReturnNode
+                 ,shape=box];
+            -296 [label=ReturnNode
+                 ,shape=box];
+            289 [label="%35 = load i64* i64* getelementptr ( %struct.IMMENSE* @icd ,  i32 0, i32 1 ) , align 8"
+                ,shape=box];
+            290 [label="%36 = shl i64 %35 , 1"
+                ,shape=box];
+            291 [label="store i64 %36 , i64* i64* getelementptr ( %struct.IMMENSE* @icd ,  i32 0, i32 1 ) , align 8"
+                ,shape=box];
+            292 [label="%37 = sext i32 %32 to i64"
+                ,shape=box];
+            293 [label="%38 = getelementptr inbounds [57 x i8]* @ipc1 , i32 0, i64 %37"
+                ,shape=box];
+            294 [label="%39 = load i8* %38 , align 1"
+                ,shape=box];
+            295 [label="%40 = sext i8 %39 to i32"
+                ,shape=box];
+            296 [label="%41 = call i64 @getbit ( i64 %key.coerce0, i64 %key.coerce1, i32 %40, i32 32 )"
+                ,shape=box];
+            297 [label="%42 = or i64 %36 , %41"
+                ,shape=box];
+            298 [label="store i64 %42 , i64* i64* getelementptr ( %struct.IMMENSE* @icd ,  i32 0, i32 1 ) , align 8"
+                ,shape=box];
+            299 [label="%43 = load i64* i64* getelementptr ( %struct.IMMENSE* @icd ,  i32 0, i32 0 ) , align 8"
+                ,shape=box];
+            300 [label="%44 = shl i64 %43 , 1"
+                ,shape=box];
+            301 [label="store i64 %44 , i64* i64* getelementptr ( %struct.IMMENSE* @icd ,  i32 0, i32 0 ) , align 8"
+                ,shape=box];
+            302 [label="%45 = sext i32 %31 to i64"
+                ,shape=box];
+            303 [label="%46 = getelementptr inbounds [57 x i8]* @ipc1 , i32 0, i64 %45"
+                ,shape=box];
+            304 [label="%47 = load i8* %46 , align 1"
+                ,shape=box];
+            305 [label="%48 = sext i8 %47 to i32"
+                ,shape=box];
+            306 [label="%49 = call i64 @getbit ( i64 %key.coerce0, i64 %key.coerce1, i32 %48, i32 32 )"
+                ,shape=box];
+            307 [label="%50 = or i64 %44 , %49"
+                ,shape=box];
+            308 [label="store i64 %50 , i64* i64* getelementptr ( %struct.IMMENSE* @icd ,  i32 0, i32 0 ) , align 8"
+                ,shape=box];
+            310 [label="%51 = add nsw i32 %32 , -1"
+                ,shape=box];
+            311 [label="store i32 %51 , i32* %j , align 4"
+                ,shape=box];
+            312 [label="%52 = add nsw i32 %31 , -1"
+                ,shape=box];
+            313 [label="store i32 %52 , i32* %k , align 4"
+                ,shape=box];
+            314 [label="br label %30"
+                ,shape=box];
+        }
+        subgraph cluster_315 {
+            graph [label="%53"];
+            316 [label="store i32 1 , i32* %i , align 4"
+                ,shape=box];
+            317 [label="br label %54"
+                ,shape=box];
+        }
+        subgraph cluster_318 {
+            graph [label="%54"];
+            319 [label="%55 = phi i32 [ [%62, %57], [1, %53] ]"
+                ,shape=box];
+            320 [label="%56 = icmp sle i32 %55 , 16"
+                ,shape=box];
+            321 [label="br i1 %56 , label %57 , label %63"
+                ,shape=box];
+        }
+        subgraph cluster_322 {
+            graph [label="%57"];
+            -331 [label=ReturnNode
+                 ,shape=box];
+            -330 [label=ReturnNode
+                 ,shape=box];
+            -327 [label=ReturnNode
+                 ,shape=box];
+            323 [label="%58 = sext i32 %55 to i64"
+                ,shape=box];
+            324 [label="%59 = getelementptr inbounds [17 x %struct.GREAT]* @des.kns , i32 0, i64 %58"
+                ,shape=box];
+            325 [label="%60 = bitcast %struct.GREAT* %pg to i8*"
+                ,shape=box];
+            326 [label="%61 = bitcast %struct.GREAT* %59 to i8*"
+                ,shape=box];
+            327 [label="call void @llvm.memcpy.p0i8.p0i8.i64 ( i8* %60, i8* %61, i64 24, i32 8, i1 0 )"
+                ,shape=box];
+            330 [label="call void @ks ( i32 %55, %struct.GREAT* %pg )"
+                ,shape=box];
+            331 [label="call void @llvm.memcpy.p0i8.p0i8.i64 ( i8* %61, i8* %60, i64 24, i32 8, i1 0 )"
+                ,shape=box];
+            332 [label="%62 = add nsw i32 %55 , 1"
+                ,shape=box];
+            333 [label="store i32 %62 , i32* %i , align 4"
+                ,shape=box];
+            334 [label="br label %54"
+                ,shape=box];
+        }
+        subgraph cluster_335 {
+            graph [label="%63"];
+            336 [label="br label %64"
+                ,shape=box];
+        }
+        subgraph cluster_337 {
+            graph [label="%64"];
+            338 [label="%65 = getelementptr inbounds %struct.IMMENSE* %itmp , i32 0, i32 0"
+                ,shape=box];
+            339 [label="store i64 0 , i64* %65 , align 8"
+                ,shape=box];
+            340 [label="%66 = getelementptr inbounds %struct.IMMENSE* %itmp , i32 0, i32 1"
+                ,shape=box];
+            341 [label="store i64 0 , i64* %66 , align 8"
+                ,shape=box];
+            342 [label="store i32 32 , i32* %j , align 4"
+                ,shape=box];
+            344 [label="store i32 64 , i32* %k , align 4"
+                ,shape=box];
+            345 [label="br label %67"
+                ,shape=box];
+        }
+        subgraph cluster_346 {
+            graph [label="%67"];
+            347 [label="%68 = phi i32 [ [%89, %73], [64, %64] ]"
+                ,shape=box];
+            348 [label="%69 = phi i64 [ [%87, %73], [0, %64] ]"
+                ,shape=box];
+            349 [label="%70 = phi i64 [ [%80, %73], [0, %64] ]"
+                ,shape=box];
+            350 [label="%71 = phi i32 [ [%88, %73], [32, %64] ]"
+                ,shape=box];
+            351 [label="%72 = icmp sge i32 %71 , 1"
+                ,shape=box];
+            352 [label="br i1 %72 , label %73 , label %90"
+                ,shape=box];
+        }
+        subgraph cluster_353 {
+            graph [label="%73"];
+            -369 [label=ReturnNode
+                 ,shape=box];
+            -360 [label=ReturnNode
+                 ,shape=box];
+            354 [label="%74 = shl i64 %70 , 1"
+                ,shape=box];
+            355 [label="store i64 %74 , i64* %66 , align 8"
+                ,shape=box];
+            356 [label="%75 = sext i32 %71 to i64"
+                ,shape=box];
+            357 [label="%76 = getelementptr inbounds [65 x i8]* @des.ip , i32 0, i64 %75"
+                ,shape=box];
+            358 [label="%77 = load i8* %76 , align 1"
+                ,shape=box];
+            359 [label="%78 = sext i8 %77 to i32"
+                ,shape=box];
+            360 [label="%79 = call i64 @getbit ( i64 %inp.coerce0, i64 %inp.coerce1, i32 %78, i32 32 )"
+                ,shape=box];
+            361 [label="%80 = or i64 %74 , %79"
+                ,shape=box];
+            362 [label="store i64 %80 , i64* %66 , align 8"
+                ,shape=box];
+            363 [label="%81 = shl i64 %69 , 1"
+                ,shape=box];
+            364 [label="store i64 %81 , i64* %65 , align 8"
+                ,shape=box];
+            365 [label="%82 = sext i32 %68 to i64"
+                ,shape=box];
+            366 [label="%83 = getelementptr inbounds [65 x i8]* @des.ip , i32 0, i64 %82"
+                ,shape=box];
+            367 [label="%84 = load i8* %83 , align 1"
+                ,shape=box];
+            368 [label="%85 = sext i8 %84 to i32"
+                ,shape=box];
+            369 [label="%86 = call i64 @getbit ( i64 %inp.coerce0, i64 %inp.coerce1, i32 %85, i32 32 )"
+                ,shape=box];
+            370 [label="%87 = or i64 %81 , %86"
+                ,shape=box];
+            371 [label="store i64 %87 , i64* %65 , align 8"
+                ,shape=box];
+            372 [label="%88 = add nsw i32 %71 , -1"
+                ,shape=box];
+            373 [label="store i32 %88 , i32* %j , align 4"
+                ,shape=box];
+            374 [label="%89 = add nsw i32 %68 , -1"
+                ,shape=box];
+            375 [label="store i32 %89 , i32* %k , align 4"
+                ,shape=box];
+            376 [label="br label %67"
+                ,shape=box];
+        }
+        subgraph cluster_377 {
+            graph [label="%90"];
+            378 [label="store i32 1 , i32* %i , align 4"
+                ,shape=box];
+            379 [label="br label %91"
+                ,shape=box];
+        }
+        subgraph cluster_380 {
+            graph [label="%91"];
+            381 [label="%92 = phi i64 [ [%93, %101], [%70, %90] ]"
+                ,shape=box];
+            382 [label="%93 = phi i64 [ [%106, %101], [%69, %90] ]"
+                ,shape=box];
+            383 [label="%94 = phi i32 [ [%107, %101], [1, %90] ]"
+                ,shape=box];
+            384 [label="%95 = icmp sle i32 %94 , 16"
+                ,shape=box];
+            385 [label="br i1 %95 , label %96 , label %108"
+                ,shape=box];
+        }
+        subgraph cluster_386 {
+            graph [label="%96"];
+            387 [label="%97 = icmp eq i32 %isw , 1"
+                ,shape=box];
+            388 [label="br i1 %97 , label %98 , label %100"
+                ,shape=box];
+        }
+        subgraph cluster_389 {
+            graph [label="%98"];
+            390 [label="%99 = sub nsw i32 17 , %94"
+                ,shape=box];
+            391 [label="br label %101"
+                ,shape=box];
+        }
+        subgraph cluster_392 {
+            graph [label="%100"];
+            393 [label="br label %101"
+                ,shape=box];
+        }
+        subgraph cluster_394 {
+            graph [label="%101"];
+            -399 [label=ReturnNode
+                 ,shape=box];
+            395 [label="%102 = phi i32 [ [%99, %98], [%94, %100] ]"
+                ,shape=box];
+            396 [label="store i32 %102 , i32* %ii , align 4"
+                ,shape=box];
+            397 [label="%103 = sext i32 %102 to i64"
+                ,shape=box];
+            398 [label="%104 = getelementptr inbounds [17 x %struct.GREAT]* @des.kns , i32 0, i64 %103"
+                ,shape=box];
+            399 [label="call void @cyfun ( i64 %93, %struct.GREAT* %104, i64* %ic )"
+                ,shape=box];
+            400 [label="%105 = load i64* %ic , align 8"
+                ,shape=box];
+            401 [label="%106 = xor i64 %105 , %92"
+                ,shape=box];
+            402 [label="store i64 %106 , i64* %ic , align 8"
+                ,shape=box];
+            403 [label="store i64 %93 , i64* %66 , align 8"
+                ,shape=box];
+            404 [label="store i64 %106 , i64* %65 , align 8"
+                ,shape=box];
+            405 [label="%107 = add nsw i32 %94 , 1"
+                ,shape=box];
+            406 [label="store i32 %107 , i32* %i , align 4"
+                ,shape=box];
+            407 [label="br label %91"
+                ,shape=box];
+        }
+        subgraph cluster_408 {
+            graph [label="%108"];
+            409 [label="store i64 %92 , i64* %ic , align 8"
+                ,shape=box];
+            410 [label="store i64 %93 , i64* %66 , align 8"
+                ,shape=box];
+            411 [label="store i64 %92 , i64* %65 , align 8"
+                ,shape=box];
+            412 [label="%109 = getelementptr inbounds %struct.IMMENSE* %out , i32 0, i32 0"
+                ,shape=box];
+            413 [label="store i64 0 , i64* %109 , align 8"
+                ,shape=box];
+            414 [label="%110 = getelementptr inbounds %struct.IMMENSE* %out , i32 0, i32 1"
+                ,shape=box];
+            415 [label="store i64 0 , i64* %110 , align 8"
+                ,shape=box];
+            416 [label="store i32 32 , i32* %j , align 4"
+                ,shape=box];
+            417 [label="store i32 64 , i32* %k , align 4"
+                ,shape=box];
+            418 [label="br label %111"
+                ,shape=box];
+        }
+        subgraph cluster_419 {
+            graph [label="%111"];
+            420 [label="%112 = phi i32 [ [%136, %115], [64, %108] ]"
+                ,shape=box];
+            421 [label="%113 = phi i32 [ [%135, %115], [32, %108] ]"
+                ,shape=box];
+            422 [label="%114 = icmp sge i32 %113 , 1"
+                ,shape=box];
+            423 [label="br i1 %114 , label %115 , label %137"
+                ,shape=box];
+        }
+        subgraph cluster_424 {
+            graph [label="%115"];
+            -445 [label=ReturnNode
+                 ,shape=box];
+            -435 [label=ReturnNode
+                 ,shape=box];
+            425 [label="%116 = load i64* %110 , align 8"
+                ,shape=box];
+            426 [label="%117 = shl i64 %116 , 1"
+                ,shape=box];
+            427 [label="store i64 %117 , i64* %110 , align 8"
+                ,shape=box];
+            428 [label="%118 = sext i32 %113 to i64"
+                ,shape=box];
+            429 [label="%119 = getelementptr inbounds [65 x i8]* @des.ipm , i32 0, i64 %118"
+                ,shape=box];
+            430 [label="%120 = load i8* %119 , align 1"
+                ,shape=box];
+            431 [label="%121 = sext i8 %120 to i32"
+                ,shape=box];
+            432 [label="%122 = bitcast %struct.IMMENSE* %itmp to {i64, i64}*"
+                ,shape=box];
+            433 [label="%123 = getelementptr {i64, i64}* %122 , i32 0, i32 0"
+                ,shape=box];
+            434 [label="%124 = getelementptr {i64, i64}* %122 , i32 0, i32 1"
+                ,shape=box];
+            435 [label="%125 = call i64 @getbit ( i64 %92, i64 %93, i32 %121, i32 32 )"
+                ,shape=box];
+            436 [label="%126 = or i64 %117 , %125"
+                ,shape=box];
+            437 [label="store i64 %126 , i64* %110 , align 8"
+                ,shape=box];
+            438 [label="%127 = load i64* %109 , align 8"
+                ,shape=box];
+            439 [label="%128 = shl i64 %127 , 1"
+                ,shape=box];
+            440 [label="store i64 %128 , i64* %109 , align 8"
+                ,shape=box];
+            441 [label="%129 = sext i32 %112 to i64"
+                ,shape=box];
+            442 [label="%130 = getelementptr inbounds [65 x i8]* @des.ipm , i32 0, i64 %129"
+                ,shape=box];
+            443 [label="%131 = load i8* %130 , align 1"
+                ,shape=box];
+            444 [label="%132 = sext i8 %131 to i32"
+                ,shape=box];
+            445 [label="%133 = call i64 @getbit ( i64 %92, i64 %93, i32 %132, i32 32 )"
+                ,shape=box];
+            446 [label="%134 = or i64 %128 , %133"
+                ,shape=box];
+            447 [label="store i64 %134 , i64* %109 , align 8"
+                ,shape=box];
+            448 [label="%135 = add nsw i32 %113 , -1"
+                ,shape=box];
+            449 [label="store i32 %135 , i32* %j , align 4"
+                ,shape=box];
+            450 [label="%136 = add nsw i32 %112 , -1"
+                ,shape=box];
+            451 [label="store i32 %136 , i32* %k , align 4"
+                ,shape=box];
+            452 [label="br label %111"
+                ,shape=box];
+        }
+        subgraph cluster_453 {
+            graph [label="%137"];
+            454 [label="ret void"
+                ,shape=box];
+        }
+    }
+    subgraph cluster_455 {
+        graph [label="@getbit"];
+        subgraph cluster_460 {
+            graph [label="%0"];
+            461 [label="%1 = alloca i64 , align 8"
+                ,shape=box];
+            462 [label="%source = alloca %struct.IMMENSE , align 8"
+                ,shape=box];
+            463 [label="%2 = alloca i32 , align 4"
+                ,shape=box];
+            464 [label="%3 = alloca i32 , align 4"
+                ,shape=box];
+            465 [label="%4 = bitcast %struct.IMMENSE* %source to {i64, i64}*"
+                ,shape=box];
+            466 [label="%5 = getelementptr {i64, i64}* %4 , i32 0, i32 0"
+                ,shape=box];
+            467 [label="store i64 %source.coerce0 , i64* %5"
+                ,shape=box];
+            468 [label="%6 = getelementptr {i64, i64}* %4 , i32 0, i32 1"
+                ,shape=box];
+            469 [label="store i64 %source.coerce1 , i64* %6"
+                ,shape=box];
+            470 [label="store i32 %bitno , i32* %2 , align 4"
+                ,shape=box];
+            471 [label="store i32 %nbits , i32* %3 , align 4"
+                ,shape=box];
+            472 [label="%7 = icmp sle i32 %bitno , %nbits"
+                ,shape=box];
+            473 [label="br i1 %7 , label %8 , label %16"
+                ,shape=box];
+        }
+        subgraph cluster_474 {
+            graph [label="%8"];
+            475 [label="%9 = sext i32 %bitno to i64"
+                ,shape=box];
+            476 [label="%10 = getelementptr inbounds [33 x i64]* @bit , i32 0, i64 %9"
+                ,shape=box];
+            477 [label="%11 = load i64* %10 , align 8"
+                ,shape=box];
+            478 [label="%12 = getelementptr inbounds %struct.IMMENSE* %source , i32 0, i32 1"
+                ,shape=box];
+            479 [label="%13 = and i64 %11 , %source.coerce1"
+                ,shape=box];
+            480 [label="%14 = icmp ne i64 %13 , 0"
+                ,shape=box];
+            481 [label="%15 = select i1 %14 , i64 1 , i64 0"
+                ,shape=box];
+            482 [label="store i64 %15 , i64* %1"
+                ,shape=box];
+            483 [label="br label %25"
+                ,shape=box];
+        }
+        subgraph cluster_484 {
+            graph [label="%16"];
+            485 [label="%17 = sub nsw i32 %bitno , %nbits"
+                ,shape=box];
+            486 [label="%18 = sext i32 %17 to i64"
+                ,shape=box];
+            487 [label="%19 = getelementptr inbounds [33 x i64]* @bit , i32 0, i64 %18"
+                ,shape=box];
+            488 [label="%20 = load i64* %19 , align 8"
+                ,shape=box];
+            489 [label="%21 = getelementptr inbounds %struct.IMMENSE* %source , i32 0, i32 0"
+                ,shape=box];
+            490 [label="%22 = and i64 %20 , %source.coerce0"
+                ,shape=box];
+            491 [label="%23 = icmp ne i64 %22 , 0"
+                ,shape=box];
+            492 [label="%24 = select i1 %23 , i64 1 , i64 0"
+                ,shape=box];
+            493 [label="store i64 %24 , i64* %1"
+                ,shape=box];
+            494 [label="br label %25"
+                ,shape=box];
+        }
+        subgraph cluster_495 {
+            graph [label="%25"];
+            496 [label="%26 = phi i64 [ [%24, %16], [%15, %8] ]"
+                ,shape=box];
+            497 [label="ret i64 %26"
+                ,shape=box];
+        }
+    }
+    subgraph cluster_498 {
+        graph [label="@ks"];
+        subgraph cluster_501 {
+            graph [label="%0"];
+            502 [label="%1 = alloca i32 , align 4"
+                ,shape=box];
+            503 [label="%2 = alloca %struct.GREAT* , align 8"
+                ,shape=box];
+            504 [label="%i = alloca i32 , align 4"
+                ,shape=box];
+            505 [label="%j = alloca i32 , align 4"
+                ,shape=box];
+            506 [label="%k = alloca i32 , align 4"
+                ,shape=box];
+            507 [label="%l = alloca i32 , align 4"
+                ,shape=box];
+            508 [label="store i32 %n , i32* %1 , align 4"
+                ,shape=box];
+            509 [label="store %struct.GREAT* %kn , %struct.GREAT** %2 , align 8"
+                ,shape=box];
+            510 [label="%3 = icmp eq i32 %n , 1"
+                ,shape=box];
+            511 [label="br i1 %3 , label %10 , label %4"
+                ,shape=box];
+        }
+        subgraph cluster_512 {
+            graph [label="%4"];
+            513 [label="%5 = icmp eq i32 %n , 2"
+                ,shape=box];
+            514 [label="br i1 %5 , label %10 , label %6"
+                ,shape=box];
+        }
+        subgraph cluster_515 {
+            graph [label="%6"];
+            516 [label="%7 = icmp eq i32 %n , 9"
+                ,shape=box];
+            517 [label="br i1 %7 , label %10 , label %8"
+                ,shape=box];
+        }
+        subgraph cluster_518 {
+            graph [label="%8"];
+            519 [label="%9 = icmp eq i32 %n , 16"
+                ,shape=box];
+            520 [label="br i1 %9 , label %10 , label %21"
+                ,shape=box];
+        }
+        subgraph cluster_521 {
+            graph [label="%10"];
+            522 [label="%11 = load i64* i64* getelementptr ( %struct.IMMENSE* @icd ,  i32 0, i32 1 ) , align 8"
+                ,shape=box];
+            523 [label="%12 = and i64 %11 , 1"
+                ,shape=box];
+            525 [label="%13 = shl i64 %12 , 28"
+                ,shape=box];
+            526 [label="%14 = or i64 %11 , %13"
+                ,shape=box];
+            527 [label="%15 = lshr i64 %14 , 1"
+                ,shape=box];
+            528 [label="store i64 %15 , i64* i64* getelementptr ( %struct.IMMENSE* @icd ,  i32 0, i32 1 ) , align 8"
+                ,shape=box];
+            529 [label="%16 = load i64* i64* getelementptr ( %struct.IMMENSE* @icd ,  i32 0, i32 0 ) , align 8"
+                ,shape=box];
+            530 [label="%17 = and i64 %16 , 1"
+                ,shape=box];
+            531 [label="%18 = shl i64 %17 , 28"
+                ,shape=box];
+            532 [label="%19 = or i64 %16 , %18"
+                ,shape=box];
+            533 [label="%20 = lshr i64 %19 , 1"
+                ,shape=box];
+            534 [label="store i64 %20 , i64* i64* getelementptr ( %struct.IMMENSE* @icd ,  i32 0, i32 0 ) , align 8"
+                ,shape=box];
+            535 [label="br label %38"
+                ,shape=box];
+        }
+        subgraph cluster_536 {
+            graph [label="%21"];
+            537 [label="store i32 1 , i32* %i , align 4"
+                ,shape=box];
+            538 [label="br label %22"
+                ,shape=box];
+        }
+        subgraph cluster_539 {
+            graph [label="%22"];
+            540 [label="%23 = phi i32 [ [%36, %25], [1, %21] ]"
+                ,shape=box];
+            541 [label="%24 = icmp sle i32 %23 , 2"
+                ,shape=box];
+            542 [label="br i1 %24 , label %25 , label %37"
+                ,shape=box];
+        }
+        subgraph cluster_543 {
+            graph [label="%25"];
+            544 [label="%26 = load i64* i64* getelementptr ( %struct.IMMENSE* @icd ,  i32 0, i32 1 ) , align 8"
+                ,shape=box];
+            545 [label="%27 = and i64 %26 , 1"
+                ,shape=box];
+            546 [label="%28 = shl i64 %27 , 28"
+                ,shape=box];
+            547 [label="%29 = or i64 %26 , %28"
+                ,shape=box];
+            548 [label="%30 = lshr i64 %29 , 1"
+                ,shape=box];
+            549 [label="store i64 %30 , i64* i64* getelementptr ( %struct.IMMENSE* @icd ,  i32 0, i32 1 ) , align 8"
+                ,shape=box];
+            550 [label="%31 = load i64* i64* getelementptr ( %struct.IMMENSE* @icd ,  i32 0, i32 0 ) , align 8"
+                ,shape=box];
+            551 [label="%32 = and i64 %31 , 1"
+                ,shape=box];
+            552 [label="%33 = shl i64 %32 , 28"
+                ,shape=box];
+            553 [label="%34 = or i64 %31 , %33"
+                ,shape=box];
+            554 [label="%35 = lshr i64 %34 , 1"
+                ,shape=box];
+            555 [label="store i64 %35 , i64* i64* getelementptr ( %struct.IMMENSE* @icd ,  i32 0, i32 0 ) , align 8"
+                ,shape=box];
+            556 [label="%36 = add nsw i32 %23 , 1"
+                ,shape=box];
+            557 [label="store i32 %36 , i32* %i , align 4"
+                ,shape=box];
+            558 [label="br label %22"
+                ,shape=box];
+        }
+        subgraph cluster_559 {
+            graph [label="%37"];
+            560 [label="br label %38"
+                ,shape=box];
+        }
+        subgraph cluster_561 {
+            graph [label="%38"];
+            562 [label="%39 = getelementptr inbounds %struct.GREAT* %kn , i32 0, i32 0"
+                ,shape=box];
+            563 [label="store i64 0 , i64* %39 , align 8"
+                ,shape=box];
+            564 [label="%40 = getelementptr inbounds %struct.GREAT* %kn , i32 0, i32 1"
+                ,shape=box];
+            565 [label="store i64 0 , i64* %40 , align 8"
+                ,shape=box];
+            566 [label="%41 = getelementptr inbounds %struct.GREAT* %kn , i32 0, i32 2"
+                ,shape=box];
+            567 [label="store i64 0 , i64* %41 , align 8"
+                ,shape=box];
+            568 [label="store i32 16 , i32* %j , align 4"
+                ,shape=box];
+            569 [label="store i32 32 , i32* %k , align 4"
+                ,shape=box];
+            571 [label="store i32 48 , i32* %l , align 4"
+                ,shape=box];
+            572 [label="br label %42"
+                ,shape=box];
+        }
+        subgraph cluster_573 {
+            graph [label="%42"];
+            574 [label="%43 = phi i32 [ [%89, %47], [48, %38] ]"
+                ,shape=box];
+            575 [label="%44 = phi i32 [ [%88, %47], [32, %38] ]"
+                ,shape=box];
+            576 [label="%45 = phi i32 [ [%87, %47], [16, %38] ]"
+                ,shape=box];
+            577 [label="%46 = icmp sge i32 %45 , 1"
+                ,shape=box];
+            578 [label="br i1 %46 , label %47 , label %90"
+                ,shape=box];
+        }
+        subgraph cluster_579 {
+            graph [label="%47"];
+            -623 [label=ReturnNode
+                 ,shape=box];
+            -609 [label=ReturnNode
+                 ,shape=box];
+            -595 [label=ReturnNode
+                 ,shape=box];
+            580 [label="%48 = load i64* %41 , align 8"
+                ,shape=box];
+            581 [label="%49 = shl i64 %48 , 1"
+                ,shape=box];
+            582 [label="store i64 %49 , i64* %41 , align 8"
+                ,shape=box];
+            583 [label="%50 = sext i32 %45 to i64"
+                ,shape=box];
+            584 [label="%51 = getelementptr inbounds [49 x i8]* @ipc2 , i32 0, i64 %50"
+                ,shape=box];
+            585 [label="%52 = load i8* %51 , align 1"
+                ,shape=box];
+            586 [label="%53 = sext i8 %52 to i32"
+                ,shape=box];
+            587 [label="%54 = load i64* i64* getelementptr ( {i64, i64}* {i64, i64}* bitcast (%struct.IMMENSE* @icd to {i64, i64}*) ,  i32 0, i32 0 ) , align 1"
+                ,shape=box];
+            592 [label="%57 = load i64* i64* getelementptr ( {i64, i64}* {i64, i64}* bitcast (%struct.IMMENSE* @icd to {i64, i64}*) ,  i32 0, i32 1 ) , align 1"
+                ,shape=box];
+            595 [label="%59 = call i64 @getbit ( i64 %54, i64 %57, i32 %53, i32 28 )"
+                ,shape=box];
+            596 [label="%60 = trunc i64 %59 to i16"
+                ,shape=box];
+            597 [label="%61 = zext i16 %60 to i64"
+                ,shape=box];
+            598 [label="%62 = or i64 %49 , %61"
+                ,shape=box];
+            599 [label="store i64 %62 , i64* %41 , align 8"
+                ,shape=box];
+            600 [label="%63 = load i64* %40 , align 8"
+                ,shape=box];
+            601 [label="%64 = shl i64 %63 , 1"
+                ,shape=box];
+            602 [label="store i64 %64 , i64* %40 , align 8"
+                ,shape=box];
+            603 [label="%65 = sext i32 %44 to i64"
+                ,shape=box];
+            604 [label="%66 = getelementptr inbounds [49 x i8]* @ipc2 , i32 0, i64 %65"
+                ,shape=box];
+            605 [label="%67 = load i8* %66 , align 1"
+                ,shape=box];
+            606 [label="%68 = sext i8 %67 to i32"
+                ,shape=box];
+            607 [label="%69 = load i64* i64* getelementptr ( {i64, i64}* {i64, i64}* bitcast (%struct.IMMENSE* @icd to {i64, i64}*) ,  i32 0, i32 0 ) , align 1"
+                ,shape=box];
+            608 [label="%70 = load i64* i64* getelementptr ( {i64, i64}* {i64, i64}* bitcast (%struct.IMMENSE* @icd to {i64, i64}*) ,  i32 0, i32 1 ) , align 1"
+                ,shape=box];
+            609 [label="%71 = call i64 @getbit ( i64 %69, i64 %70, i32 %68, i32 28 )"
+                ,shape=box];
+            610 [label="%72 = trunc i64 %71 to i16"
+                ,shape=box];
+            611 [label="%73 = zext i16 %72 to i64"
+                ,shape=box];
+            612 [label="%74 = or i64 %64 , %73"
+                ,shape=box];
+            613 [label="store i64 %74 , i64* %40 , align 8"
+                ,shape=box];
+            614 [label="%75 = load i64* %39 , align 8"
+                ,shape=box];
+            615 [label="%76 = shl i64 %75 , 1"
+                ,shape=box];
+            616 [label="store i64 %76 , i64* %39 , align 8"
+                ,shape=box];
+            617 [label="%77 = sext i32 %43 to i64"
+                ,shape=box];
+            618 [label="%78 = getelementptr inbounds [49 x i8]* @ipc2 , i32 0, i64 %77"
+                ,shape=box];
+            619 [label="%79 = load i8* %78 , align 1"
+                ,shape=box];
+            620 [label="%80 = sext i8 %79 to i32"
+                ,shape=box];
+            621 [label="%81 = load i64* i64* getelementptr ( {i64, i64}* {i64, i64}* bitcast (%struct.IMMENSE* @icd to {i64, i64}*) ,  i32 0, i32 0 ) , align 1"
+                ,shape=box];
+            622 [label="%82 = load i64* i64* getelementptr ( {i64, i64}* {i64, i64}* bitcast (%struct.IMMENSE* @icd to {i64, i64}*) ,  i32 0, i32 1 ) , align 1"
+                ,shape=box];
+            623 [label="%83 = call i64 @getbit ( i64 %81, i64 %82, i32 %80, i32 28 )"
+                ,shape=box];
+            624 [label="%84 = trunc i64 %83 to i16"
+                ,shape=box];
+            625 [label="%85 = zext i16 %84 to i64"
+                ,shape=box];
+            626 [label="%86 = or i64 %76 , %85"
+                ,shape=box];
+            627 [label="store i64 %86 , i64* %39 , align 8"
+                ,shape=box];
+            628 [label="%87 = add nsw i32 %45 , -1"
+                ,shape=box];
+            629 [label="store i32 %87 , i32* %j , align 4"
+                ,shape=box];
+            630 [label="%88 = add nsw i32 %44 , -1"
+                ,shape=box];
+            631 [label="store i32 %88 , i32* %k , align 4"
+                ,shape=box];
+            632 [label="%89 = add nsw i32 %43 , -1"
+                ,shape=box];
+            633 [label="store i32 %89 , i32* %l , align 4"
+                ,shape=box];
+            634 [label="br label %42"
+                ,shape=box];
+        }
+        subgraph cluster_635 {
+            graph [label="%90"];
+            636 [label="ret void"
+                ,shape=box];
+        }
+    }
+    subgraph cluster_637 {
+        graph [label="@cyfun"];
+        subgraph cluster_641 {
+            graph [label="%0"];
+            642 [label="%1 = alloca i64 , align 8"
+                ,shape=box];
+            643 [label="%2 = alloca i64* , align 8"
+                ,shape=box];
+            644 [label="%ie = alloca %struct.GREAT , align 8"
+                ,shape=box];
+            645 [label="%itmp = alloca i64 , align 8"
+                ,shape=box];
+            646 [label="%ietmp1 = alloca i64 , align 8"
+                ,shape=box];
+            647 [label="%ietmp2 = alloca i64 , align 8"
+                ,shape=box];
+            648 [label="%iec = alloca [9 x i8] , align 1"
+                ,shape=box];
+            649 [label="%jj = alloca i32 , align 4"
+                ,shape=box];
+            650 [label="%irow = alloca i32 , align 4"
+                ,shape=box];
+            651 [label="%icol = alloca i32 , align 4"
+                ,shape=box];
+            652 [label="%iss = alloca i32 , align 4"
+                ,shape=box];
+            653 [label="%j = alloca i32 , align 4"
+                ,shape=box];
+            654 [label="%l = alloca i32 , align 4"
+                ,shape=box];
+            655 [label="%m = alloca i32 , align 4"
+                ,shape=box];
+            656 [label="%p = alloca i64* , align 8"
+                ,shape=box];
+            657 [label="store i64 %ir , i64* %1 , align 8"
+                ,shape=box];
+            658 [label="store i64* %iout , i64** %2 , align 8"
+                ,shape=box];
+            661 [label="store i64* i64* getelementptr ( [33 x i64]* @bit ,  i32 0, i32 0 ) , i64** %p , align 8"
+                ,shape=box];
+            662 [label="%4 = getelementptr inbounds %struct.GREAT* %ie , i32 0, i32 0"
+                ,shape=box];
+            663 [label="store i64 0 , i64* %4 , align 8"
+                ,shape=box];
+            664 [label="%5 = getelementptr inbounds %struct.GREAT* %ie , i32 0, i32 1"
+                ,shape=box];
+            665 [label="store i64 0 , i64* %5 , align 8"
+                ,shape=box];
+            666 [label="%6 = getelementptr inbounds %struct.GREAT* %ie , i32 0, i32 2"
+                ,shape=box];
+            667 [label="store i64 0 , i64* %6 , align 8"
+                ,shape=box];
+            668 [label="store i32 16 , i32* %j , align 4"
+                ,shape=box];
+            669 [label="store i32 32 , i32* %l , align 4"
+                ,shape=box];
+            670 [label="store i32 48 , i32* %m , align 4"
+                ,shape=box];
+            671 [label="br label %7"
+                ,shape=box];
+        }
+        subgraph cluster_672 {
+            graph [label="%7"];
+            673 [label="%8 = phi i32 [ [%54, %15], [48, %0] ]"
+                ,shape=box];
+            674 [label="%9 = phi i64 [ [%51, %15], [0, %0] ]"
+                ,shape=box];
+            675 [label="%10 = phi i32 [ [%53, %15], [32, %0] ]"
+                ,shape=box];
+            676 [label="%11 = phi i64 [ [%39, %15], [0, %0] ]"
+                ,shape=box];
+            677 [label="%12 = phi i64 [ [%27, %15], [0, %0] ]"
+                ,shape=box];
+            678 [label="%13 = phi i32 [ [%52, %15], [16, %0] ]"
+                ,shape=box];
+            679 [label="%14 = icmp sge i32 %13 , 1"
+                ,shape=box];
+            680 [label="br i1 %14 , label %15 , label %55"
+                ,shape=box];
+        }
+        subgraph cluster_681 {
+            graph [label="%15"];
+            682 [label="%16 = shl i64 %12 , 1"
+                ,shape=box];
+            683 [label="store i64 %16 , i64* %6 , align 8"
+                ,shape=box];
+            684 [label="%17 = sext i32 %13 to i64"
+                ,shape=box];
+            685 [label="%18 = getelementptr inbounds [49 x i32]* @cyfun.iet , i32 0, i64 %17"
+                ,shape=box];
+            686 [label="%19 = load i32* %18 , align 4"
+                ,shape=box];
+            687 [label="%20 = sext i32 %19 to i64"
+                ,shape=box];
+            688 [label="%21 = getelementptr inbounds i64* i64* getelementptr ( [33 x i64]* @bit ,  i32 0, i32 0 ) , i64 %20"
+                ,shape=box];
+            689 [label="%22 = load i64* %21 , align 8"
+                ,shape=box];
+            690 [label="%23 = and i64 %22 , %ir"
+                ,shape=box];
+            691 [label="%24 = icmp ne i64 %23 , 0"
+                ,shape=box];
+            692 [label="%25 = select i1 %24 , i32 1 , i32 0"
+                ,shape=box];
+            693 [label="%26 = sext i32 %25 to i64"
+                ,shape=box];
+            694 [label="%27 = or i64 %16 , %26"
+                ,shape=box];
+            695 [label="store i64 %27 , i64* %6 , align 8"
+                ,shape=box];
+            696 [label="%28 = shl i64 %11 , 1"
+                ,shape=box];
+            697 [label="store i64 %28 , i64* %5 , align 8"
+                ,shape=box];
+            698 [label="%29 = sext i32 %10 to i64"
+                ,shape=box];
+            699 [label="%30 = getelementptr inbounds [49 x i32]* @cyfun.iet , i32 0, i64 %29"
+                ,shape=box];
+            700 [label="%31 = load i32* %30 , align 4"
+                ,shape=box];
+            701 [label="%32 = sext i32 %31 to i64"
+                ,shape=box];
+            702 [label="%33 = getelementptr inbounds i64* i64* getelementptr ( [33 x i64]* @bit ,  i32 0, i32 0 ) , i64 %32"
+                ,shape=box];
+            703 [label="%34 = load i64* %33 , align 8"
+                ,shape=box];
+            704 [label="%35 = and i64 %34 , %ir"
+                ,shape=box];
+            705 [label="%36 = icmp ne i64 %35 , 0"
+                ,shape=box];
+            706 [label="%37 = select i1 %36 , i32 1 , i32 0"
+                ,shape=box];
+            707 [label="%38 = sext i32 %37 to i64"
+                ,shape=box];
+            708 [label="%39 = or i64 %28 , %38"
+                ,shape=box];
+            709 [label="store i64 %39 , i64* %5 , align 8"
+                ,shape=box];
+            710 [label="%40 = shl i64 %9 , 1"
+                ,shape=box];
+            711 [label="store i64 %40 , i64* %4 , align 8"
+                ,shape=box];
+            712 [label="%41 = sext i32 %8 to i64"
+                ,shape=box];
+            713 [label="%42 = getelementptr inbounds [49 x i32]* @cyfun.iet , i32 0, i64 %41"
+                ,shape=box];
+            714 [label="%43 = load i32* %42 , align 4"
+                ,shape=box];
+            715 [label="%44 = sext i32 %43 to i64"
+                ,shape=box];
+            716 [label="%45 = getelementptr inbounds i64* i64* getelementptr ( [33 x i64]* @bit ,  i32 0, i32 0 ) , i64 %44"
+                ,shape=box];
+            717 [label="%46 = load i64* %45 , align 8"
+                ,shape=box];
+            718 [label="%47 = and i64 %46 , %ir"
+                ,shape=box];
+            719 [label="%48 = icmp ne i64 %47 , 0"
+                ,shape=box];
+            720 [label="%49 = select i1 %48 , i32 1 , i32 0"
+                ,shape=box];
+            721 [label="%50 = sext i32 %49 to i64"
+                ,shape=box];
+            722 [label="%51 = or i64 %40 , %50"
+                ,shape=box];
+            723 [label="store i64 %51 , i64* %4 , align 8"
+                ,shape=box];
+            724 [label="%52 = add nsw i32 %13 , -1"
+                ,shape=box];
+            725 [label="store i32 %52 , i32* %j , align 4"
+                ,shape=box];
+            726 [label="%53 = add nsw i32 %10 , -1"
+                ,shape=box];
+            727 [label="store i32 %53 , i32* %l , align 4"
+                ,shape=box];
+            728 [label="%54 = add nsw i32 %8 , -1"
+                ,shape=box];
+            729 [label="store i32 %54 , i32* %m , align 4"
+                ,shape=box];
+            730 [label="br label %7"
+                ,shape=box];
+        }
+        subgraph cluster_731 {
+            graph [label="%55"];
+            732 [label="%56 = getelementptr inbounds %struct.GREAT* %k , i32 0, i32 2"
+                ,shape=box];
+            733 [label="%57 = load i64* %56 , align 8"
+                ,shape=box];
+            734 [label="%58 = xor i64 %12 , %57"
+                ,shape=box];
+            735 [label="store i64 %58 , i64* %6 , align 8"
+                ,shape=box];
+            736 [label="%59 = getelementptr inbounds %struct.GREAT* %k , i32 0, i32 1"
+                ,shape=box];
+            737 [label="%60 = load i64* %59 , align 8"
+                ,shape=box];
+            738 [label="%61 = xor i64 %11 , %60"
+                ,shape=box];
+            739 [label="store i64 %61 , i64* %5 , align 8"
+                ,shape=box];
+            740 [label="%62 = getelementptr inbounds %struct.GREAT* %k , i32 0, i32 0"
+                ,shape=box];
+            741 [label="%63 = load i64* %62 , align 8"
+                ,shape=box];
+            742 [label="%64 = xor i64 %9 , %63"
+                ,shape=box];
+            743 [label="store i64 %64 , i64* %4 , align 8"
+                ,shape=box];
+            745 [label="%65 = shl i64 %61 , 16"
+                ,shape=box];
+            746 [label="%66 = add i64 %65 , %58"
+                ,shape=box];
+            747 [label="store i64 %66 , i64* %ietmp1 , align 8"
+                ,shape=box];
+            749 [label="%67 = shl i64 %64 , 8"
+                ,shape=box];
+            750 [label="%68 = lshr i64 %61 , 8"
+                ,shape=box];
+            751 [label="%69 = add i64 %67 , %68"
+                ,shape=box];
+            752 [label="store i64 %69 , i64* %ietmp2 , align 8"
+                ,shape=box];
+            753 [label="store i32 1 , i32* %j , align 4"
+                ,shape=box];
+            754 [label="store i32 5 , i32* %m , align 4"
+                ,shape=box];
+            755 [label="br label %70"
+                ,shape=box];
+        }
+        subgraph cluster_756 {
+            graph [label="%70"];
+            757 [label="%71 = phi i32 [ [%88, %76], [5, %55] ]"
+                ,shape=box];
+            758 [label="%72 = phi i64 [ [%86, %76], [%69, %55] ]"
+                ,shape=box];
+            759 [label="%73 = phi i64 [ [%85, %76], [%66, %55] ]"
+                ,shape=box];
+            760 [label="%74 = phi i32 [ [%87, %76], [1, %55] ]"
+                ,shape=box];
+            761 [label="%75 = icmp sle i32 %74 , 4"
+                ,shape=box];
+            762 [label="br i1 %75 , label %76 , label %89"
+                ,shape=box];
+        }
+        subgraph cluster_763 {
+            graph [label="%76"];
+            765 [label="%77 = and i64 %73 , 63"
+                ,shape=box];
+            766 [label="%78 = trunc i64 %77 to i8"
+                ,shape=box];
+            767 [label="%79 = sext i32 %74 to i64"
+                ,shape=box];
+            768 [label="%80 = getelementptr inbounds [9 x i8]* %iec , i32 0, i64 %79"
+                ,shape=box];
+            769 [label="store i8 %78 , i8* %80 , align 1"
+                ,shape=box];
+            770 [label="%81 = and i64 %72 , 63"
+                ,shape=box];
+            771 [label="%82 = trunc i64 %81 to i8"
+                ,shape=box];
+            772 [label="%83 = sext i32 %71 to i64"
+                ,shape=box];
+            773 [label="%84 = getelementptr inbounds [9 x i8]* %iec , i32 0, i64 %83"
+                ,shape=box];
+            774 [label="store i8 %82 , i8* %84 , align 1"
+                ,shape=box];
+            776 [label="%85 = lshr i64 %73 , 6"
+                ,shape=box];
+            777 [label="store i64 %85 , i64* %ietmp1 , align 8"
+                ,shape=box];
+            778 [label="%86 = lshr i64 %72 , 6"
+                ,shape=box];
+            779 [label="store i64 %86 , i64* %ietmp2 , align 8"
+                ,shape=box];
+            780 [label="%87 = add nsw i32 %74 , 1"
+                ,shape=box];
+            781 [label="store i32 %87 , i32* %j , align 4"
+                ,shape=box];
+            782 [label="%88 = add nsw i32 %71 , 1"
+                ,shape=box];
+            783 [label="store i32 %88 , i32* %m , align 4"
+                ,shape=box];
+            784 [label="br label %70"
+                ,shape=box];
+        }
+        subgraph cluster_785 {
+            graph [label="%89"];
+            786 [label="store i64 0 , i64* %itmp , align 8"
+                ,shape=box];
+            787 [label="store i32 8 , i32* %jj , align 4"
+                ,shape=box];
+            788 [label="br label %90"
+                ,shape=box];
+        }
+        subgraph cluster_789 {
+            graph [label="%90"];
+            790 [label="%91 = phi i64 [ [%126, %94], [0, %89] ]"
+                ,shape=box];
+            791 [label="%92 = phi i32 [ [%127, %94], [8, %89] ]"
+                ,shape=box];
+            792 [label="%93 = icmp sge i32 %92 , 1"
+                ,shape=box];
+            793 [label="br i1 %93 , label %94 , label %128"
+                ,shape=box];
+        }
+        subgraph cluster_794 {
+            graph [label="%94"];
+            795 [label="%95 = sext i32 %92 to i64"
+                ,shape=box];
+            796 [label="%96 = getelementptr inbounds [9 x i8]* %iec , i32 0, i64 %95"
+                ,shape=box];
+            797 [label="%97 = load i8* %96 , align 1"
+                ,shape=box];
+            798 [label="%98 = sext i8 %97 to i32"
+                ,shape=box];
+            799 [label="store i32 %98 , i32* %j , align 4"
+                ,shape=box];
+            800 [label="%99 = and i32 %98 , 1"
+                ,shape=box];
+            801 [label="%100 = shl i32 %99 , 1"
+                ,shape=box];
+            802 [label="%101 = and i32 %98 , 32"
+                ,shape=box];
+            803 [label="%102 = ashr i32 %101 , 5"
+                ,shape=box];
+            804 [label="%103 = add nsw i32 %100 , %102"
+                ,shape=box];
+            805 [label="store i32 %103 , i32* %irow , align 4"
+                ,shape=box];
+            806 [label="%104 = and i32 %98 , 2"
+                ,shape=box];
+            807 [label="%105 = shl i32 %104 , 2"
+                ,shape=box];
+            808 [label="%106 = and i32 %98 , 4"
+                ,shape=box];
+            809 [label="%107 = add nsw i32 %105 , %106"
+                ,shape=box];
+            810 [label="%108 = and i32 %98 , 8"
+                ,shape=box];
+            811 [label="%109 = ashr i32 %108 , 2"
+                ,shape=box];
+            812 [label="%110 = add nsw i32 %107 , %109"
+                ,shape=box];
+            813 [label="%111 = and i32 %98 , 16"
+                ,shape=box];
+            814 [label="%112 = ashr i32 %111 , 4"
+                ,shape=box];
+            815 [label="%113 = add nsw i32 %110 , %112"
+                ,shape=box];
+            816 [label="store i32 %113 , i32* %icol , align 4"
+                ,shape=box];
+            817 [label="%114 = sext i32 %103 to i64"
+                ,shape=box];
+            818 [label="%115 = sext i32 %113 to i64"
+                ,shape=box];
+            819 [label="%116 = getelementptr inbounds [16 x [4 x [9 x i8]]]* @cyfun.is , i32 0, i64 %115"
+                ,shape=box];
+            820 [label="%117 = getelementptr inbounds [4 x [9 x i8]]* %116 , i32 0, i64 %114"
+                ,shape=box];
+            821 [label="%118 = getelementptr inbounds [9 x i8]* %117 , i32 0, i64 %95"
+                ,shape=box];
+            822 [label="%119 = load i8* %118 , align 1"
+                ,shape=box];
+            823 [label="%120 = sext i8 %119 to i32"
+                ,shape=box];
+            824 [label="store i32 %120 , i32* %iss , align 4"
+                ,shape=box];
+            826 [label="%121 = shl i64 %91 , 4"
+                ,shape=box];
+            827 [label="store i64 %121 , i64* %itmp , align 8"
+                ,shape=box];
+            828 [label="%122 = sext i32 %120 to i64"
+                ,shape=box];
+            829 [label="%123 = getelementptr inbounds [16 x i8]* @cyfun.ibin , i32 0, i64 %122"
+                ,shape=box];
+            830 [label="%124 = load i8* %123 , align 1"
+                ,shape=box];
+            831 [label="%125 = sext i8 %124 to i64"
+                ,shape=box];
+            832 [label="%126 = or i64 %121 , %125"
+                ,shape=box];
+            833 [label="store i64 %126 , i64* %itmp , align 8"
+                ,shape=box];
+            834 [label="%127 = add nsw i32 %92 , -1"
+                ,shape=box];
+            835 [label="store i32 %127 , i32* %jj , align 4"
+                ,shape=box];
+            836 [label="br label %90"
+                ,shape=box];
+        }
+        subgraph cluster_837 {
+            graph [label="%128"];
+            838 [label="store i64 0 , i64* %iout , align 8"
+                ,shape=box];
+            839 [label="store i64* i64* getelementptr ( [33 x i64]* @bit ,  i32 0, i32 0 ) , i64** %p , align 8"
+                ,shape=box];
+            840 [label="store i32 32 , i32* %j , align 4"
+                ,shape=box];
+            841 [label="br label %129"
+                ,shape=box];
+        }
+        subgraph cluster_842 {
+            graph [label="%129"];
+            843 [label="%130 = phi i64 [ [%145, %133], [0, %128] ]"
+                ,shape=box];
+            844 [label="%131 = phi i32 [ [%146, %133], [32, %128] ]"
+                ,shape=box];
+            845 [label="%132 = icmp sge i32 %131 , 1"
+                ,shape=box];
+            846 [label="br i1 %132 , label %133 , label %147"
+                ,shape=box];
+        }
+        subgraph cluster_847 {
+            graph [label="%133"];
+            848 [label="%134 = shl i64 %130 , 1"
+                ,shape=box];
+            849 [label="store i64 %134 , i64* %iout , align 8"
+                ,shape=box];
+            850 [label="%135 = sext i32 %131 to i64"
+                ,shape=box];
+            851 [label="%136 = getelementptr inbounds [33 x i32]* @cyfun.ipp , i32 0, i64 %135"
+                ,shape=box];
+            852 [label="%137 = load i32* %136 , align 4"
+                ,shape=box];
+            853 [label="%138 = sext i32 %137 to i64"
+                ,shape=box];
+            854 [label="%139 = getelementptr inbounds i64* i64* getelementptr ( [33 x i64]* @bit ,  i32 0, i32 0 ) , i64 %138"
+                ,shape=box];
+            855 [label="%140 = load i64* %139 , align 8"
+                ,shape=box];
+            856 [label="%141 = and i64 %140 , %91"
+                ,shape=box];
+            857 [label="%142 = icmp ne i64 %141 , 0"
+                ,shape=box];
+            858 [label="%143 = select i1 %142 , i32 1 , i32 0"
+                ,shape=box];
+            859 [label="%144 = sext i32 %143 to i64"
+                ,shape=box];
+            860 [label="%145 = or i64 %134 , %144"
+                ,shape=box];
+            861 [label="store i64 %145 , i64* %iout , align 8"
+                ,shape=box];
+            862 [label="%146 = add nsw i32 %131 , -1"
+                ,shape=box];
+            863 [label="store i32 %146 , i32* %j , align 4"
+                ,shape=box];
+            864 [label="br label %129"
+                ,shape=box];
+        }
+        subgraph cluster_865 {
+            graph [label="%147"];
+            866 [label="ret void"
+                ,shape=box];
+        }
+    }
+    subgraph cluster_867 {
+        graph [label="@main"];
+        subgraph cluster_868 {
+            graph [label="%0"];
+            -896 [label=ReturnNode
+                 ,shape=box];
+            869 [label="%1 = alloca i32 , align 4"
+                ,shape=box];
+            870 [label="%inp = alloca %struct.IMMENSE , align 8"
+                ,shape=box];
+            871 [label="%key = alloca %struct.IMMENSE , align 8"
+                ,shape=box];
+            872 [label="%out = alloca %struct.IMMENSE , align 8"
+                ,shape=box];
+            873 [label="%newkey = alloca i32 , align 4"
+                ,shape=box];
+            874 [label="%isw = alloca i32 , align 4"
+                ,shape=box];
+            875 [label="store i32 0 , i32* %1"
+                ,shape=box];
+            876 [label="%2 = getelementptr inbounds %struct.IMMENSE* %inp , i32 0, i32 0"
+                ,shape=box];
+            878 [label="store i64 35 , i64* %2 , align 8"
+                ,shape=box];
+            879 [label="%3 = getelementptr inbounds %struct.IMMENSE* %inp , i32 0, i32 1"
+                ,shape=box];
+            881 [label="store i64 26 , i64* %3 , align 8"
+                ,shape=box];
+            882 [label="%4 = getelementptr inbounds %struct.IMMENSE* %key , i32 0, i32 0"
+                ,shape=box];
+            884 [label="store i64 2 , i64* %4 , align 8"
+                ,shape=box];
+            885 [label="%5 = getelementptr inbounds %struct.IMMENSE* %key , i32 0, i32 1"
+                ,shape=box];
+            886 [label="store i64 16 , i64* %5 , align 8"
+                ,shape=box];
+            887 [label="%6 = load i32* @value , align 4"
+                ,shape=box];
+            888 [label="store i32 %6 , i32* %newkey , align 4"
+                ,shape=box];
+            889 [label="store i32 %6 , i32* %isw , align 4"
+                ,shape=box];
+            890 [label="%7 = bitcast %struct.IMMENSE* %inp to {i64, i64}*"
+                ,shape=box];
+            891 [label="%8 = getelementptr {i64, i64}* %7 , i32 0, i32 0"
+                ,shape=box];
+            892 [label="%9 = getelementptr {i64, i64}* %7 , i32 0, i32 1"
+                ,shape=box];
+            893 [label="%10 = bitcast %struct.IMMENSE* %key to {i64, i64}*"
+                ,shape=box];
+            894 [label="%11 = getelementptr {i64, i64}* %10 , i32 0, i32 0"
+                ,shape=box];
+            895 [label="%12 = getelementptr {i64, i64}* %10 , i32 0, i32 1"
+                ,shape=box];
+            896 [label="call void @des ( i64 35, i64 26, i64 2, i64 16, i32* %newkey, i32 %6, %struct.IMMENSE* %out )"
+                ,shape=box];
+            897 [label="ret i32 0"
+                ,shape=box];
+        }
+    }
+    -896 -> 897 [label=""];
+    -623 -> 624 [label=""];
+    -609 -> 610 [label=""];
+    -595 -> 596 [label=""];
+    -445 -> 446 [label=""];
+    -435 -> 436 [label=""];
+    -399 -> 400 [label=""];
+    -369 -> 370 [label=""];
+    -360 -> 361 [label=""];
+    -331 -> 332 [label=""];
+    -330 -> 331 [label=""];
+    -327 -> 330 [label=""];
+    -306 -> 307 [label=""];
+    -296 -> 297 [label=""];
+    212 -> 213 [label=""];
+    213 -> 214 [label=""];
+    214 -> 215 [label=""];
+    215 -> 216 [label=""];
+    216 -> 217 [label=""];
+    217 -> 218 [label=""];
+    218 -> 219 [label=""];
+    219 -> 220 [label=""];
+    220 -> 221 [label=""];
+    221 -> 222 [label=""];
+    222 -> 223 [label=""];
+    223 -> 224 [label=""];
+    224 -> 225 [label=""];
+    225 -> 226 [label=""];
+    226 -> 227 [label=""];
+    227 -> 228 [label=""];
+    228 -> 229 [label=""];
+    229 -> 230 [label=""];
+    230 -> 231 [label=""];
+    231 -> 232 [label=""];
+    232 -> 233 [label=""];
+    233 -> 234 [label=""];
+    234 -> 235 [label=""];
+    235 -> 236 [label=""];
+    236 -> 237 [label=""];
+    237 -> 238 [label=""];
+    238 -> 239 [label=""];
+    239 -> 240 [label=""];
+    240 -> 242 [label=True];
+    240 -> 267 [label=False];
+    242 -> 244 [label=""];
+    244 -> 247 [label=""];
+    247 -> 248 [label=""];
+    248 -> 249 [label=""];
+    249 -> 251 [label=""];
+    251 -> 252 [label=""];
+    252 -> 253 [label=""];
+    253 -> 254 [label=""];
+    254 -> 256 [label=True];
+    254 -> 265 [label=False];
+    256 -> 257 [label=""];
+    257 -> 258 [label=""];
+    258 -> 259 [label=""];
+    259 -> 260 [label=""];
+    260 -> 261 [label=""];
+    261 -> 262 [label=""];
+    262 -> 263 [label=""];
+    263 -> 251 [label=""];
+    265 -> 267 [label=""];
+    267 -> 268 [label=""];
+    268 -> 269 [label=""];
+    269 -> 271 [label=True];
+    269 -> 338 [label=False];
+    271 -> 275 [label=""];
+    275 -> 278 [label=""];
+    278 -> 279 [label=""];
+    279 -> 281 [label=""];
+    281 -> 282 [label=""];
+    282 -> 284 [label=""];
+    284 -> 285 [label=""];
+    285 -> 286 [label=""];
+    286 -> 287 [label=""];
+    287 -> 289 [label=True];
+    287 -> 316 [label=False];
+    289 -> 290 [label=""];
+    290 -> 291 [label=""];
+    291 -> 292 [label=""];
+    292 -> 293 [label=""];
+    293 -> 294 [label=""];
+    294 -> 295 [label=""];
+    295 -> 296 [label=""];
+    296 -> -296 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    296 -> 461 [label="(_[%41 = call i64 @getbit ( i64 %key.coerce0, i64 %key.coerce1, i32 %40, i32 32 )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    297 -> 298 [label=""];
+    298 -> 299 [label=""];
+    299 -> 300 [label=""];
+    300 -> 301 [label=""];
+    301 -> 302 [label=""];
+    302 -> 303 [label=""];
+    303 -> 304 [label=""];
+    304 -> 305 [label=""];
+    305 -> 306 [label=""];
+    306 -> -306 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    306 -> 461 [label="(_[%49 = call i64 @getbit ( i64 %key.coerce0, i64 %key.coerce1, i32 %48, i32 32 )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    307 -> 308 [label=""];
+    308 -> 310 [label=""];
+    310 -> 311 [label=""];
+    311 -> 312 [label=""];
+    312 -> 313 [label=""];
+    313 -> 314 [label=""];
+    314 -> 284 [label=""];
+    316 -> 317 [label=""];
+    317 -> 319 [label=""];
+    319 -> 320 [label=""];
+    320 -> 321 [label=""];
+    321 -> 323 [label=True];
+    321 -> 336 [label=False];
+    323 -> 324 [label=""];
+    324 -> 325 [label=""];
+    325 -> 326 [label=""];
+    326 -> 327 [label=""];
+    327 -> -327 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    327 -> 899 [label="(_[call void @llvm.memcpy.p0i8.p0i8.i64 ( i8* %60, i8* %61, i64 24, i32 8, i1 0 )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    330 -> -330 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    330 -> 502 [label="(_[call void @ks ( i32 %55, %struct.GREAT* %pg )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    331 -> -331 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    331 -> 899 [label="(_[call void @llvm.memcpy.p0i8.p0i8.i64 ( i8* %61, i8* %60, i64 24, i32 8, i1 0 )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    332 -> 333 [label=""];
+    333 -> 334 [label=""];
+    334 -> 319 [label=""];
+    336 -> 338 [label=""];
+    338 -> 339 [label=""];
+    339 -> 340 [label=""];
+    340 -> 341 [label=""];
+    341 -> 342 [label=""];
+    342 -> 344 [label=""];
+    344 -> 345 [label=""];
+    345 -> 347 [label=""];
+    347 -> 348 [label=""];
+    348 -> 349 [label=""];
+    349 -> 350 [label=""];
+    350 -> 351 [label=""];
+    351 -> 352 [label=""];
+    352 -> 354 [label=True];
+    352 -> 378 [label=False];
+    354 -> 355 [label=""];
+    355 -> 356 [label=""];
+    356 -> 357 [label=""];
+    357 -> 358 [label=""];
+    358 -> 359 [label=""];
+    359 -> 360 [label=""];
+    360 -> -360 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    360 -> 461 [label="(_[%79 = call i64 @getbit ( i64 %inp.coerce0, i64 %inp.coerce1, i32 %78, i32 32 )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    361 -> 362 [label=""];
+    362 -> 363 [label=""];
+    363 -> 364 [label=""];
+    364 -> 365 [label=""];
+    365 -> 366 [label=""];
+    366 -> 367 [label=""];
+    367 -> 368 [label=""];
+    368 -> 369 [label=""];
+    369 -> -369 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    369 -> 461 [label="(_[%86 = call i64 @getbit ( i64 %inp.coerce0, i64 %inp.coerce1, i32 %85, i32 32 )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    370 -> 371 [label=""];
+    371 -> 372 [label=""];
+    372 -> 373 [label=""];
+    373 -> 374 [label=""];
+    374 -> 375 [label=""];
+    375 -> 376 [label=""];
+    376 -> 347 [label=""];
+    378 -> 379 [label=""];
+    379 -> 381 [label=""];
+    381 -> 382 [label=""];
+    382 -> 383 [label=""];
+    383 -> 384 [label=""];
+    384 -> 385 [label=""];
+    385 -> 387 [label=True];
+    385 -> 409 [label=False];
+    387 -> 388 [label=""];
+    388 -> 390 [label=True];
+    388 -> 393 [label=False];
+    390 -> 391 [label=""];
+    391 -> 395 [label=""];
+    393 -> 395 [label=""];
+    395 -> 396 [label=""];
+    396 -> 397 [label=""];
+    397 -> 398 [label=""];
+    398 -> 399 [label=""];
+    399 -> -399 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    399 -> 642 [label="(_[call void @cyfun ( i64 %93, %struct.GREAT* %104, i64* %ic )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    400 -> 401 [label=""];
+    401 -> 402 [label=""];
+    402 -> 403 [label=""];
+    403 -> 404 [label=""];
+    404 -> 405 [label=""];
+    405 -> 406 [label=""];
+    406 -> 407 [label=""];
+    407 -> 381 [label=""];
+    409 -> 410 [label=""];
+    410 -> 411 [label=""];
+    411 -> 412 [label=""];
+    412 -> 413 [label=""];
+    413 -> 414 [label=""];
+    414 -> 415 [label=""];
+    415 -> 416 [label=""];
+    416 -> 417 [label=""];
+    417 -> 418 [label=""];
+    418 -> 420 [label=""];
+    420 -> 421 [label=""];
+    421 -> 422 [label=""];
+    422 -> 423 [label=""];
+    423 -> 425 [label=True];
+    423 -> 454 [label=False];
+    425 -> 426 [label=""];
+    426 -> 427 [label=""];
+    427 -> 428 [label=""];
+    428 -> 429 [label=""];
+    429 -> 430 [label=""];
+    430 -> 431 [label=""];
+    431 -> 432 [label=""];
+    432 -> 433 [label=""];
+    433 -> 434 [label=""];
+    434 -> 435 [label=""];
+    435 -> -435 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    435 -> 461 [label="(_[%125 = call i64 @getbit ( i64 %92, i64 %93, i32 %121, i32 32 )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    436 -> 437 [label=""];
+    437 -> 438 [label=""];
+    438 -> 439 [label=""];
+    439 -> 440 [label=""];
+    440 -> 441 [label=""];
+    441 -> 442 [label=""];
+    442 -> 443 [label=""];
+    443 -> 444 [label=""];
+    444 -> 445 [label=""];
+    445 -> -445 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    445 -> 461 [label="(_[%133 = call i64 @getbit ( i64 %92, i64 %93, i32 %132, i32 32 )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    446 -> 447 [label=""];
+    447 -> 448 [label=""];
+    448 -> 449 [label=""];
+    449 -> 450 [label=""];
+    450 -> 451 [label=""];
+    451 -> 452 [label=""];
+    452 -> 420 [label=""];
+    454 -> -896 [label=")_[call void @des ( i64 35, i64 26, i64 2, i64 16, i32* %newkey, i32 %6, %struct.IMMENSE* %out )]"
+                ,style=dashed
+                ,color=crimson];
+    461 -> 462 [label=""];
+    462 -> 463 [label=""];
+    463 -> 464 [label=""];
+    464 -> 465 [label=""];
+    465 -> 466 [label=""];
+    466 -> 467 [label=""];
+    467 -> 468 [label=""];
+    468 -> 469 [label=""];
+    469 -> 470 [label=""];
+    470 -> 471 [label=""];
+    471 -> 472 [label=""];
+    472 -> 473 [label=""];
+    473 -> 475 [label=True];
+    473 -> 485 [label=False];
+    475 -> 476 [label=""];
+    476 -> 477 [label=""];
+    477 -> 478 [label=""];
+    478 -> 479 [label=""];
+    479 -> 480 [label=""];
+    480 -> 481 [label=""];
+    481 -> 482 [label=""];
+    482 -> 483 [label=""];
+    483 -> 496 [label=""];
+    485 -> 486 [label=""];
+    486 -> 487 [label=""];
+    487 -> 488 [label=""];
+    488 -> 489 [label=""];
+    489 -> 490 [label=""];
+    490 -> 491 [label=""];
+    491 -> 492 [label=""];
+    492 -> 493 [label=""];
+    493 -> 494 [label=""];
+    494 -> 496 [label=""];
+    496 -> 497 [label=""];
+    497 -> -623 [label=")_[%83 = call i64 @getbit ( i64 %81, i64 %82, i32 %80, i32 28 )]"
+                ,style=dashed
+                ,color=crimson];
+    497 -> -609 [label=")_[%71 = call i64 @getbit ( i64 %69, i64 %70, i32 %68, i32 28 )]"
+                ,style=dashed
+                ,color=crimson];
+    497 -> -595 [label=")_[%59 = call i64 @getbit ( i64 %54, i64 %57, i32 %53, i32 28 )]"
+                ,style=dashed
+                ,color=crimson];
+    497 -> -445 [label=")_[%133 = call i64 @getbit ( i64 %92, i64 %93, i32 %132, i32 32 )]"
+                ,style=dashed
+                ,color=crimson];
+    497 -> -435 [label=")_[%125 = call i64 @getbit ( i64 %92, i64 %93, i32 %121, i32 32 )]"
+                ,style=dashed
+                ,color=crimson];
+    497 -> -369 [label=")_[%86 = call i64 @getbit ( i64 %inp.coerce0, i64 %inp.coerce1, i32 %85, i32 32 )]"
+                ,style=dashed
+                ,color=crimson];
+    497 -> -360 [label=")_[%79 = call i64 @getbit ( i64 %inp.coerce0, i64 %inp.coerce1, i32 %78, i32 32 )]"
+                ,style=dashed
+                ,color=crimson];
+    497 -> -306 [label=")_[%49 = call i64 @getbit ( i64 %key.coerce0, i64 %key.coerce1, i32 %48, i32 32 )]"
+                ,style=dashed
+                ,color=crimson];
+    497 -> -296 [label=")_[%41 = call i64 @getbit ( i64 %key.coerce0, i64 %key.coerce1, i32 %40, i32 32 )]"
+                ,style=dashed
+                ,color=crimson];
+    502 -> 503 [label=""];
+    503 -> 504 [label=""];
+    504 -> 505 [label=""];
+    505 -> 506 [label=""];
+    506 -> 507 [label=""];
+    507 -> 508 [label=""];
+    508 -> 509 [label=""];
+    509 -> 510 [label=""];
+    510 -> 511 [label=""];
+    511 -> 513 [label=False];
+    511 -> 522 [label=True];
+    513 -> 514 [label=""];
+    514 -> 516 [label=False];
+    514 -> 522 [label=True];
+    516 -> 517 [label=""];
+    517 -> 519 [label=False];
+    517 -> 522 [label=True];
+    519 -> 520 [label=""];
+    520 -> 522 [label=True];
+    520 -> 537 [label=False];
+    522 -> 523 [label=""];
+    523 -> 525 [label=""];
+    525 -> 526 [label=""];
+    526 -> 527 [label=""];
+    527 -> 528 [label=""];
+    528 -> 529 [label=""];
+    529 -> 530 [label=""];
+    530 -> 531 [label=""];
+    531 -> 532 [label=""];
+    532 -> 533 [label=""];
+    533 -> 534 [label=""];
+    534 -> 535 [label=""];
+    535 -> 562 [label=""];
+    537 -> 538 [label=""];
+    538 -> 540 [label=""];
+    540 -> 541 [label=""];
+    541 -> 542 [label=""];
+    542 -> 544 [label=True];
+    542 -> 560 [label=False];
+    544 -> 545 [label=""];
+    545 -> 546 [label=""];
+    546 -> 547 [label=""];
+    547 -> 548 [label=""];
+    548 -> 549 [label=""];
+    549 -> 550 [label=""];
+    550 -> 551 [label=""];
+    551 -> 552 [label=""];
+    552 -> 553 [label=""];
+    553 -> 554 [label=""];
+    554 -> 555 [label=""];
+    555 -> 556 [label=""];
+    556 -> 557 [label=""];
+    557 -> 558 [label=""];
+    558 -> 540 [label=""];
+    560 -> 562 [label=""];
+    562 -> 563 [label=""];
+    563 -> 564 [label=""];
+    564 -> 565 [label=""];
+    565 -> 566 [label=""];
+    566 -> 567 [label=""];
+    567 -> 568 [label=""];
+    568 -> 569 [label=""];
+    569 -> 571 [label=""];
+    571 -> 572 [label=""];
+    572 -> 574 [label=""];
+    574 -> 575 [label=""];
+    575 -> 576 [label=""];
+    576 -> 577 [label=""];
+    577 -> 578 [label=""];
+    578 -> 580 [label=True];
+    578 -> 636 [label=False];
+    580 -> 581 [label=""];
+    581 -> 582 [label=""];
+    582 -> 583 [label=""];
+    583 -> 584 [label=""];
+    584 -> 585 [label=""];
+    585 -> 586 [label=""];
+    586 -> 587 [label=""];
+    587 -> 592 [label=""];
+    592 -> 595 [label=""];
+    595 -> -595 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    595 -> 461 [label="(_[%59 = call i64 @getbit ( i64 %54, i64 %57, i32 %53, i32 28 )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    596 -> 597 [label=""];
+    597 -> 598 [label=""];
+    598 -> 599 [label=""];
+    599 -> 600 [label=""];
+    600 -> 601 [label=""];
+    601 -> 602 [label=""];
+    602 -> 603 [label=""];
+    603 -> 604 [label=""];
+    604 -> 605 [label=""];
+    605 -> 606 [label=""];
+    606 -> 607 [label=""];
+    607 -> 608 [label=""];
+    608 -> 609 [label=""];
+    609 -> -609 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    609 -> 461 [label="(_[%71 = call i64 @getbit ( i64 %69, i64 %70, i32 %68, i32 28 )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    610 -> 611 [label=""];
+    611 -> 612 [label=""];
+    612 -> 613 [label=""];
+    613 -> 614 [label=""];
+    614 -> 615 [label=""];
+    615 -> 616 [label=""];
+    616 -> 617 [label=""];
+    617 -> 618 [label=""];
+    618 -> 619 [label=""];
+    619 -> 620 [label=""];
+    620 -> 621 [label=""];
+    621 -> 622 [label=""];
+    622 -> 623 [label=""];
+    623 -> -623 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    623 -> 461 [label="(_[%83 = call i64 @getbit ( i64 %81, i64 %82, i32 %80, i32 28 )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    624 -> 625 [label=""];
+    625 -> 626 [label=""];
+    626 -> 627 [label=""];
+    627 -> 628 [label=""];
+    628 -> 629 [label=""];
+    629 -> 630 [label=""];
+    630 -> 631 [label=""];
+    631 -> 632 [label=""];
+    632 -> 633 [label=""];
+    633 -> 634 [label=""];
+    634 -> 574 [label=""];
+    636 -> -330 [label=")_[call void @ks ( i32 %55, %struct.GREAT* %pg )]"
+                ,style=dashed
+                ,color=crimson];
+    642 -> 643 [label=""];
+    643 -> 644 [label=""];
+    644 -> 645 [label=""];
+    645 -> 646 [label=""];
+    646 -> 647 [label=""];
+    647 -> 648 [label=""];
+    648 -> 649 [label=""];
+    649 -> 650 [label=""];
+    650 -> 651 [label=""];
+    651 -> 652 [label=""];
+    652 -> 653 [label=""];
+    653 -> 654 [label=""];
+    654 -> 655 [label=""];
+    655 -> 656 [label=""];
+    656 -> 657 [label=""];
+    657 -> 658 [label=""];
+    658 -> 661 [label=""];
+    661 -> 662 [label=""];
+    662 -> 663 [label=""];
+    663 -> 664 [label=""];
+    664 -> 665 [label=""];
+    665 -> 666 [label=""];
+    666 -> 667 [label=""];
+    667 -> 668 [label=""];
+    668 -> 669 [label=""];
+    669 -> 670 [label=""];
+    670 -> 671 [label=""];
+    671 -> 673 [label=""];
+    673 -> 674 [label=""];
+    674 -> 675 [label=""];
+    675 -> 676 [label=""];
+    676 -> 677 [label=""];
+    677 -> 678 [label=""];
+    678 -> 679 [label=""];
+    679 -> 680 [label=""];
+    680 -> 682 [label=True];
+    680 -> 732 [label=False];
+    682 -> 683 [label=""];
+    683 -> 684 [label=""];
+    684 -> 685 [label=""];
+    685 -> 686 [label=""];
+    686 -> 687 [label=""];
+    687 -> 688 [label=""];
+    688 -> 689 [label=""];
+    689 -> 690 [label=""];
+    690 -> 691 [label=""];
+    691 -> 692 [label=""];
+    692 -> 693 [label=""];
+    693 -> 694 [label=""];
+    694 -> 695 [label=""];
+    695 -> 696 [label=""];
+    696 -> 697 [label=""];
+    697 -> 698 [label=""];
+    698 -> 699 [label=""];
+    699 -> 700 [label=""];
+    700 -> 701 [label=""];
+    701 -> 702 [label=""];
+    702 -> 703 [label=""];
+    703 -> 704 [label=""];
+    704 -> 705 [label=""];
+    705 -> 706 [label=""];
+    706 -> 707 [label=""];
+    707 -> 708 [label=""];
+    708 -> 709 [label=""];
+    709 -> 710 [label=""];
+    710 -> 711 [label=""];
+    711 -> 712 [label=""];
+    712 -> 713 [label=""];
+    713 -> 714 [label=""];
+    714 -> 715 [label=""];
+    715 -> 716 [label=""];
+    716 -> 717 [label=""];
+    717 -> 718 [label=""];
+    718 -> 719 [label=""];
+    719 -> 720 [label=""];
+    720 -> 721 [label=""];
+    721 -> 722 [label=""];
+    722 -> 723 [label=""];
+    723 -> 724 [label=""];
+    724 -> 725 [label=""];
+    725 -> 726 [label=""];
+    726 -> 727 [label=""];
+    727 -> 728 [label=""];
+    728 -> 729 [label=""];
+    729 -> 730 [label=""];
+    730 -> 673 [label=""];
+    732 -> 733 [label=""];
+    733 -> 734 [label=""];
+    734 -> 735 [label=""];
+    735 -> 736 [label=""];
+    736 -> 737 [label=""];
+    737 -> 738 [label=""];
+    738 -> 739 [label=""];
+    739 -> 740 [label=""];
+    740 -> 741 [label=""];
+    741 -> 742 [label=""];
+    742 -> 743 [label=""];
+    743 -> 745 [label=""];
+    745 -> 746 [label=""];
+    746 -> 747 [label=""];
+    747 -> 749 [label=""];
+    749 -> 750 [label=""];
+    750 -> 751 [label=""];
+    751 -> 752 [label=""];
+    752 -> 753 [label=""];
+    753 -> 754 [label=""];
+    754 -> 755 [label=""];
+    755 -> 757 [label=""];
+    757 -> 758 [label=""];
+    758 -> 759 [label=""];
+    759 -> 760 [label=""];
+    760 -> 761 [label=""];
+    761 -> 762 [label=""];
+    762 -> 765 [label=True];
+    762 -> 786 [label=False];
+    765 -> 766 [label=""];
+    766 -> 767 [label=""];
+    767 -> 768 [label=""];
+    768 -> 769 [label=""];
+    769 -> 770 [label=""];
+    770 -> 771 [label=""];
+    771 -> 772 [label=""];
+    772 -> 773 [label=""];
+    773 -> 774 [label=""];
+    774 -> 776 [label=""];
+    776 -> 777 [label=""];
+    777 -> 778 [label=""];
+    778 -> 779 [label=""];
+    779 -> 780 [label=""];
+    780 -> 781 [label=""];
+    781 -> 782 [label=""];
+    782 -> 783 [label=""];
+    783 -> 784 [label=""];
+    784 -> 757 [label=""];
+    786 -> 787 [label=""];
+    787 -> 788 [label=""];
+    788 -> 790 [label=""];
+    790 -> 791 [label=""];
+    791 -> 792 [label=""];
+    792 -> 793 [label=""];
+    793 -> 795 [label=True];
+    793 -> 838 [label=False];
+    795 -> 796 [label=""];
+    796 -> 797 [label=""];
+    797 -> 798 [label=""];
+    798 -> 799 [label=""];
+    799 -> 800 [label=""];
+    800 -> 801 [label=""];
+    801 -> 802 [label=""];
+    802 -> 803 [label=""];
+    803 -> 804 [label=""];
+    804 -> 805 [label=""];
+    805 -> 806 [label=""];
+    806 -> 807 [label=""];
+    807 -> 808 [label=""];
+    808 -> 809 [label=""];
+    809 -> 810 [label=""];
+    810 -> 811 [label=""];
+    811 -> 812 [label=""];
+    812 -> 813 [label=""];
+    813 -> 814 [label=""];
+    814 -> 815 [label=""];
+    815 -> 816 [label=""];
+    816 -> 817 [label=""];
+    817 -> 818 [label=""];
+    818 -> 819 [label=""];
+    819 -> 820 [label=""];
+    820 -> 821 [label=""];
+    821 -> 822 [label=""];
+    822 -> 823 [label=""];
+    823 -> 824 [label=""];
+    824 -> 826 [label=""];
+    826 -> 827 [label=""];
+    827 -> 828 [label=""];
+    828 -> 829 [label=""];
+    829 -> 830 [label=""];
+    830 -> 831 [label=""];
+    831 -> 832 [label=""];
+    832 -> 833 [label=""];
+    833 -> 834 [label=""];
+    834 -> 835 [label=""];
+    835 -> 836 [label=""];
+    836 -> 790 [label=""];
+    838 -> 839 [label=""];
+    839 -> 840 [label=""];
+    840 -> 841 [label=""];
+    841 -> 843 [label=""];
+    843 -> 844 [label=""];
+    844 -> 845 [label=""];
+    845 -> 846 [label=""];
+    846 -> 848 [label=True];
+    846 -> 866 [label=False];
+    848 -> 849 [label=""];
+    849 -> 850 [label=""];
+    850 -> 851 [label=""];
+    851 -> 852 [label=""];
+    852 -> 853 [label=""];
+    853 -> 854 [label=""];
+    854 -> 855 [label=""];
+    855 -> 856 [label=""];
+    856 -> 857 [label=""];
+    857 -> 858 [label=""];
+    858 -> 859 [label=""];
+    859 -> 860 [label=""];
+    860 -> 861 [label=""];
+    861 -> 862 [label=""];
+    862 -> 863 [label=""];
+    863 -> 864 [label=""];
+    864 -> 843 [label=""];
+    866 -> -399 [label=")_[call void @cyfun ( i64 %93, %struct.GREAT* %104, i64* %ic )]"
+                ,style=dashed
+                ,color=crimson];
+    869 -> 870 [label=""];
+    870 -> 871 [label=""];
+    871 -> 872 [label=""];
+    872 -> 873 [label=""];
+    873 -> 874 [label=""];
+    874 -> 875 [label=""];
+    875 -> 876 [label=""];
+    876 -> 878 [label=""];
+    878 -> 879 [label=""];
+    879 -> 881 [label=""];
+    881 -> 882 [label=""];
+    882 -> 884 [label=""];
+    884 -> 885 [label=""];
+    885 -> 886 [label=""];
+    886 -> 887 [label=""];
+    887 -> 888 [label=""];
+    888 -> 889 [label=""];
+    889 -> 890 [label=""];
+    890 -> 891 [label=""];
+    891 -> 892 [label=""];
+    892 -> 893 [label=""];
+    893 -> 894 [label=""];
+    894 -> 895 [label=""];
+    895 -> 896 [label=""];
+    896 -> -896 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    896 -> 212 [label="(_[call void @des ( i64 35, i64 26, i64 2, i64 16, i32* %newkey, i32 %6, %struct.IMMENSE* %out )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    899 -> -331 [label=")_[call void @llvm.memcpy.p0i8.p0i8.i64 ( i8* %61, i8* %60, i64 24, i32 8, i1 0 )]"
+                ,style=dashed
+                ,color=crimson];
+    899 -> -327 [label=")_[call void @llvm.memcpy.p0i8.p0i8.i64 ( i8* %60, i8* %61, i64 24, i32 8, i1 0 )]"
+                ,style=dashed
+                ,color=crimson];
+}

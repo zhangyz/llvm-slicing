@@ -1,0 +1,16 @@
+
+Forward Static SliceTable:
+	#Insts_sliced = 647.0 (Average: 65)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ a@swap           {"WCET/prime.c: [15,16,19,20,23,25,26,27,28,29,31,32,35,37,44,45]"}
+ b@swap           {"WCET/prime.c: [15,16,19,20,23,25,26,27,28,29,31,32,36,44,45]"}
+ i@prime          {"WCET/prime.c: [27]"}
+ m@divides        {"WCET/prime.c: [15,16,19,20,23,25,26,27,28,29,31,32,44,45]"}
+ n@divides        {"WCET/prime.c: [15,16,19,20,23,25,26,27,28,29,31,32,44,45]"}
+ n@even           {"WCET/prime.c: [15,16,19,20,23,25,26,27,28,29,31,32,44,45]"}
+ n@prime          {"WCET/prime.c: [15,16,19,20,23,25,26,27,28,29,31,32,44,45]"}
+ tmp@swap         {"WCET/prime.c: [35]"}
+ x@main           {"WCET/prime.c: [15,16,19,20,23,25,26,27,28,29,31,32,44,45]"}
+ y@main           {"WCET/prime.c: [15,16,19,20,23,25,26,27,28,29,31,32,44,45]"}

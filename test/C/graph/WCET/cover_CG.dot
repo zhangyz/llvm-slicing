@@ -1,0 +1,23 @@
+digraph {
+    subgraph cluster_0 {
+        1337 [label="extern @llvm.dbg.declare"];
+    }
+    subgraph cluster_1 {
+        1320 [label="@main"];
+    }
+    subgraph cluster_2 {
+        1254 [label="@swi10"];
+    }
+    subgraph cluster_3 {
+        988 [label="@swi50"];
+    }
+    subgraph cluster_4 {
+        1 [label="@swi120"];
+    }
+    subgraph cluster_5 {
+        -100 [label=unknown];
+    }
+    1320 -> 1 [label=""];
+    1320 -> 988 [label=""];
+    1320 -> 1254 [label=""];
+}

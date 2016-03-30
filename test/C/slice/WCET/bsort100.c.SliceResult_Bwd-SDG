@@ -1,0 +1,23 @@
+
+Backward Static SliceTable:
+	#Insts_sliced = 221.0 (Average: 13)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ Array                       {"WCET/bsort100.c: [32]"}
+ Array@BubbleSort            {"WCET/bsort100.c: [32,43,89]"}
+ Array@Initialize            {"WCET/bsort100.c: [32,41,68,83,84]"}
+ Index@BubbleSort            {"WCET/bsort100.c: [32,43,89,98,100,103,105,106,108,110,111,112,117]"}
+ Index@Initialize            {"WCET/bsort100.c: [32,41,68,83]"}
+ LastIndex@BubbleSort        {"WCET/bsort100.c: [32,43,89]"}
+ Seed                        {"WCET/bsort100.c: [32]"}
+ Sorted@BubbleSort           {"WCET/bsort100.c: [32,43,89,95,98,100,102,103,105,106,108,110,111,112,113,117]"}
+ StartTime@main              {"WCET/bsort100.c: [32]"}
+ StopTime@main               {"WCET/bsort100.c: [32]"}
+ Temp@BubbleSort             {"WCET/bsort100.c: [32,43,89,98,100,103,105,106,108,110,111,112,117]"}
+ TotalTime@main              {"WCET/bsort100.c: [32]"}
+ buffer@ttime                {"WCET/bsort100.c: [53]"}
+ fact@Initialize             {"WCET/bsort100.c: [32,41,68,82]"}
+ factor                      {"WCET/bsort100.c: [32,41,68,77]"}
+ i@BubbleSort                {"WCET/bsort100.c: [32,43,89,98,100,103,105,106,108,110,111,112,117]"}
+ utime@ttime                 {"WCET/bsort100.c: [53,63]"}

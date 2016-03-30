@@ -1,0 +1,36 @@
+
+Forward Static SliceTable:
+	#Insts_sliced = 1304.0 (Average: 43)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ Array@Calc_Sum_Mean               {"st.c: [60,64,69,100,101,108,120,121,122,135,136,137,141]"}
+ Array@Calc_Var_Stddev             {"st.c: [108,120,121,122]"}
+ Array@Initialize                  {"st.c: [155]"}
+ ArrayA@Calc_LinCorrCoef           {"st.c: [108,135,136,137,141]"}
+ ArrayB@Calc_LinCorrCoef           {"st.c: [108,135,136,137,141]"}
+ Aterm@Calc_LinCorrCoef            {"st.c: [136,141]"}
+ Bterm@Calc_LinCorrCoef            {"st.c: [137,141]"}
+ Mean@Calc_Sum_Mean                {"st.c: []"}
+ Mean@Calc_Var_Stddev              {"st.c: [108,120,121,122]"}
+ MeanA@Calc_LinCorrCoef            {"st.c: [108,135,136,137,141]"}
+ MeanA@main                        {"st.c: [59,60,69,98,99,100,101,108,118,119,120,121,122,132,133,134,135,136,137,141]"}
+ MeanB@Calc_LinCorrCoef            {"st.c: [108,135,136,137,141]"}
+ MeanB@main                        {"st.c: [63,64,69,98,99,100,101,108,118,119,120,121,122,132,133,134,135,136,137,141]"}
+ Seed                              {"st.c: [60,64,69,100,101,108,120,121,122,135,136,137,141,155,164,165]"}
+ Stddev@Calc_Var_Stddev            {"st.c: []"}
+ StddevA@main                      {"st.c: [60,108,118,119,120,121,122]"}
+ StddevB@main                      {"st.c: [64,108,118,119,120,121,122]"}
+ Sum@Calc_Sum_Mean                 {"st.c: [60,64,69,100,101,108,120,121,122,135,136,137,141]"}
+ SumA                              {"st.c: [59,60,69,98,99,100,101,108,120,121,122,135,136,137,141]"}
+ SumB                              {"st.c: [63,64,69,98,99,100,101,108,120,121,122,135,136,137,141]"}
+ Var@Calc_Var_Stddev               {"st.c: []"}
+ VarA@main                         {"st.c: [60,108,118,119,120,121,122]"}
+ VarB@main                         {"st.c: [64,108,118,119,120,121,122]"}
+ diffs@Calc_Var_Stddev             {"st.c: [120,121,122]"}
+ i@Calc_LinCorrCoef                {"st.c: [108,134,135,136,137,141]"}
+ i@Calc_Sum_Mean                   {"st.c: [60,64,69,99,100,101,108,120,121,122,135,136,137,141]"}
+ i@Calc_Var_Stddev                 {"st.c: [108,119,120,121,122]"}
+ i@Initialize                      {"st.c: [60,64,69,100,101,108,120,121,122,135,136,137,141,154,155,164,165]"}
+ numerator@Calc_LinCorrCoef        {"st.c: [135,141]"}
+ x@Square                          {"st.c: [108,120,121,122,136,137,141]"}

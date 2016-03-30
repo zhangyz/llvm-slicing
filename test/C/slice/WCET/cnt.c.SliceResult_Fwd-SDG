@@ -1,0 +1,26 @@
+
+Forward Static SliceTable:
+	#Insts_sliced = 410.0 (Average: 20)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ Array                        {}
+ Array@Initialize             {"WCET/cnt.c: [133,187,191,193,195,199,201,207,209,211,213]"}
+ Array@Sum                    {"WCET/cnt.c: [187,191,193,195,199,201,207,209,211,213]"}
+ Array@Test                   {"WCET/cnt.c: [133,187,191,193,195,199,201,207,209,211,213]"}
+ Inner@Sum                    {"WCET/cnt.c: [179]"}
+ InnerIndex@Initialize        {"WCET/cnt.c: [129,131,133,137,187,191,193,195,199,201,207,209,211,213,247,251,253]"}
+ Ncnt@Sum                     {"WCET/cnt.c: [173,201]"}
+ Negcnt                       {}
+ Negtotal                     {}
+ Ntotal@Sum                   {"WCET/cnt.c: [169,199]"}
+ Outer@Sum                    {"WCET/cnt.c: [177]"}
+ OuterIndex@Initialize        {"WCET/cnt.c: [129]"}
+ Pcnt@Sum                     {"WCET/cnt.c: [171,193]"}
+ Poscnt                       {}
+ Postotal                     {}
+ Ptotal@Sum                   {"WCET/cnt.c: [167,191]"}
+ Seed                         {}
+ StartTime@Test               {"WCET/cnt.c: [89]"}
+ StopTime@Test                {"WCET/cnt.c: [93]"}
+ TotalTime@Test               {"WCET/cnt.c: [97]"}

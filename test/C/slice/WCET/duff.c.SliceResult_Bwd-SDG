@@ -1,0 +1,15 @@
+
+Backward Static SliceTable:
+	#Insts_sliced = 59.0 (Average: 7)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ arr@initialize           {"WCET/duff.c: [79,85,89,105,109]"}
+ count@duffcopy           {"WCET/duff.c: [45,105,111]"}
+ from@duffcopy            {"WCET/duff.c: [45,105,111]"}
+ i@initialize             {"WCET/duff.c: [79,85,105,109]"}
+ length@initialize        {"WCET/duff.c: [79,105,109]"}
+ n@duffcopy               {"WCET/duff.c: [45,49,51,69,105,111]"}
+ source                   {"WCET/duff.c: [105]"}
+ target                   {"WCET/duff.c: [105]"}
+ to@duffcopy              {"WCET/duff.c: [45,105,111]"}

@@ -1,0 +1,63 @@
+
+Forward Static SliceTable:
+	#Insts_sliced = 2747.0 (Average: 48)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ InBuff                         {}
+ InCnt                          {}
+ OutBuff                        {}
+ apsim_InCnt                    {}
+ apsim_bound111@compress        {"WCET/compress.c: [286,318]"}
+ bits@output                    {"WCET/compress.c: [438,456,463,478]"}
+ block_compress                 {"WCET/compress.c: [268,291,292,294,295,296,297,298,302,303,304,305,309,310,311,313,314,315,318,319,324,325,326,327,328,329,332,333,334,335,339,343,345,347,348,349,350,351,353,354,356,357,358,359,360,363,364,365,367,369,371,373,375,376,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,399,413,415,416,419,422,423,425,432,438,439,441,448,449,454,455,456,457,459,461,462,463,464,467,468,469,471,472,473,474,475,476,477,478,479,480,485,490,491,492,493,494,495,496,497,498,499,500,502,503,506,509,510,514,516,517,518,519,521]"}
+ bp@output                      {"WCET/compress.c: [439,455,461,477]"}
+ buf                            {}
+ buf@writebytes                 {"WCET/compress.c: [415,423]"}
+ bytes_out                      {}
+ c@compress                     {"WCET/compress.c: [288]"}
+ c@putbyte                      {"WCET/compress.c: [415,423]"}
+ checkpoint                     {}
+ clear_flg                      {}
+ code@output                    {"WCET/compress.c: [291,292,294,295,296,297,298,302,303,304,305,309,310,311,313,314,315,318,319,324,325,326,327,328,329,332,333,334,335,339,343,345,347,348,349,350,351,353,354,356,357,358,359,360,363,364,365,367,369,371,373,375,376,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,399,413,415,416,419,422,423,425,432,438,439,441,448,449,454,455,456,457,459,461,462,463,464,467,468,469,471,472,473,474,475,476,477,478,479,480,485,490,491,492,493,494,495,496,497,498,499,500,502,503,506,509,510,514,516,517,518,519,521]"}
+ codetab                        {"WCET/compress.c: [291,292,294,295,296,297,298,302,303,304,305,309,310,311,313,314,315,318,319,325,326]"}
+ comp_text_buffer               {}
+ count@main                     {"WCET/compress.c: [202]"}
+ disp@compress                  {"WCET/compress.c: [302,304]"}
+ ent@compress                   {"WCET/compress.c: [270,295,314,323]"}
+ exit_stat                      {}
+ fcode@compress                 {"WCET/compress.c: [273,291]"}
+ force                          {}
+ free_ent                       {}
+ fsize                          {}
+ hshift@compress                {"WCET/compress.c: [278]"}
+ hsize                          {"WCET/compress.c: [273,275,278,280,281,284,291,292,294,295,296,297,298,302,303,304,305,309,310,311,313,314,315,318,319,325,326,360,369,371,373,375,376,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,399]"}
+ hsize@cl_hash                  {"WCET/compress.c: [371,375,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,399]"}
+ hsize_reg@compress             {"WCET/compress.c: [280]"}
+ htab                           {"WCET/compress.c: [291,292,294,295,296,297,298,302,303,304,305,309,310,311,313,314,315,318,319,325,326]"}
+ htab_p@cl_hash                 {"WCET/compress.c: [394,397]"}
+ i@cl_hash                      {"WCET/compress.c: [396,397,399]"}
+ i@compress                     {"WCET/compress.c: [252,292,309,310]"}
+ i@initbuffer                   {"WCET/compress.c: [232]"}
+ i@writebytes                   {"WCET/compress.c: [422]"}
+ in_count                       {}
+ lmask                          {"WCET/compress.c: [454]"}
+ m1@cl_hash                     {"WCET/compress.c: [373,397]"}
+ maxbits                        {}
+ maxcode                        {}
+ maxmaxcode                     {}
+ n@writebytes                   {"WCET/compress.c: [415,422,423,425]"}
+ n_bits                         {}
+ nomagic                        {}
+ offset                         {}
+ ofname                         {}
+ orig_text_buffer               {"WCET/compress.c: [237]"}
+ out_count                      {}
+ quiet                          {}
+ r_off@output                   {"WCET/compress.c: [438,449]"}
+ rat@cl_block                   {"WCET/compress.c: [349,351,354]"}
+ ratio                          {}
+ rmask                          {"WCET/compress.c: [454]"}
+ seed@initbuffer                {"WCET/compress.c: [228,235]"}
+ tabort@initbuffer              {"WCET/compress.c: [234]"}
+ zcat_flg                       {}

@@ -1,0 +1,28 @@
+digraph {
+    subgraph cluster_0 {
+        114 [label="extern @llvm.dbg.declare"];
+    }
+    subgraph cluster_1 {
+        85 [label="@main"];
+    }
+    subgraph cluster_2 {
+        70 [label="@swap"];
+    }
+    subgraph cluster_3 {
+        24 [label="@prime"];
+    }
+    subgraph cluster_4 {
+        16 [label="@even"];
+    }
+    subgraph cluster_5 {
+        1 [label="@divides"];
+    }
+    subgraph cluster_6 {
+        -100 [label=unknown];
+    }
+    16 -> 1 [label=""];
+    24 -> 1 [label=""];
+    24 -> 16 [label=""];
+    85 -> 24 [label=""];
+    85 -> 70 [label=""];
+}

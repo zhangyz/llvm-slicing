@@ -1,0 +1,12 @@
+
+Backward Static SliceTable:
+	#Insts_sliced = 89.0 (Average: 15)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ IN                  {"WCET/lcdnum.c: [53]"}
+ OUT                 {"WCET/lcdnum.c: [19,53,59,60,63,66]"}
+ a@main              {"WCET/lcdnum.c: [53,59,60,62,63,65]"}
+ a@num_to_lcd        {"WCET/lcdnum.c: [19,53,59,60,62,63,65,66]"}
+ i@main              {"WCET/lcdnum.c: [53,59,60,63]"}
+ n@main              {"WCET/lcdnum.c: [53,59]"}

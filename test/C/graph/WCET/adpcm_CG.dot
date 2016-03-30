@@ -1,0 +1,84 @@
+digraph {
+    subgraph cluster_0 {
+        1692 [label="extern @llvm.dbg.declare"];
+    }
+    subgraph cluster_1 {
+        1606 [label="@main"];
+    }
+    subgraph cluster_2 {
+        1500 [label="@reset"];
+    }
+    subgraph cluster_3 {
+        1228 [label="@decode"];
+    }
+    subgraph cluster_4 {
+        452 [label="@encode"];
+    }
+    subgraph cluster_5 {
+        1193 [label="@logsch"];
+    }
+    subgraph cluster_6 {
+        1135 [label="@uppol1"];
+    }
+    subgraph cluster_7 {
+        1061 [label="@uppol2"];
+    }
+    subgraph cluster_8 {
+        958 [label="@upzero"];
+    }
+    subgraph cluster_9 {
+        933 [label="@scalel"];
+    }
+    subgraph cluster_10 {
+        895 [label="@logscl"];
+    }
+    subgraph cluster_11 {
+        839 [label="@quantl"];
+    }
+    subgraph cluster_12 {
+        807 [label="@filtep"];
+    }
+    subgraph cluster_13 {
+        758 [label="@filtez"];
+    }
+    subgraph cluster_14 {
+        443 [label="@my_cos"];
+    }
+    subgraph cluster_15 {
+        378 [label="@my_sin"];
+    }
+    subgraph cluster_16 {
+        360 [label="@my_fabs"];
+    }
+    subgraph cluster_17 {
+        341 [label="@my_abs"];
+    }
+    subgraph cluster_18 {
+        -100 [label=unknown];
+    }
+    378 -> 360 [label=""];
+    443 -> 378 [label=""];
+    452 -> 341 [label=""];
+    452 -> 758 [label=""];
+    452 -> 807 [label=""];
+    452 -> 839 [label=""];
+    452 -> 895 [label=""];
+    452 -> 933 [label=""];
+    452 -> 958 [label=""];
+    452 -> 1061 [label=""];
+    452 -> 1135 [label=""];
+    452 -> 1193 [label=""];
+    839 -> 341 [label=""];
+    1228 -> 758 [label=""];
+    1228 -> 807 [label=""];
+    1228 -> 895 [label=""];
+    1228 -> 933 [label=""];
+    1228 -> 958 [label=""];
+    1228 -> 1061 [label=""];
+    1228 -> 1135 [label=""];
+    1228 -> 1193 [label=""];
+    1606 -> 443 [label=""];
+    1606 -> 452 [label=""];
+    1606 -> 1228 [label=""];
+    1606 -> 1500 [label=""];
+}

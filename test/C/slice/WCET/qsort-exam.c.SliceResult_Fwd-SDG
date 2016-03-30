@@ -1,0 +1,18 @@
+
+Forward Static SliceTable:
+	#Insts_sliced = 223.0 (Average: 19)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ a@sort             {"WCET/qsort-exam.c: [67,91]"}
+ arr                {}
+ flag@sort          {"WCET/qsort-exam.c: [63]"}
+ i@sort             {"WCET/qsort-exam.c: [68,93]"}
+ ir@sort            {"WCET/qsort-exam.c: [58,75,105]"}
+ istack             {}
+ j@sort             {"WCET/qsort-exam.c: [66]"}
+ jstack@sort        {"WCET/qsort-exam.c: [59,76,100]"}
+ k@sort             {"WCET/qsort-exam.c: [78]"}
+ l@sort             {"WCET/qsort-exam.c: [58,76,109]"}
+ n@sort             {"WCET/qsort-exam.c: [58,65,66,67,68,69,70,72,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,102,103,104,105,106,107,108,109,113]"}
+ temp@sort          {"WCET/qsort-exam.c: [79,81,84,87,96]"}

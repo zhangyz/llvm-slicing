@@ -1,0 +1,269 @@
+digraph {
+    subgraph cluster_136 {
+        graph [label="@llvm.dbg.declare"];
+        136 [label="ExternalFunction: @llvm.dbg.declare"];
+    }
+    subgraph cluster_49 {
+        graph [label="@foo"];
+        subgraph cluster_51 {
+            graph [label="%0"];
+            52 [label="%1 = alloca i32 , align 4"
+               ,shape=box];
+            53 [label="%2 = alloca i32 , align 4"
+               ,shape=box];
+            54 [label="%i = alloca i32 , align 4"
+               ,shape=box];
+            55 [label="%j = alloca i32 , align 4"
+               ,shape=box];
+            56 [label="%k = alloca i32 , align 4"
+               ,shape=box];
+            57 [label="%l = alloca i32 , align 4"
+               ,shape=box];
+            58 [label="store i32 %x , i32* %2 , align 4"
+               ,shape=box];
+            59 [label="store i32 0 , i32* %i , align 4"
+               ,shape=box];
+            60 [label="br label %3"
+               ,shape=box];
+        }
+        subgraph cluster_61 {
+            graph [label="%3"];
+            62 [label="%4 = phi i32 [ [%43, %42], [0, %0] ]"
+               ,shape=box];
+            63 [label="%5 = icmp slt i32 %4 , 5"
+               ,shape=box];
+            65 [label="br i1 %5 , label %6 , label %44"
+               ,shape=box];
+        }
+        subgraph cluster_66 {
+            graph [label="%6"];
+            67 [label="store i32 0 , i32* %j , align 4"
+               ,shape=box];
+            68 [label="br label %7"
+               ,shape=box];
+        }
+        subgraph cluster_69 {
+            graph [label="%7"];
+            70 [label="%8 = phi i32 [ [%41, %40], [0, %6] ]"
+               ,shape=box];
+            71 [label="%9 = icmp slt i32 %8 , 5"
+               ,shape=box];
+            72 [label="br i1 %9 , label %10 , label %42"
+               ,shape=box];
+        }
+        subgraph cluster_73 {
+            graph [label="%10"];
+            74 [label="store i32 0 , i32* %k , align 4"
+               ,shape=box];
+            75 [label="br label %11"
+               ,shape=box];
+        }
+        subgraph cluster_76 {
+            graph [label="%11"];
+            77 [label="%12 = phi i32 [ [%39, %38], [0, %10] ]"
+               ,shape=box];
+            78 [label="%13 = icmp slt i32 %12 , 5"
+               ,shape=box];
+            79 [label="br i1 %13 , label %14 , label %40"
+               ,shape=box];
+        }
+        subgraph cluster_80 {
+            graph [label="%14"];
+            81 [label="store i32 0 , i32* %l , align 4"
+               ,shape=box];
+            82 [label="br label %15"
+               ,shape=box];
+        }
+        subgraph cluster_83 {
+            graph [label="%15"];
+            84 [label="%16 = phi i32 [ [%37, %36], [0, %14] ]"
+               ,shape=box];
+            85 [label="%17 = icmp slt i32 %16 , 5"
+               ,shape=box];
+            86 [label="br i1 %17 , label %18 , label %38"
+               ,shape=box];
+        }
+        subgraph cluster_87 {
+            graph [label="%18"];
+            88 [label="%19 = sext i32 %16 to i64"
+               ,shape=box];
+            89 [label="%20 = sext i32 %12 to i64"
+               ,shape=box];
+            90 [label="%21 = sext i32 %8 to i64"
+               ,shape=box];
+            91 [label="%22 = sext i32 %4 to i64"
+               ,shape=box];
+            92 [label="%23 = getelementptr inbounds [5 x [5 x [5 x [5 x i32]]]]* @keys , i32 0, i64 %22"
+               ,shape=box];
+            93 [label="%24 = getelementptr inbounds [5 x [5 x [5 x i32]]]* %23 , i32 0, i64 %21"
+               ,shape=box];
+            94 [label="%25 = getelementptr inbounds [5 x [5 x i32]]* %24 , i32 0, i64 %20"
+               ,shape=box];
+            95 [label="%26 = getelementptr inbounds [5 x i32]* %25 , i32 0, i64 %19"
+               ,shape=box];
+            96 [label="%27 = load i32* %26 , align 4"
+               ,shape=box];
+            97 [label="%28 = icmp eq i32 %27 , %x"
+               ,shape=box];
+            98 [label="br i1 %28 , label %29 , label %36"
+               ,shape=box];
+        }
+        subgraph cluster_99 {
+            graph [label="%29"];
+            100 [label="%30 = getelementptr inbounds [5 x [5 x [5 x [5 x i32]]]]* @answer , i32 0, i64 %22"
+                ,shape=box];
+            101 [label="%31 = getelementptr inbounds [5 x [5 x [5 x i32]]]* %30 , i32 0, i64 %21"
+                ,shape=box];
+            102 [label="%32 = getelementptr inbounds [5 x [5 x i32]]* %31 , i32 0, i64 %20"
+                ,shape=box];
+            103 [label="%33 = getelementptr inbounds [5 x i32]* %32 , i32 0, i64 %19"
+                ,shape=box];
+            104 [label="%34 = load i32* %33 , align 4"
+                ,shape=box];
+            105 [label="%35 = add nsw i32 %34 , %x"
+                ,shape=box];
+            106 [label="store i32 %35 , i32* %1"
+                ,shape=box];
+            107 [label="br label %45"
+                ,shape=box];
+        }
+        subgraph cluster_108 {
+            graph [label="%36"];
+            109 [label="%37 = add nsw i32 %16 , 1"
+                ,shape=box];
+            110 [label="store i32 %37 , i32* %l , align 4"
+                ,shape=box];
+            111 [label="br label %15"
+                ,shape=box];
+        }
+        subgraph cluster_112 {
+            graph [label="%38"];
+            113 [label="%39 = add nsw i32 %12 , 1"
+                ,shape=box];
+            114 [label="store i32 %39 , i32* %k , align 4"
+                ,shape=box];
+            115 [label="br label %11"
+                ,shape=box];
+        }
+        subgraph cluster_116 {
+            graph [label="%40"];
+            117 [label="%41 = add nsw i32 %8 , 1"
+                ,shape=box];
+            118 [label="store i32 %41 , i32* %j , align 4"
+                ,shape=box];
+            119 [label="br label %7"
+                ,shape=box];
+        }
+        subgraph cluster_120 {
+            graph [label="%42"];
+            121 [label="%43 = add nsw i32 %4 , 1"
+                ,shape=box];
+            122 [label="store i32 %43 , i32* %i , align 4"
+                ,shape=box];
+            123 [label="br label %3"
+                ,shape=box];
+        }
+        subgraph cluster_124 {
+            graph [label="%44"];
+            126 [label="store i32 -1 , i32* %1"
+                ,shape=box];
+            127 [label="br label %45"
+                ,shape=box];
+        }
+        subgraph cluster_128 {
+            graph [label="%45"];
+            129 [label="%46 = phi i32 [ [-1, %44], [%35, %29] ]"
+                ,shape=box];
+            130 [label="ret i32 %46"
+                ,shape=box];
+        }
+    }
+    subgraph cluster_131 {
+        graph [label="@main"];
+        subgraph cluster_132 {
+            graph [label="%0"];
+            -133 [label=ReturnNode
+                 ,shape=box];
+            133 [label="%1 = call i32 @foo ( i32 400 )"
+                ,shape=box];
+            135 [label="ret void"
+                ,shape=box];
+        }
+    }
+    -133 -> 135 [label=""];
+    52 -> 53 [label=""];
+    53 -> 54 [label=""];
+    54 -> 55 [label=""];
+    55 -> 56 [label=""];
+    56 -> 57 [label=""];
+    57 -> 58 [label=""];
+    58 -> 59 [label=""];
+    59 -> 60 [label=""];
+    60 -> 62 [label=""];
+    62 -> 63 [label=""];
+    63 -> 65 [label=""];
+    65 -> 67 [label=True];
+    65 -> 126 [label=False];
+    67 -> 68 [label=""];
+    68 -> 70 [label=""];
+    70 -> 71 [label=""];
+    71 -> 72 [label=""];
+    72 -> 74 [label=True];
+    72 -> 121 [label=False];
+    74 -> 75 [label=""];
+    75 -> 77 [label=""];
+    77 -> 78 [label=""];
+    78 -> 79 [label=""];
+    79 -> 81 [label=True];
+    79 -> 117 [label=False];
+    81 -> 82 [label=""];
+    82 -> 84 [label=""];
+    84 -> 85 [label=""];
+    85 -> 86 [label=""];
+    86 -> 88 [label=True];
+    86 -> 113 [label=False];
+    88 -> 89 [label=""];
+    89 -> 90 [label=""];
+    90 -> 91 [label=""];
+    91 -> 92 [label=""];
+    92 -> 93 [label=""];
+    93 -> 94 [label=""];
+    94 -> 95 [label=""];
+    95 -> 96 [label=""];
+    96 -> 97 [label=""];
+    97 -> 98 [label=""];
+    98 -> 100 [label=True];
+    98 -> 109 [label=False];
+    100 -> 101 [label=""];
+    101 -> 102 [label=""];
+    102 -> 103 [label=""];
+    103 -> 104 [label=""];
+    104 -> 105 [label=""];
+    105 -> 106 [label=""];
+    106 -> 107 [label=""];
+    107 -> 129 [label=""];
+    109 -> 110 [label=""];
+    110 -> 111 [label=""];
+    111 -> 84 [label=""];
+    113 -> 114 [label=""];
+    114 -> 115 [label=""];
+    115 -> 77 [label=""];
+    117 -> 118 [label=""];
+    118 -> 119 [label=""];
+    119 -> 70 [label=""];
+    121 -> 122 [label=""];
+    122 -> 123 [label=""];
+    123 -> 62 [label=""];
+    126 -> 127 [label=""];
+    127 -> 129 [label=""];
+    129 -> 130 [label=""];
+    130 -> -133 [label=")_[%1 = call i32 @foo ( i32 400 )]"
+                ,style=dashed
+                ,color=crimson];
+    133 -> -133 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    133 -> 52 [label="(_[%1 = call i32 @foo ( i32 400 )]"
+              ,style=dashed
+              ,color=deepskyblue];
+}

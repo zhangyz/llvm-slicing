@@ -1,0 +1,586 @@
+digraph {
+    subgraph cluster_212 {
+        graph [label="@llvm.dbg.declare"];
+        212 [label="ExternalFunction: @llvm.dbg.declare"];
+    }
+    subgraph cluster_8 {
+        graph [label="@qurt_fabs"];
+        subgraph cluster_10 {
+            graph [label="%0"];
+            12 [label="%1 = alloca double , align 8"
+               ,shape=box];
+            13 [label="%f = alloca double , align 8"
+               ,shape=box];
+            14 [label="store double %n , double* %1 , align 8"
+               ,shape=box];
+            15 [label="%2 = fcmp oge double %n , 0.0"
+               ,shape=box];
+            17 [label="br i1 %2 , label %3 , label %4"
+               ,shape=box];
+        }
+        subgraph cluster_18 {
+            graph [label="%3"];
+            19 [label="store double %n , double* %f , align 8"
+               ,shape=box];
+            20 [label="br label %6"
+               ,shape=box];
+        }
+        subgraph cluster_21 {
+            graph [label="%4"];
+            23 [label="%5 = sub double -0.0 , %n"
+               ,shape=box];
+            24 [label="store double %5 , double* %f , align 8"
+               ,shape=box];
+            25 [label="br label %6"
+               ,shape=box];
+        }
+        subgraph cluster_26 {
+            graph [label="%6"];
+            27 [label="%7 = phi double [ [%5, %4], [%n, %3] ]"
+               ,shape=box];
+            28 [label="ret double %7"
+               ,shape=box];
+        }
+    }
+    subgraph cluster_29 {
+        graph [label="@qurt_sqrt"];
+        subgraph cluster_31 {
+            graph [label="%0"];
+            32 [label="%1 = alloca double , align 8"
+               ,shape=box];
+            33 [label="%x = alloca double , align 8"
+               ,shape=box];
+            34 [label="%dx = alloca double , align 8"
+               ,shape=box];
+            35 [label="%diff = alloca double , align 8"
+               ,shape=box];
+            36 [label="%min_tol = alloca double , align 8"
+               ,shape=box];
+            37 [label="%i = alloca i32 , align 4"
+               ,shape=box];
+            38 [label="%flag = alloca i32 , align 4"
+               ,shape=box];
+            39 [label="store double %val , double* %1 , align 8"
+               ,shape=box];
+            41 [label="%2 = div double %val , 10.0"
+               ,shape=box];
+            42 [label="store double %2 , double* %x , align 8"
+               ,shape=box];
+            44 [label="store double 1.0e-5 , double* %min_tol , align 8"
+               ,shape=box];
+            45 [label="store i32 0 , i32* %flag , align 4"
+               ,shape=box];
+            46 [label="%3 = fcmp oeq double %val , 0.0"
+               ,shape=box];
+            47 [label="br i1 %3 , label %4 , label %5"
+               ,shape=box];
+        }
+        subgraph cluster_48 {
+            graph [label="%4"];
+            49 [label="store double 0.0 , double* %x , align 8"
+               ,shape=box];
+            50 [label="br label %32"
+               ,shape=box];
+        }
+        subgraph cluster_51 {
+            graph [label="%5"];
+            52 [label="store i32 1 , i32* %i , align 4"
+               ,shape=box];
+            53 [label="br label %6"
+               ,shape=box];
+        }
+        subgraph cluster_54 {
+            graph [label="%6"];
+            55 [label="%7 = phi i32 [ [%28, %27], [0, %5] ]"
+               ,shape=box];
+            56 [label="%8 = phi i32 [ [%30, %27], [1, %5] ]"
+               ,shape=box];
+            57 [label="%9 = phi double [ [%29, %27], [%2, %5] ]"
+               ,shape=box];
+            58 [label="%10 = icmp slt i32 %8 , 20"
+               ,shape=box];
+            60 [label="br i1 %10 , label %11 , label %31"
+               ,shape=box];
+        }
+        subgraph cluster_61 {
+            graph [label="%11"];
+            62 [label="%12 = icmp ne i32 %7 , 0"
+               ,shape=box];
+            63 [label="br i1 %12 , label %26 , label %13"
+               ,shape=box];
+        }
+        subgraph cluster_64 {
+            graph [label="%13"];
+            -76 [label=ReturnNode
+                ,shape=box];
+            65 [label="%14 = mul double %9 , %9"
+               ,shape=box];
+            66 [label="%15 = sub double %val , %14"
+               ,shape=box];
+            68 [label="%16 = mul double 2.0 , %9"
+               ,shape=box];
+            69 [label="%17 = div double %15 , %16"
+               ,shape=box];
+            70 [label="store double %17 , double* %dx , align 8"
+               ,shape=box];
+            71 [label="%18 = add double %9 , %17"
+               ,shape=box];
+            72 [label="store double %18 , double* %x , align 8"
+               ,shape=box];
+            73 [label="%19 = mul double %18 , %18"
+               ,shape=box];
+            74 [label="%20 = sub double %val , %19"
+               ,shape=box];
+            75 [label="store double %20 , double* %diff , align 8"
+               ,shape=box];
+            76 [label="%21 = call double @qurt_fabs ( double %20 )"
+               ,shape=box];
+            77 [label="%22 = fcmp ole double %21 , 1.0e-5"
+               ,shape=box];
+            78 [label="br i1 %22 , label %23 , label %24"
+               ,shape=box];
+        }
+        subgraph cluster_79 {
+            graph [label="%23"];
+            80 [label="store i32 1 , i32* %flag , align 4"
+               ,shape=box];
+            81 [label="br label %24"
+               ,shape=box];
+        }
+        subgraph cluster_82 {
+            graph [label="%24"];
+            83 [label="%25 = phi i32 [ [1, %23], [0, %13] ]"
+               ,shape=box];
+            84 [label="br label %27"
+               ,shape=box];
+        }
+        subgraph cluster_85 {
+            graph [label="%26"];
+            86 [label="br label %27"
+               ,shape=box];
+        }
+        subgraph cluster_87 {
+            graph [label="%27"];
+            88 [label="%28 = phi i32 [ [%7, %26], [%25, %24] ]"
+               ,shape=box];
+            89 [label="%29 = phi double [ [%9, %26], [%18, %24] ]"
+               ,shape=box];
+            90 [label="%30 = add nsw i32 %8 , 1"
+               ,shape=box];
+            91 [label="store i32 %30 , i32* %i , align 4"
+               ,shape=box];
+            92 [label="br label %6"
+               ,shape=box];
+        }
+        subgraph cluster_93 {
+            graph [label="%31"];
+            94 [label="br label %32"
+               ,shape=box];
+        }
+        subgraph cluster_95 {
+            graph [label="%32"];
+            96 [label="%33 = phi double [ [%9, %31], [0.0, %4] ]"
+               ,shape=box];
+            97 [label="ret double %33"
+               ,shape=box];
+        }
+    }
+    subgraph cluster_98 {
+        graph [label="@main"];
+        subgraph cluster_99 {
+            graph [label="%0"];
+            -127 [label=ReturnNode
+                 ,shape=box];
+            -121 [label=ReturnNode
+                 ,shape=box];
+            -116 [label=ReturnNode
+                 ,shape=box];
+            100 [label="%1 = alloca i32 , align 4"
+                ,shape=box];
+            101 [label="store i32 0 , i32* %1"
+                ,shape=box];
+            106 [label="store double 1.0 , double* double* getelementptr ( [3 x double]* @a ,  i32 0, i64 0 ) , align 8"
+                ,shape=box];
+            111 [label="store double -3.0 , double* double* getelementptr ( [3 x double]* @a ,  i32 0, i64 1 ) , align 8"
+                ,shape=box];
+            115 [label="store double 2.0 , double* double* getelementptr ( [3 x double]* @a ,  i32 0, i64 2 ) , align 8"
+                ,shape=box];
+            116 [label="%5 = call i32 @qurt ( )"
+                ,shape=box];
+            117 [label="store double 1.0 , double* double* getelementptr ( [3 x double]* @a ,  i32 0, i64 0 ) , align 8"
+                ,shape=box];
+            119 [label="store double -2.0 , double* double* getelementptr ( [3 x double]* @a ,  i32 0, i64 1 ) , align 8"
+                ,shape=box];
+            120 [label="store double 1.0 , double* double* getelementptr ( [3 x double]* @a ,  i32 0, i64 2 ) , align 8"
+                ,shape=box];
+            121 [label="%6 = call i32 @qurt ( )"
+                ,shape=box];
+            122 [label="store double 1.0 , double* double* getelementptr ( [3 x double]* @a ,  i32 0, i64 0 ) , align 8"
+                ,shape=box];
+            124 [label="store double -4.0 , double* double* getelementptr ( [3 x double]* @a ,  i32 0, i64 1 ) , align 8"
+                ,shape=box];
+            126 [label="store double 8.0 , double* double* getelementptr ( [3 x double]* @a ,  i32 0, i64 2 ) , align 8"
+                ,shape=box];
+            127 [label="%7 = call i32 @qurt ( )"
+                ,shape=box];
+            128 [label="ret i32 0"
+                ,shape=box];
+        }
+    }
+    subgraph cluster_129 {
+        graph [label="@qurt"];
+        subgraph cluster_130 {
+            graph [label="%0"];
+            131 [label="%1 = alloca i32 , align 4"
+                ,shape=box];
+            132 [label="%d = alloca double , align 8"
+                ,shape=box];
+            133 [label="%w1 = alloca double , align 8"
+                ,shape=box];
+            134 [label="%w2 = alloca double , align 8"
+                ,shape=box];
+            135 [label="%2 = load double* double* getelementptr ( [3 x double]* @a ,  i32 0, i64 0 ) , align 8"
+                ,shape=box];
+            136 [label="%3 = fcmp oeq double %2 , 0.0"
+                ,shape=box];
+            137 [label="br i1 %3 , label %4 , label %5"
+                ,shape=box];
+        }
+        subgraph cluster_138 {
+            graph [label="%4"];
+            140 [label="store i32 999 , i32* %1"
+                ,shape=box];
+            141 [label="br label %39"
+                ,shape=box];
+        }
+        subgraph cluster_142 {
+            graph [label="%5"];
+            -154 [label=ReturnNode
+                 ,shape=box];
+            -153 [label=ReturnNode
+                 ,shape=box];
+            143 [label="%6 = load double* double* getelementptr ( [3 x double]* @a ,  i32 0, i64 1 ) , align 8"
+                ,shape=box];
+            144 [label="%7 = mul double %6 , %6"
+                ,shape=box];
+            146 [label="%8 = mul double 4.0 , %2"
+                ,shape=box];
+            147 [label="%9 = load double* double* getelementptr ( [3 x double]* @a ,  i32 0, i64 2 ) , align 8"
+                ,shape=box];
+            148 [label="%10 = mul double %8 , %9"
+                ,shape=box];
+            149 [label="%11 = sub double %7 , %10"
+                ,shape=box];
+            150 [label="store double %11 , double* %d , align 8"
+                ,shape=box];
+            151 [label="%12 = mul double 2.0 , %2"
+                ,shape=box];
+            152 [label="store double %12 , double* %w1 , align 8"
+                ,shape=box];
+            153 [label="%13 = call double @qurt_fabs ( double %11 )"
+                ,shape=box];
+            154 [label="%14 = call double @qurt_sqrt ( double %13 )"
+                ,shape=box];
+            155 [label="store double %14 , double* %w2 , align 8"
+                ,shape=box];
+            156 [label="%15 = fcmp ogt double %11 , 0.0"
+                ,shape=box];
+            157 [label="br i1 %15 , label %16 , label %27"
+                ,shape=box];
+        }
+        subgraph cluster_158 {
+            graph [label="%16"];
+            159 [label="store i32 1 , i32* @flag , align 4"
+                ,shape=box];
+            160 [label="%17 = load double* double* getelementptr ( [3 x double]* @a ,  i32 0, i64 1 ) , align 8"
+                ,shape=box];
+            161 [label="%18 = sub double -0.0 , %17"
+                ,shape=box];
+            162 [label="%19 = add double %18 , %14"
+                ,shape=box];
+            163 [label="%20 = div double %19 , %12"
+                ,shape=box];
+            166 [label="store double %20 , double* double* getelementptr ( [2 x double]* @x1 ,  i32 0, i64 0 ) , align 8"
+                ,shape=box];
+            169 [label="store double 0.0 , double* double* getelementptr ( [2 x double]* @x1 ,  i32 0, i64 1 ) , align 8"
+                ,shape=box];
+            170 [label="%23 = sub double %18 , %14"
+                ,shape=box];
+            171 [label="%24 = div double %23 , %12"
+                ,shape=box];
+            174 [label="store double %24 , double* double* getelementptr ( [2 x double]* @x2 ,  i32 0, i64 0 ) , align 8"
+                ,shape=box];
+            177 [label="store double 0.0 , double* double* getelementptr ( [2 x double]* @x2 ,  i32 0, i64 1 ) , align 8"
+                ,shape=box];
+            178 [label="store i32 0 , i32* %1"
+                ,shape=box];
+            179 [label="br label %39"
+                ,shape=box];
+        }
+        subgraph cluster_180 {
+            graph [label="%27"];
+            181 [label="%28 = fcmp oeq double %11 , 0.0"
+                ,shape=box];
+            182 [label="br i1 %28 , label %29 , label %33"
+                ,shape=box];
+        }
+        subgraph cluster_183 {
+            graph [label="%29"];
+            184 [label="store i32 0 , i32* @flag , align 4"
+                ,shape=box];
+            185 [label="%30 = load double* double* getelementptr ( [3 x double]* @a ,  i32 0, i64 1 ) , align 8"
+                ,shape=box];
+            186 [label="%31 = sub double -0.0 , %30"
+                ,shape=box];
+            187 [label="%32 = div double %31 , %12"
+                ,shape=box];
+            188 [label="store double %32 , double* double* getelementptr ( [2 x double]* @x1 ,  i32 0, i64 0 ) , align 8"
+                ,shape=box];
+            189 [label="store double 0.0 , double* double* getelementptr ( [2 x double]* @x1 ,  i32 0, i64 1 ) , align 8"
+                ,shape=box];
+            190 [label="store double %32 , double* double* getelementptr ( [2 x double]* @x2 ,  i32 0, i64 0 ) , align 8"
+                ,shape=box];
+            191 [label="store double 0.0 , double* double* getelementptr ( [2 x double]* @x2 ,  i32 0, i64 1 ) , align 8"
+                ,shape=box];
+            192 [label="store i32 0 , i32* %1"
+                ,shape=box];
+            193 [label="br label %39"
+                ,shape=box];
+        }
+        subgraph cluster_194 {
+            graph [label="%33"];
+            196 [label="store i32 -1 , i32* @flag , align 4"
+                ,shape=box];
+            197 [label="%34 = div double %14 , %12"
+                ,shape=box];
+            198 [label="store double %34 , double* %w2 , align 8"
+                ,shape=box];
+            199 [label="%35 = load double* double* getelementptr ( [3 x double]* @a ,  i32 0, i64 1 ) , align 8"
+                ,shape=box];
+            200 [label="%36 = sub double -0.0 , %35"
+                ,shape=box];
+            201 [label="%37 = div double %36 , %12"
+                ,shape=box];
+            202 [label="store double %37 , double* double* getelementptr ( [2 x double]* @x1 ,  i32 0, i64 0 ) , align 8"
+                ,shape=box];
+            203 [label="store double %34 , double* double* getelementptr ( [2 x double]* @x1 ,  i32 0, i64 1 ) , align 8"
+                ,shape=box];
+            204 [label="store double %37 , double* double* getelementptr ( [2 x double]* @x2 ,  i32 0, i64 0 ) , align 8"
+                ,shape=box];
+            205 [label="%38 = sub double -0.0 , %34"
+                ,shape=box];
+            206 [label="store double %38 , double* double* getelementptr ( [2 x double]* @x2 ,  i32 0, i64 1 ) , align 8"
+                ,shape=box];
+            207 [label="store i32 0 , i32* %1"
+                ,shape=box];
+            208 [label="br label %39"
+                ,shape=box];
+        }
+        subgraph cluster_209 {
+            graph [label="%39"];
+            210 [label="%40 = phi i32 [ [0, %33], [0, %29], [0, %16], [999, %4] ]"
+                ,shape=box];
+            211 [label="ret i32 %40"
+                ,shape=box];
+        }
+    }
+    -154 -> 155 [label=""];
+    -153 -> 154 [label=""];
+    -127 -> 128 [label=""];
+    -121 -> 122 [label=""];
+    -116 -> 117 [label=""];
+    -76 -> 77 [label=""];
+    12 -> 13 [label=""];
+    13 -> 14 [label=""];
+    14 -> 15 [label=""];
+    15 -> 17 [label=""];
+    17 -> 19 [label=True];
+    17 -> 23 [label=False];
+    19 -> 20 [label=""];
+    20 -> 27 [label=""];
+    23 -> 24 [label=""];
+    24 -> 25 [label=""];
+    25 -> 27 [label=""];
+    27 -> 28 [label=""];
+    28 -> -153 [label=")_[%13 = call double @qurt_fabs ( double %11 )]"
+               ,style=dashed
+               ,color=crimson];
+    28 -> -76 [label=")_[%21 = call double @qurt_fabs ( double %20 )]"
+              ,style=dashed
+              ,color=crimson];
+    32 -> 33 [label=""];
+    33 -> 34 [label=""];
+    34 -> 35 [label=""];
+    35 -> 36 [label=""];
+    36 -> 37 [label=""];
+    37 -> 38 [label=""];
+    38 -> 39 [label=""];
+    39 -> 41 [label=""];
+    41 -> 42 [label=""];
+    42 -> 44 [label=""];
+    44 -> 45 [label=""];
+    45 -> 46 [label=""];
+    46 -> 47 [label=""];
+    47 -> 49 [label=True];
+    47 -> 52 [label=False];
+    49 -> 50 [label=""];
+    50 -> 96 [label=""];
+    52 -> 53 [label=""];
+    53 -> 55 [label=""];
+    55 -> 56 [label=""];
+    56 -> 57 [label=""];
+    57 -> 58 [label=""];
+    58 -> 60 [label=""];
+    60 -> 62 [label=True];
+    60 -> 94 [label=False];
+    62 -> 63 [label=""];
+    63 -> 65 [label=False];
+    63 -> 86 [label=True];
+    65 -> 66 [label=""];
+    66 -> 68 [label=""];
+    68 -> 69 [label=""];
+    69 -> 70 [label=""];
+    70 -> 71 [label=""];
+    71 -> 72 [label=""];
+    72 -> 73 [label=""];
+    73 -> 74 [label=""];
+    74 -> 75 [label=""];
+    75 -> 76 [label=""];
+    76 -> -76 [label="<call-to-return>"
+              ,style=dotted
+              ,color=forestgreen];
+    76 -> 12 [label="(_[%21 = call double @qurt_fabs ( double %20 )]"
+             ,style=dashed
+             ,color=deepskyblue];
+    77 -> 78 [label=""];
+    78 -> 80 [label=True];
+    78 -> 83 [label=False];
+    80 -> 81 [label=""];
+    81 -> 83 [label=""];
+    83 -> 84 [label=""];
+    84 -> 88 [label=""];
+    86 -> 88 [label=""];
+    88 -> 89 [label=""];
+    89 -> 90 [label=""];
+    90 -> 91 [label=""];
+    91 -> 92 [label=""];
+    92 -> 55 [label=""];
+    94 -> 96 [label=""];
+    96 -> 97 [label=""];
+    97 -> -154 [label=")_[%14 = call double @qurt_sqrt ( double %13 )]"
+               ,style=dashed
+               ,color=crimson];
+    100 -> 101 [label=""];
+    101 -> 106 [label=""];
+    106 -> 111 [label=""];
+    111 -> 115 [label=""];
+    115 -> 116 [label=""];
+    116 -> -116 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    116 -> 131 [label="(_[%5 = call i32 @qurt ( )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    117 -> 119 [label=""];
+    119 -> 120 [label=""];
+    120 -> 121 [label=""];
+    121 -> -121 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    121 -> 131 [label="(_[%6 = call i32 @qurt ( )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    122 -> 124 [label=""];
+    124 -> 126 [label=""];
+    126 -> 127 [label=""];
+    127 -> -127 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    127 -> 131 [label="(_[%7 = call i32 @qurt ( )]"
+               ,style=dashed
+               ,color=deepskyblue];
+    131 -> 132 [label=""];
+    132 -> 133 [label=""];
+    133 -> 134 [label=""];
+    134 -> 135 [label=""];
+    135 -> 136 [label=""];
+    136 -> 137 [label=""];
+    137 -> 140 [label=True];
+    137 -> 143 [label=False];
+    140 -> 141 [label=""];
+    141 -> 210 [label=""];
+    143 -> 144 [label=""];
+    144 -> 146 [label=""];
+    146 -> 147 [label=""];
+    147 -> 148 [label=""];
+    148 -> 149 [label=""];
+    149 -> 150 [label=""];
+    150 -> 151 [label=""];
+    151 -> 152 [label=""];
+    152 -> 153 [label=""];
+    153 -> -153 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    153 -> 12 [label="(_[%13 = call double @qurt_fabs ( double %11 )]"
+              ,style=dashed
+              ,color=deepskyblue];
+    154 -> -154 [label="<call-to-return>"
+                ,style=dotted
+                ,color=forestgreen];
+    154 -> 32 [label="(_[%14 = call double @qurt_sqrt ( double %13 )]"
+              ,style=dashed
+              ,color=deepskyblue];
+    155 -> 156 [label=""];
+    156 -> 157 [label=""];
+    157 -> 159 [label=True];
+    157 -> 181 [label=False];
+    159 -> 160 [label=""];
+    160 -> 161 [label=""];
+    161 -> 162 [label=""];
+    162 -> 163 [label=""];
+    163 -> 166 [label=""];
+    166 -> 169 [label=""];
+    169 -> 170 [label=""];
+    170 -> 171 [label=""];
+    171 -> 174 [label=""];
+    174 -> 177 [label=""];
+    177 -> 178 [label=""];
+    178 -> 179 [label=""];
+    179 -> 210 [label=""];
+    181 -> 182 [label=""];
+    182 -> 184 [label=True];
+    182 -> 196 [label=False];
+    184 -> 185 [label=""];
+    185 -> 186 [label=""];
+    186 -> 187 [label=""];
+    187 -> 188 [label=""];
+    188 -> 189 [label=""];
+    189 -> 190 [label=""];
+    190 -> 191 [label=""];
+    191 -> 192 [label=""];
+    192 -> 193 [label=""];
+    193 -> 210 [label=""];
+    196 -> 197 [label=""];
+    197 -> 198 [label=""];
+    198 -> 199 [label=""];
+    199 -> 200 [label=""];
+    200 -> 201 [label=""];
+    201 -> 202 [label=""];
+    202 -> 203 [label=""];
+    203 -> 204 [label=""];
+    204 -> 205 [label=""];
+    205 -> 206 [label=""];
+    206 -> 207 [label=""];
+    207 -> 208 [label=""];
+    208 -> 210 [label=""];
+    210 -> 211 [label=""];
+    211 -> -127 [label=")_[%7 = call i32 @qurt ( )]"
+                ,style=dashed
+                ,color=crimson];
+    211 -> -121 [label=")_[%6 = call i32 @qurt ( )]"
+                ,style=dashed
+                ,color=crimson];
+    211 -> -116 [label=")_[%5 = call i32 @qurt ( )]"
+                ,style=dashed
+                ,color=crimson];
+}

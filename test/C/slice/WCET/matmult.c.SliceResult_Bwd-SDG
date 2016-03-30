@@ -1,0 +1,22 @@
+
+Backward Static SliceTable:
+	#Insts_sliced = 479.0 (Average: 30)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ A@Multiply                   {"WCET/matmult.c: [52,61,77,88,96,108,115,116,117,121,126,147]"}
+ A@Test                       {"WCET/matmult.c: [52,61,77,88,108,115,116,117,121,126]"}
+ Array@Initialize             {"WCET/matmult.c: [52,61,77,88,89,108,115,116,117,121,126]"}
+ ArrayA                       {"WCET/matmult.c: [52]"}
+ ArrayB                       {"WCET/matmult.c: [52]"}
+ B@Multiply                   {"WCET/matmult.c: [52,61,77,89,96,108,115,116,117,121,126,147]"}
+ B@Test                       {"WCET/matmult.c: [52,61,77,89,108,115,116,117,121,126]"}
+ Index@Multiply               {"WCET/matmult.c: [52,61,77,96,147,154,155,158]"}
+ Inner@Multiply               {"WCET/matmult.c: [52,61,77,96,147,154,155,158]"}
+ InnerIndex@Initialize        {"WCET/matmult.c: [52,61,77,88,89,108,115,116]"}
+ Outer@Multiply               {"WCET/matmult.c: [52,61,77,96,147,154,155,158]"}
+ OuterIndex@Initialize        {"WCET/matmult.c: [52,61,77,88,89,108,115,116]"}
+ Res@Multiply                 {"WCET/matmult.c: [52,61,77,88,89,96,108,115,116,117,121,126,147,154,155,157,158,159]"}
+ Res@Test                     {"WCET/matmult.c: [52,61,77,88,89,96,108,115,116,117,121,126,147,154,155,157,158,159]"}
+ ResultArray                  {"WCET/matmult.c: [52]"}
+ Seed                         {"WCET/matmult.c: [52,54,61,65,73,77,88,89,108,115,116,117,121,126]"}

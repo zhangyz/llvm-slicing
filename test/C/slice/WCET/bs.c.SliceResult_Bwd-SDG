@@ -1,0 +1,12 @@
+
+Backward Static SliceTable:
+	#Insts_sliced = 123.0 (Average: 20)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ data                        {"WCET/bs.c: [71]"}
+ fvalue@binary_search        {"WCET/bs.c: [71,73,76,82,83,84,85,86,87,93,94,100]"}
+ low@binary_search           {"WCET/bs.c: [71,73,76,80,83,84,85,86,93,94,100]"}
+ mid@binary_search           {"WCET/bs.c: [71,73,76,83,84,85,86,93,94,100]"}
+ up@binary_search            {"WCET/bs.c: [71,73,76,81,83,84,85,86,93,94,100]"}
+ x@binary_search             {"WCET/bs.c: [71,73,76]"}

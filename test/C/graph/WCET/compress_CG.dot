@@ -1,0 +1,44 @@
+digraph {
+    subgraph cluster_0 {
+        714 [label="extern @llvm.dbg.declare"];
+    }
+    subgraph cluster_1 {
+        67 [label="@main"];
+    }
+    subgraph cluster_2 {
+        121 [label="@compress"];
+    }
+    subgraph cluster_3 {
+        428 [label="@cl_block"];
+    }
+    subgraph cluster_4 {
+        480 [label="@output"];
+    }
+    subgraph cluster_5 {
+        680 [label="@writebytes"];
+    }
+    subgraph cluster_6 {
+        670 [label="@putbyte"];
+    }
+    subgraph cluster_7 {
+        336 [label="@cl_hash"];
+    }
+    subgraph cluster_8 {
+        307 [label="@getbyte"];
+    }
+    subgraph cluster_9 {
+        88 [label="@initbuffer"];
+    }
+    subgraph cluster_10 {
+        -100 [label=unknown];
+    }
+    67 -> 88 [label=""];
+    67 -> 121 [label=""];
+    121 -> 307 [label=""];
+    121 -> 336 [label=""];
+    121 -> 428 [label=""];
+    428 -> 336 [label=""];
+    428 -> 480 [label=""];
+    480 -> 670 [label=""];
+    480 -> 680 [label=""];
+}

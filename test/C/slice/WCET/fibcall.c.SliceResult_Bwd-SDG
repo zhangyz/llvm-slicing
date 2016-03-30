@@ -1,0 +1,13 @@
+
+Backward Static SliceTable:
+	#Insts_sliced = 87.0 (Average: 12)
+
+ Variable      SrcLineNumbers  
+------------------------------
+ Fnew@fib        {"WCET/fibcall.c: [47,51,52,54,57,64,69]"}
+ Fold@fib        {"WCET/fibcall.c: [47,51,52,54,57,58,64,69]"}
+ a@main          {"WCET/fibcall.c: [64,68]"}
+ ans@fib         {"WCET/fibcall.c: [47,52,54,57,60,64,69]"}
+ i@fib           {"WCET/fibcall.c: [47,52,54,64,69]"}
+ n@fib           {"WCET/fibcall.c: [47,64,69]"}
+ temp@fib        {"WCET/fibcall.c: [47,52,54,56,57,64,69]"}

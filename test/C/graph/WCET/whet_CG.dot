@@ -1,0 +1,47 @@
+digraph {
+    subgraph cluster_0 {
+        512 [label="extern @llvm.dbg.declare"];
+    }
+    subgraph cluster_1 {
+        29 [label="@main"];
+    }
+    subgraph cluster_2 {
+        511 [label="extern @log"];
+    }
+    subgraph cluster_3 {
+        510 [label="extern @exp"];
+    }
+    subgraph cluster_4 {
+        509 [label="extern @sqrt"];
+    }
+    subgraph cluster_5 {
+        508 [label="extern @cos"];
+    }
+    subgraph cluster_6 {
+        507 [label="extern @sin"];
+    }
+    subgraph cluster_7 {
+        506 [label="extern @atan"];
+    }
+    subgraph cluster_8 {
+        487 [label="@p0"];
+    }
+    subgraph cluster_9 {
+        463 [label="@p3"];
+    }
+    subgraph cluster_10 {
+        406 [label="@pa"];
+    }
+    subgraph cluster_11 {
+        -100 [label=unknown];
+    }
+    29 -> 406 [label=""];
+    29 -> 463 [label=""];
+    29 -> 487 [label=""];
+    29 -> 506 [label=""];
+    29 -> 507 [label=""];
+    29 -> 508 [label=""];
+    29 -> 509 [label=""];
+    29 -> 510 [label=""];
+    29 -> 511 [label=""];
+}

@@ -1,0 +1,11 @@
+digraph {
+    subgraph cluster_0 {
+        100 [label="extern @llvm.dbg.declare"];
+    }
+    subgraph cluster_1 {
+        3 [label="@main"];
+    }
+    subgraph cluster_2 {
+        -100 [label=unknown];
+    }
+}

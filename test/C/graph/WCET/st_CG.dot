@@ -1,0 +1,45 @@
+digraph {
+    subgraph cluster_0 {
+        220 [label="extern @llvm.dbg.declare"];
+    }
+    subgraph cluster_1 {
+        10 [label="@main"];
+    }
+    subgraph cluster_2 {
+        182 [label="@Initialize"];
+    }
+    subgraph cluster_3 {
+        209 [label="@RandomInteger"];
+    }
+    subgraph cluster_4 {
+        123 [label="@Calc_LinCorrCoef"];
+    }
+    subgraph cluster_5 {
+        82 [label="@Calc_Var_Stddev"];
+    }
+    subgraph cluster_6 {
+        221 [label="extern @sqrt"];
+    }
+    subgraph cluster_7 {
+        75 [label="@Square"];
+    }
+    subgraph cluster_8 {
+        40 [label="@Calc_Sum_Mean"];
+    }
+    subgraph cluster_9 {
+        36 [label="@InitSeed"];
+    }
+    subgraph cluster_10 {
+        -100 [label=unknown];
+    }
+    10 -> 36 [label=""];
+    10 -> 40 [label=""];
+    10 -> 82 [label=""];
+    10 -> 123 [label=""];
+    10 -> 182 [label=""];
+    82 -> 75 [label=""];
+    82 -> 221 [label=""];
+    123 -> 75 [label=""];
+    123 -> 221 [label=""];
+    182 -> 209 [label=""];
+}

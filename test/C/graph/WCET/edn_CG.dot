@@ -1,0 +1,47 @@
+digraph {
+    subgraph cluster_0 {
+        830 [label="extern @llvm.dbg.declare"];
+    }
+    subgraph cluster_1 {
+        780 [label="@main"];
+    }
+    subgraph cluster_2 {
+        831 [label="extern @llvm.memcpy.p0i8.p0i8.i64"];
+    }
+    subgraph cluster_3 {
+        445 [label="@jpegdct"];
+    }
+    subgraph cluster_4 {
+        402 [label="@codebook"];
+    }
+    subgraph cluster_5 {
+        328 [label="@iir1"];
+    }
+    subgraph cluster_6 {
+        263 [label="@latsynth"];
+    }
+    subgraph cluster_7 {
+        166 [label="@fir_no_red_ld"];
+    }
+    subgraph cluster_8 {
+        111 [label="@fir"];
+    }
+    subgraph cluster_9 {
+        64 [label="@mac"];
+    }
+    subgraph cluster_10 {
+        23 [label="@vec_mpy1"];
+    }
+    subgraph cluster_11 {
+        -100 [label=unknown];
+    }
+    780 -> 23 [label=""];
+    780 -> 64 [label=""];
+    780 -> 111 [label=""];
+    780 -> 166 [label=""];
+    780 -> 263 [label=""];
+    780 -> 328 [label=""];
+    780 -> 402 [label=""];
+    780 -> 445 [label=""];
+    780 -> 831 [label=""];
+}
