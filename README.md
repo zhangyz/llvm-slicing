@@ -40,7 +40,7 @@ Currently, `llvm-slicing` includes four static slicers based on corresponding sl
          -o,--output FILE/DIR       The destination of a file output
          FILE                       The input file which can be bitcode,llvm assembly, or C/CPP sourcecode
 
-For a multi-programs library, you can first compile these programs into corresponding IRs, then combine them into a single IR with the `llvm-link` tool, and finally use `llvm-slicing` to slice this library. 
+For a multi-programs library, you can first compile these programs into corresponding IRs, then combine them into a single IR with the LLVM tool `llvm-link`, and finally use `llvm-slicing` to slice this library. 
 
 
 ## Example
