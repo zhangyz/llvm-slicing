@@ -8,4 +8,4 @@ RUN apt-get update && \
     
 ADD /bin/llvm-slicing_llvm-3.3_x86-64_Ubuntu-12.04.2.tar.bz2 /usr/local/bin 
 
-CMD ["llvm-slicing -h"]
+CMD ["llvm-slicing", "-h"]
