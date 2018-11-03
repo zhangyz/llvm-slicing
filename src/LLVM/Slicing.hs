@@ -29,7 +29,7 @@ import LLVM.Slicing.Data.SliceType
 import LLVM.Slicing.Static.SDG.SDGType 
 import qualified LLVM.Slicing.Static.Symbolic.SymSlicer as Sym
 import qualified LLVM.Slicing.Static.SDG.SDGSlicer as SDG
-import qualified LLVM.Slicing.Static.SDG.IFDS.IFDSSlicer as IFDS
+-- import qualified LLVM.Slicing.Static.SDG.IFDS.IFDSSlicer as IFDS
 import qualified LLVM.Slicing.Static.Weiser.MWeiser as MW
 
     
@@ -38,7 +38,7 @@ genSliceTableWith :: String -> Bool -> Module -> (SliceTable,SliceTable)
 genSliceTableWith method isPar m
   | elem method ["sym","symbolic","Symbolic","Sym","SymSlicer"] = Sym.genSliceTable isPar m
   | elem method ["sdg","SDG","SDGSlicer","sdgSlicer"] =  SDG.genSliceTable isPar m
-  | elem method ["ifds","IFDS","IFDSSlicer","ifdsSlicer"] =  IFDS.genSliceTable isPar m
+-- | elem method ["ifds","IFDS","IFDSSlicer","ifdsSlicer"] =  IFDS.genSliceTable isPar m
   | elem method ["weiser","Weiser","MWeiser","WeiserSlicer"] =  
         if isPar then error "Weiser cann't support to compute slices parallelly!" 
         else MW.genSliceTable m
@@ -65,7 +65,7 @@ genSDGgraph m = toDotString (G.grev sdg')
   where
     valMap = genValueMap m    
     sdg' = G.nmap (convertNode2 (valMap ^!)) sdg 
-    sdg = IFDS.genSDG False m      -- SDG.genSDG False m 
+    sdg = SDG.genSDG False m      -- IFDS.genSDG False m 
        
 toDotString :: ToGraphviz a => a -> String    
 toDotString = L.unpack . G.printDotGraph . toGraphviz 
