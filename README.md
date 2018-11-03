@@ -6,6 +6,8 @@ Program slicing is a technique for simplifying programs by focusing on selected 
 
 ## Installation
 
+#### Building from source
+
 `llvm-slicing` is written in [Haskell](https://www.haskell.org/). It depends on `LLVM 3.0-3.4` and `llvm-config` must be in your `PATH`. It is built and packaged using [`Cabal`](https://www.haskell.org/cabal/). 
  - Install the package `cabal-install` from your system's package manager (with e.g. `apt-get`); <br>
    Verify that `cabal` is installed and update its dependency list with  `cabal update`
@@ -13,9 +15,13 @@ Program slicing is a technique for simplifying programs by focusing on selected 
    This will compile `llvm-slicing` and install it to your `~/.cabal/bin` directory
  - Add this directory to your `PATH`; <br> Verify that your `PATH` is set up correctly with `which llvm-slicing`
 
+#### Using pre-built binary
+
 Alternatively, download our pre-built binary for Ubuntu 12.04 LTS (64 bit) with LLVM 3.3: <br> 
      [`llvm-slicing_llvm-3.3_x86-64_Ubuntu-12.04.2.tar.bz2`](bin/llvm-slicing_llvm-3.3_x86-64_Ubuntu-12.04.2.tar.bz2)  <br>
 Then unzip it and put the binary `llvm-slicing` in a directory that is on your `PATH`. 
+
+#### Creating docker image 
 
 For docker users, please visit the file [`Dockerfile`](/Dockerfile) or pull the image [`nuptzyz/llvm-slicing`](https://hub.docker.com/r/nuptzyz/llvm-slicing/).
 
