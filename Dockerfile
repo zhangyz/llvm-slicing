@@ -7,5 +7,7 @@ RUN apt-get update && \
     cp /usr/bin/opt-3.3 /usr/local/bin/opt
     
 ADD /bin/llvm-slicing_llvm-3.3_x86-64_Ubuntu-12.04.2.tar.bz2 /usr/local/bin 
+COPY /test/C/sample/sum3.c /usr/local/src/
 
-CMD ["llvm-slicing", "-h"]
+CMD ["llvm-slicing", "/usr/local/src/sum3.c", "-d", "Both"]
+
