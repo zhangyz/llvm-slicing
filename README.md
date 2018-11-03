@@ -9,16 +9,16 @@ Program slicing is a technique for simplifying programs by focusing on selected 
 #### Building from source
 
 `llvm-slicing` is written in [Haskell](https://www.haskell.org/). It depends on `LLVM 3.0-3.4` and `llvm-config` must be in your `PATH`. It is built and packaged using [`Cabal`](https://www.haskell.org/cabal/). 
- - Install the package `cabal-install` from your system's package manager (with e.g. `apt-get`); <br>
-   Verify that `cabal` is installed and update its dependency list with  `cabal update`
- - `git clone` this repository, and `cd` to the `llvm-slicing` source directory (`src`) to build/install: `cabal install`. <br>
-   This will compile `llvm-slicing` and install it to your `~/.cabal/bin` directory
- - Add this directory to your `PATH`; <br> Verify that your `PATH` is set up correctly with `which llvm-slicing`
+ - Install the package `cabal-install` from your system's package manager (with e.g. `apt-get`); 
+   Verify that `cabal` is installed and update its dependency list with  `cabal update`.
+ - `git clone` this repository, and `cd` to the `llvm-slicing` source directory (`src`) to build/install: `cabal install`. 
+   This will compile `llvm-slicing` and install it to your `~/.cabal/bin` directory.
+ - Add this directory to your `PATH`; <br> Verify that your `PATH` is set up correctly with `which llvm-slicing`.
 
 #### Using pre-built binary
 
-Alternatively, download our pre-built binary for Ubuntu 12.04 LTS (64 bit) with LLVM 3.3: <br> 
-     [`llvm-slicing_llvm-3.3_x86-64_Ubuntu-12.04.2.tar.bz2`](bin/llvm-slicing_llvm-3.3_x86-64_Ubuntu-12.04.2.tar.bz2)  <br>
+Alternatively, download our pre-built binary for Ubuntu 12.04 LTS (64 bit) with LLVM 3.3:  
+     [llvm-slicing_llvm-3.3_x86-64_Ubuntu-12.04.2.tar.bz2](https://github.com/zhangyz/llvm-slicing/blob/master/bin/llvm-slicing_llvm-3.3_x86-64_Ubuntu-12.04.2.tar.bz2)  
 Then unzip it and put the binary `llvm-slicing` in a directory that is on your `PATH`. 
 
 #### Creating docker image 
@@ -53,7 +53,7 @@ For a multi-programs library, you can first compile these programs into correspo
 
 ## Example
 
-For a simple C program, [`sum3.c`](test/C/sample/sum3.c), its backward static slice table with symbolic slicing method:
+For a simple C program, [sum3.c](https://github.com/zhangyz/llvm-slicing/blob/master/test/C/sample/sum3.c), its backward static slice table with symbolic slicing method:
 
       $ llvm-slicing sum3.c
       
@@ -124,6 +124,6 @@ To print its LLVM IR SDG:
 
       $ llvm-slicing sum3.c -g Sdg
      
-  ![SDG for sum3.c](test/C/sample/sum3_SDG.png "IR SDG of sum3.c")
+  ![SDG for sum3.c](https://github.com/zhangyz/llvm-slicing/blob/master/test/C/sample/sum3_SDG.png "IR SDG of sum3.c")
 
-For more slice results of `sum3.c`, please visit the folder [`test/C/sample`](test/C/sample/).   
+For more slice results of `sum3.c`, please visit the folder [`test/C/sample`](https://github.com/zhangyz/llvm-slicing/blob/master/test/C/sample/).   
