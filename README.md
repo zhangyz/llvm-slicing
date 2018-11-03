@@ -15,7 +15,9 @@ Program slicing is a technique for simplifying programs by focusing on selected 
 
 Alternatively, download our pre-built binary for Ubuntu 12.04 LTS (64 bit) with LLVM 3.3: <br> 
      [`llvm-slicing_llvm-3.3_x86-64_Ubuntu-12.04.2.tar.bz2`](bin/llvm-slicing_llvm-3.3_x86-64_Ubuntu-12.04.2.tar.bz2)  <br>
-Then unzip it and put the binary `llvm-slicing` in a directory that is on your `PATH`
+Then unzip it and put the binary `llvm-slicing` in a directory that is on your `PATH`. 
+
+For docker users, please visit the file [`Dockerfile`](/Dockerfile) or pull the image [`nuptzyz/llvm-slicing`](https://hub.docker.com/r/nuptzyz/llvm-slicing/).
 
 ## Usage
 
