@@ -227,6 +227,9 @@ getFunDefsOrRefs fAliasMap defOrRef f = fDefsOrRefs
     fitF v = if hasExtraReference v then not (isLocalToFunction f v)
              else not (isLocalToFunction f v || isConstant v)
              
-
+functionVars :: Function -> [String]
+functionVars f = fmlVars ++ locVars
+  where fmlVars = map toVarName' $ functionParameters f 
+        locVars = map toVarName' $ funcAllocInsts f
 
 
