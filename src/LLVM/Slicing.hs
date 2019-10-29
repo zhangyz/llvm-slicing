@@ -31,6 +31,7 @@ import qualified LLVM.Slicing.Static.Symbolic.SymSlicer as Sym
 import qualified LLVM.Slicing.Static.SDG.SDGSlicer as SDG
 -- import qualified LLVM.Slicing.Static.SDG.IFDS.IFDSSlicer as IFDS
 import qualified LLVM.Slicing.Static.Weiser.MWeiser as MW
+import qualified LLVM.Slicing.Static.InfoFlow.InfoFlowSlicer as IF 
 
     
 -- | Get backward/forward slice tables with a given method
@@ -42,6 +43,7 @@ genSliceTableWith method isPar m
   | elem method ["weiser","Weiser","MWeiser","WeiserSlicer"] =  
         if isPar then error "Weiser cann't support to compute slices parallelly!" 
         else MW.genSliceTable m
+  | elem method ["Info","info","if","InfoFlow","infoFlow"] = IF.genSliceTable isPar m
   | otherwise  = error "Unknown the slice method (Symbolic,SDG,IFDS or Weiser)!"
 
   
