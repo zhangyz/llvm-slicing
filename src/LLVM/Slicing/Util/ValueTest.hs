@@ -89,4 +89,26 @@ isAllocaInst :: Instruction -> Bool
 isAllocaInst AllocaInst {} = True
 isAllocaInst _ = False
 
+isConstantValue :: Value -> Bool
+isConstantValue v =  case valueContent' v of
+    ConstantC ConstantPointerNull {} -> True
+    ConstantC ConstantValue {} -> True
+    _ -> False
+    
+isExtFunction :: IsValue a => a -> Bool
+isExtFunction v  =
+  case valueContent' (toValue v) of
+    ExternalFunctionC _ -> True
+    _ -> False 
 
+isBBEntryInst :: Instruction -> Bool
+isBBEntryInst i = 
+  case instructionBasicBlock i of
+    Nothing -> False
+    Just iBB -> [i] == (take 1 $ basicBlockInstructions iBB)
+
+isFunEntryInst :: Instruction -> Bool
+isFunEntryInst i = 
+  case instructionFunction i of
+    Nothing -> False
+    Just iFun -> i == functionEntryInstruction iFun  
