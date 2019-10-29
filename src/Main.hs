@@ -8,7 +8,7 @@ import LLVM.Slicing
 
 -----
 ---
-data SliceMethod = Symbolic | SDG | Weiser | IFDS | Sym2
+data SliceMethod = Symbolic | SDG | Weiser | IFDS | InfoFlow
                   deriving (Read, Ord, Eq, Show)
 data Direction = Fwd | Bwd | Both deriving (Read, Ord, Eq, Show)
 data GrType = Sdg | Icfg | Cfg | Cdg | Cg | Pdt | Dt 
@@ -22,6 +22,7 @@ data Opts = Opts {
                  , timeOut :: Int
                  , grType :: Maybe GrType
                  , outputFile :: Maybe FilePath
+                 , cmpSlices  :: [String]
                  , inputFile :: FilePath
                  } deriving (Show)
 
@@ -42,7 +43,7 @@ cmdOpts = Opts
       ( long "method"
       <> short 'm'
       <> metavar "SLICE_METHOD"
-      <> help "The slice algorithm: Symbolic,Weiser,SDG or IFDS. Default: Symbolic"
+      <> help "The slice algorithm: Symbolic,Weiser,InfoFlow,SDG or IFDS. Default: Symbolic"
       <> value Symbolic)    
   <*> option auto
       ( long "isParallel"
@@ -66,6 +67,11 @@ cmdOpts = Opts
      <> short 'o'
      <> metavar "FILE/DIR"
      <> help "The destination of a file output"))
+  <*> many (strOption
+      ( long "compare"
+--      <> short 'c'
+      <> metavar "SLICE_METHOD"
+      <> help "Compare the final results of two slice methods. If null, compare Symbolic and IFDS"))
   <*> argument str 
       ( metavar "FILE" 
       <> help "The input file which can be bitcode,llvm assembly, or C/CPP sourcecode")
@@ -122,5 +128,12 @@ realMain opts = (timeoutWith (timeOut opts)). timeIO $! do
       Just ofile -> appendFile ofile res
     putStrLn res   
     printInfo m
+    
+    -- compare slice tables 
+    let cmps = case cmpSlices opts of 
+          [md1]  -> compareSliceMethod m (md1, "Symbolic")
+          md1 : md2 : _ -> compareSliceMethod m (md1,md2)
+          _  -> compareSliceMethod m ("Symbolic","IFDS")    -- SDG
+    writeFile (inFile ++ ".SliceDiffResult") cmps   
 
  
