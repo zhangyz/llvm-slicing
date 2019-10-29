@@ -10,7 +10,7 @@ name:                llvm-slicing
 -- PVP summary:      +-+------- breaking API changes
 --                   | | +----- non-breaking API additions
 --                   | | | +--- code changes with no API change
-version:             0.3.3
+version:             0.3.6
 
 -- A short (one-line) description of the package.
 synopsis:            Various program slicers based on LLVM
@@ -57,6 +57,7 @@ executable llvm-slicing
                    LLVM.Slicing.Static.Weiser.MWeiser,
                    LLVM.Slicing.Static.SDG.IFDS.IFDSSlicer,
                    LLVM.Slicing.Static.SDG.SDGSlicer,
+                   LLVM.Slicing.Static.InfoFlow.InfoFlowSlicer,
                    LLVM.Slicing 
                     
   
@@ -79,7 +80,8 @@ executable llvm-slicing
                   graphviz, filepath, directory,
                   llvm-data-interop, fgl, 
                   deepseq, deepseq-generics, 
-                  loch-th, lens, binary
+                  loch-th, lens, binary,
+                  pointless-lenses
   
   -- Directories containing source files.
   -- hs-source-dirs:      
