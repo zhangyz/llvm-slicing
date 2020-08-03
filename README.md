@@ -18,7 +18,7 @@ Program slicing is a technique for simplifying programs by focusing on selected 
 #### Using pre-built binary
 
 Alternatively, download our pre-built binary for Ubuntu 12.04 LTS (64 bit) with LLVM 3.3:  
-     [`llvm-slicing_llvm-3.3_x86-64_Ubuntu-12.04.2.tar.bz2`](https://github.com/zhangyz/llvm-slicing/blob/master/bin/llvm-slicing_llvm-3.3_x86-64_Ubuntu-12.04.2.tar.bz2)  
+     [`llvm-slicing_llvm-3.3_x86-64_Ubuntu-12.04.2.tar.bz2`](./bin/llvm-slicing_llvm-3.3_x86-64_Ubuntu-12.04.2.tar.bz2)  
 Then unzip it and put the binary `llvm-slicing` in a directory that is on your `PATH`. 
 
 #### Creating docker image 
@@ -53,7 +53,7 @@ For a multi-programs library, you can first compile these programs into correspo
 
 ## Example
 
-For a simple C program, [sum3.c](https://github.com/zhangyz/llvm-slicing/blob/master/test/C/sample/sum3.c), its backward static slice table with symbolic slicing method:
+For a simple C program, [sum3.c](./test/C/sample/sum3.c), its backward static slice table with symbolic slicing method:
 
       $ llvm-slicing sum3.c
       
@@ -124,6 +124,6 @@ To print its LLVM IR SDG:
 
       $ llvm-slicing sum3.c -g Sdg
      
-  ![SDG for sum3.c](https://github.com/zhangyz/llvm-slicing/blob/master/test/C/sample/sum3_SDG.png "IR SDG of sum3.c")
+  ![SDG for sum3.c](./test/C/sample/sum3_SDG.png "IR SDG of sum3.c")
 
-For more slice results of `sum3.c`, please visit the folder [test/C/sample](https://github.com/zhangyz/llvm-slicing/blob/master/test/C/sample/).   
+For more slice results of `sum3.c`, please visit the folder [test/C/sample](./test/C/sample/).   
